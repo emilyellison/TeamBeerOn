@@ -121,14 +121,25 @@ header {
 			font-size:16px;
 		}
 	}
-	input, label, textarea {
-		display:block;
-		padding:5px 5px;
+	form {
+		line-height:10px;
+		text-align:center;
+		margin:20px 0px;
+		input {
+			padding:5px;
+			border-radius:4px;
+		}
+		input, label, textarea {
+			display:block;
+			padding:5px 5px;
+			font-size:16px;
+		}
+		textarea {
+			width:200px;
+			border-radius:4px;
+		}
 	}
-	textarea {
-		width:200px;
-		border-radius:4px;
-	}
+
 	.status_date {
 		color:grey;
 	}
