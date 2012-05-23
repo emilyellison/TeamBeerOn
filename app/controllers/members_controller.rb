@@ -1,5 +1,9 @@
 class MembersController < ApplicationController
 
+  def new
+    
+  end
+
   def show
   
   end
