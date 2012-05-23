@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BeerOn</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<header>
+	<h1>BeerOn</h1>
+		<p class='menu'>
+			<a href='#'>About</a>
+			<a href='#'>Profile</a>
+			<a href='#'>Sign Out</a>
+		</p>
+		<hr/>
+
+		<form class='search'/>
+			<input type='text' id='query' name='query'></input>
+			<input type='submit' value='Search' class='button'></input>
+		</form>
+
+		<hr/>
+	</header>
+	<div class='content'>
+		<%= yield %>
+	</div>
+</body>
+</html>
