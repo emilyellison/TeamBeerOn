@@ -4,4 +4,8 @@ class BeerMeController < ApplicationController
     
   end
   
+  def rate
+    
+  end
+  
 end
