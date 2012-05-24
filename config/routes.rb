@@ -2,6 +2,7 @@ TeamBeerOn::Application.routes.draw do
   
   root to: 'beer_me#location'
   
+  get 'preference' => 'beer_me#preference', as: :preference
   get 'sign_in' => 'sessions#new', as: :sign_in
   get 'sign_out' => 'sessions#destroy', as: :sign_out
   get 'beers/1/rate' => 'beers#rate', as: :rate_beer 

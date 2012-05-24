@@ -4,7 +4,7 @@ class BeerMeController < ApplicationController
     
   end
   
-  def rate
+  def preference
     
   end
   
