@@ -126,6 +126,13 @@ header {
 		float:left;
 		width:300px;
 	}
+	.floor {
+		width:500px;
+		.button {
+			background-image: -webkit-linear-gradient(top, brown, darkred);
+			border:1px solid brown;
+		}
+	}
 	form {
 		line-height:10px;
 		margin:20px 0px;
