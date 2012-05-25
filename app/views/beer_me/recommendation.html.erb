@@ -1,0 +1,5 @@
+<% if @beers.present? %>
+	<h2>Try a <%= @beers.first.name %></h2>
+<% else %>
+	<h2>Sorry, there were no beers that matched your requirements.</h2>
+<% end %>

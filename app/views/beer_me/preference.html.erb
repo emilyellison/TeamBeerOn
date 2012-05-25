@@ -1,35 +1,26 @@
 <h2>What are you in the mood for?</h2>
 
-<%= form_for @beer_me_search do |f| %>
-	<%= f.label :style %>
-	<%=  %>
+<%= search_form_for @q, url: recommendation_url, method: :post do |f| %>
+	<div class='column'>
+		<h3>
+			<%= f.label :style_cont, 'Style' %>
+		</h3>
+		<%= f.select(:style_cont, @styles, include_blank: true) %><br/>
+		
+	</div>
+	<div class='column'>
+		<h3>
+			Characteristics
+		</h3>
+			<% @characteristics.each do |key, value| %>
+				<%= f.label key, "#{value}", class: 'button', id: "label_#{key}" %>
+				<%= f.check_box key, style: 'visibility: hidden' %>
+			<% end %>
+	</div>
+	<div class='floor'>
+		<%= f.submit 'Beer Me', class: 'button' %>
+	</div>
 <% end %>
 
-<div class='column'>
-	<h3>Style</h3>
-	<select>
-		<option value='IPA'>IPA</option>
-		<option value='Hefeweizen'>Hefeweizen</option>
-		<option value='Porter'>Porter</option>
-		<option value='Stout'>Stout</option>
-	</select>
-</div>
-<div class='column'>
-	<h3>Characteristics</h3>
-	<input class='button' value='Smooth'></input>
-	<input class='button' value='Rich'></input>
-	<input class='button' value='Fruity'></input>
-	<input class='button' value='Hoppy'></input>
-</div>
-<div class='column'>
-	<h3>Extras</h3>
-	<input class='button' value='Drink Local'></input>
-	<input class='button' value='Hipster Edition'></input>
-	<input class='button' value='Cheap'></input>
-</div>
-<div class='floor'>
+
 	
-	<input class='button' value='Beer Me'></input>
-</div>
-
-
