@@ -5,6 +5,10 @@ class BeerMeController < ApplicationController
   end
   
   def preference
+    @beer_me_search = BeerMeSearch.new
+  end
+  
+  def recommendation
     
   end
   
