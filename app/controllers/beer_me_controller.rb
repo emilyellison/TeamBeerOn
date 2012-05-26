@@ -9,7 +9,7 @@ class BeerMeController < ApplicationController
     styles = []
     Beer.all.collect { |x| styles << x.style }
     @styles = styles.uniq.sort!
-    @characteristics = { acidic_present: 'Acidic', clean_present: 'Clean', creamy_present: 'Creamy',
+    @search_characteristics = { acidic_present: 'Acidic', clean_present: 'Clean', creamy_present: 'Creamy',
       crisp_present: 'Crisp', hoppy_present: 'Hoppy', malty_present: 'Malty', rich_present: 'Rich',
       smooth_present: 'Smooth', bitter_present: 'Bitter', earthy_present: 'Earthy', sour_present: 'Sour',
       spicy_present: 'Spicy', sweet_present: 'Sweet', tart_present: 'Tart', banana_present: 'Banana',

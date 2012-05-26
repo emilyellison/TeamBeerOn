@@ -12,7 +12,7 @@
 		<h3>
 			Characteristics
 		</h3>
-			<% @characteristics.each do |key, value| %>
+			<% @search_characteristics.each do |key, value| %>
 				<%= f.label key, "#{value}", class: 'button', id: "label_#{key}" %>
 				<%= f.check_box key, style: 'visibility: hidden' %>
 			<% end %>

@@ -1,5 +1,19 @@
 <% if @beers.present? %>
-	<h2>Try a <%= @beers.first.name %></h2>
+	<% @beers.each do |beer| %>
+		<h2><%= beer.name %> (<%= beer.abv %>%)</h2>
+		<h3><%= beer.brewery.name %></h3>
+		<h3><%= beer.brewery.city %>, <%= beer.brewery.state %>, <%= beer.brewery.country %></h3>
+		<br/>
+		<p>
+			Style: <%= beer.style %>
+		</p>
+		<p>
+			Characteristics:
+			<% beer.characteristics.sort.each do |char| %>
+			<li><%= char %></li>
+			<% end %>
+		</p>
+	<% end %>
 <% else %>
 	<h2>Sorry, there were no beers that matched your requirements.</h2>
 <% end %>
