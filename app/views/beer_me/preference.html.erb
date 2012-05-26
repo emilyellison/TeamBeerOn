@@ -28,7 +28,11 @@
 		<%= f.submit 'Beer Me', class: 'button' %>
 	</div>
 <% end %>
-
-
+<hr/>
+<% @characteristics_array.each do |char| %>
+	<% char.each do |name, desc| %>
+		<li><%= desc[:label] %>: <%= desc[:number_of_beers] %> beers remaining.</li>
+	<% end %>
+<% end %>
 
 	
