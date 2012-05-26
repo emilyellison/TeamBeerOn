@@ -2,6 +2,10 @@ class Beer < ActiveRecord::Base
   attr_accessible :abv, :brewery_id, :ibu, :name, :srm, :style, :acidic, :clean, :creamy, :crisp, :hoppy, :malty, :rich, :smooth, :bitter, :earthy, :sour, :spicy, :sweet, :tart, :banana, :caramel, :citrus, :chocolate, :cloves, :coffee, :floral, :fruity, :grapefruit, :lemon, :nutty, :pine, :smoky, :toffee, :vanilla, :wheat, :belgian
   
   belongs_to :brewery
+  has_many :beer_experiences
+  
+  validates :name, presence: true
+  validates :brewery_id, presence: true
   
   def characteristics
     available_characteristics = { 'Acidic' => acidic, 'Clean' => clean, 'Creamy' => creamy, 'Crisp' => crisp, 

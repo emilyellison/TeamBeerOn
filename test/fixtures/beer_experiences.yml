@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  beer_id: 1
+  bar_id: 1
+  rarity: 1
+  price: 1
+  home: 1
+  local: 1
+  draft: 1
+
+two:
+  beer_id: 1
+  bar_id: 1
+  rarity: 1
+  price: 1
+  home: 1
+  local: 1
+  draft: 1

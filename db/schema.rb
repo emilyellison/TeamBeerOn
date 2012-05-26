@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120526011905) do
+ActiveRecord::Schema.define(:version => 20120526181225) do
 
   create_table "bars", :force => true do |t|
     t.string   "name"
@@ -37,6 +37,18 @@ ActiveRecord::Schema.define(:version => 20120526011905) do
     t.time     "close_saturday"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+  end
+
+  create_table "beer_experiences", :force => true do |t|
+    t.integer  "beer_id"
+    t.integer  "bar_id"
+    t.integer  "rarity"
+    t.integer  "price"
+    t.integer  "home",       :default => 0
+    t.integer  "local",      :default => 0
+    t.integer  "draft",      :default => 0
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
   end
 
   create_table "beer_me_searches", :force => true do |t|
