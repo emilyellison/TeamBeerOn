@@ -1,6 +1,6 @@
 <% if @beers.present? %>
 	<% @beers.each do |beer| %>
-		<h2><%= beer.name %> (<%= beer.abv %>%)</h2>
+		<h2><%= beer.name %> <%= "(#{beer.abv}%)" if beer.abv %></h2>
 		<h3><%= beer.brewery.name %></h3>
 		<h3><%= beer.brewery.city %>, <%= beer.brewery.state %>, <%= beer.brewery.country %></h3>
 		<br/>
@@ -8,9 +8,11 @@
 			Style: <%= beer.style %>
 		</p>
 		<p>
-			Characteristics:
-			<% beer.characteristics.sort.each do |char| %>
-			<li><%= char %></li>
+			<% if beer.characteristics.present? %>
+				Characteristics:
+				<% beer.characteristics.sort.each do |char| %>
+				<li><%= char %></li>
+				<% end %>
 			<% end %>
 		</p>
 	<% end %>

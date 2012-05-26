@@ -20,4 +20,3 @@ class Beer < ActiveRecord::Base
   end
 end
 
-# available_characteristics = [ 
