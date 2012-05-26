@@ -3,7 +3,7 @@
 <%= search_form_for @q, url: recommendation_url, method: :post do |f| %>
 	<div class='column'>
 		<h3>
-			<%= f.label :style_cont, 'Style' %>
+			Style
 		</h3>
 		<%= f.select(:style_cont, @styles, include_blank: true) %><br/>
 		
@@ -13,7 +13,7 @@
 			Characteristics
 		</h3>
 			<% @search_characteristics.each do |key, value| %>
-				<%= f.label key, "#{value}", class: 'button', id: "label_#{key}" %>
+				<%= f.label key, value, class: 'button', id: "label_#{key}" %>
 				<%= f.check_box key, style: 'visibility: hidden' %>
 			<% end %>
 	</div>

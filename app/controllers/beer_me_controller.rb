@@ -22,7 +22,8 @@ class BeerMeController < ApplicationController
   
   def recommendation
     @q = Beer.search(params[:q])
-    @beers = @q.result(:distinct => true)
+    # Change shuffle later to order by price, local, rarity.
+    @beers = @q.result(:distinct => true).shuffle
   end
   
 end

@@ -11,7 +11,33 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120525191640) do
+ActiveRecord::Schema.define(:version => 20120526011905) do
+
+  create_table "bars", :force => true do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "city"
+    t.string   "state"
+    t.integer  "zip"
+    t.integer  "phone"
+    t.string   "website"
+    t.time     "open_sunday"
+    t.time     "open_monday"
+    t.time     "open_tuesday"
+    t.time     "open_wednesday"
+    t.time     "open_thursday"
+    t.time     "open_friday"
+    t.time     "open_saturday"
+    t.time     "close_sunday"
+    t.time     "close_monday"
+    t.time     "close_tuesday"
+    t.time     "close_wednesday"
+    t.time     "close_thursday"
+    t.time     "close_friday"
+    t.time     "close_saturday"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
 
   create_table "beer_me_searches", :force => true do |t|
     t.string   "style"

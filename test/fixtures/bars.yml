@@ -1,0 +1,47 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  address: MyString
+  city: MyString
+  state: MyString
+  zip: 1
+  phone: 1
+  website: MyString
+  open_sunday: 2012-05-25 20:19:05
+  open_monday: 2012-05-25 20:19:05
+  open_tuesday: 2012-05-25 20:19:05
+  open_wednesday: 2012-05-25 20:19:05
+  open_thursday: 2012-05-25 20:19:05
+  open_friday: 2012-05-25 20:19:05
+  open_saturday: 2012-05-25 20:19:05
+  close_sunday: 2012-05-25 20:19:05
+  close_monday: 2012-05-25 20:19:05
+  close_tuesday: 2012-05-25 20:19:05
+  close_wednesday: 2012-05-25 20:19:05
+  close_thursday: 2012-05-25 20:19:05
+  close_friday: 2012-05-25 20:19:05
+  close_saturday: 2012-05-25 20:19:05
+
+two:
+  name: MyString
+  address: MyString
+  city: MyString
+  state: MyString
+  zip: 1
+  phone: 1
+  website: MyString
+  open_sunday: 2012-05-25 20:19:05
+  open_monday: 2012-05-25 20:19:05
+  open_tuesday: 2012-05-25 20:19:05
+  open_wednesday: 2012-05-25 20:19:05
+  open_thursday: 2012-05-25 20:19:05
+  open_friday: 2012-05-25 20:19:05
+  open_saturday: 2012-05-25 20:19:05
+  close_sunday: 2012-05-25 20:19:05
+  close_monday: 2012-05-25 20:19:05
+  close_tuesday: 2012-05-25 20:19:05
+  close_wednesday: 2012-05-25 20:19:05
+  close_thursday: 2012-05-25 20:19:05
+  close_friday: 2012-05-25 20:19:05
+  close_saturday: 2012-05-25 20:19:05
