@@ -12,9 +12,15 @@
 			Characteristics
 		</h3>
 			<% @characteristics_array.each do |char| %>
-				<% char.each do |key, value| %>
-					<%= f.label value[:search_term], value[:label], class: 'button', id: "label_#{value[:search_term]}" %>
-					<%= f.check_box value[:search_term], style: 'visibility:hidden' %>
+				<% char.each do |name, desc| %>
+					<% if desc[:number_of_beers] > 0 %>
+						<%= f.label desc[:search_term], desc[:label], class: 'button', id: "label_#{desc[:search_term]}" %>
+						<%= f.check_box desc[:search_term], style: 'visibility:hidden' %>
+					<% else %>
+						<%= f.label desc[:search_term], desc[:label], class: 'disabled', id: "label_#{desc[:search_term]}" %>
+						<br/><br/>
+					<% end %>
+					
 				<% end %>
 			<% end %>
 	</div>
