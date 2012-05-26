@@ -11,15 +11,18 @@
 		<h3>
 			Characteristics
 		</h3>
-			<% @search_characteristics.each do |key, value| %>
-				<%= f.label key, value, class: 'button', id: "label_#{key}" %>
-				<%= f.check_box key, style: 'visibility: hidden' %>
+			<% @characteristics_array.each do |char| %>
+				<% char.each do |key, value| %>
+					<%= f.label value[:search_term], value[:label], class: 'button', id: "label_#{value[:search_term]}" %>
+					<%= f.check_box value[:search_term], style: 'visibility:hidden' %>
+				<% end %>
 			<% end %>
 	</div>
 	<div class='floor'>
 		<%= f.submit 'Beer Me', class: 'button' %>
 	</div>
 <% end %>
+
 
 
 	

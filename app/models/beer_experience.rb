@@ -4,4 +4,7 @@ class BeerExperience < ActiveRecord::Base
   belongs_to :bar
   belongs_to :beer
   
+  validates :bar_id, presence: true
+  validates :beer_id, presence: true
+  
 end
