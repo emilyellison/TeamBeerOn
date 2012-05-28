@@ -1,5 +1,13 @@
 $(document).ready( function() {
 
+	// $("#q_belgian_present").change(function () {
+	//     $.post('recommendation.html.erb', function(data) {
+	//        $('#checkbox_section').html(data);
+	//     });
+	// })
+	
+
+
 	$("#q_acidic_present").change(function() {
 		 $("#label_acidic_present").toggleClass("checked", this.checked)
 	}).change();

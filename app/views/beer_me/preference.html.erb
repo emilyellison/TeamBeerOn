@@ -11,28 +11,22 @@
 		<h3>
 			Characteristics
 		</h3>
+		<div id='#checkbox_section'>
 			<% @characteristics_array.each do |char| %>
 				<% char.each do |name, desc| %>
 					<% if desc[:number_of_beers] > 0 %>
-						<%= f.label desc[:search_term], desc[:label], class: 'button', id: "label_#{desc[:search_term]}" %>
+						<%= f.label desc[:search_term], "#{desc[:label]} (#{desc[:number_of_beers]})", class: 'button', id: "label_#{desc[:search_term]}" %>
 						<%= f.check_box desc[:search_term], style: 'visibility:hidden' %>
 					<% else %>
-						<%= f.label desc[:search_term], desc[:label], class: 'disabled', id: "label_#{desc[:search_term]}" %>
+						<%= f.label desc[:search_term], "#{desc[:label]} (#{desc[:number_of_beers]})", class: 'disabled', id: "label_#{desc[:search_term]}" %>
 						<br/><br/>
 					<% end %>
 					
 				<% end %>
 			<% end %>
+		</div>
 	</div>
 	<div class='floor'>
 		<%= f.submit 'Beer Me', class: 'button' %>
 	</div>
 <% end %>
-<hr/>
-<% @characteristics_array.each do |char| %>
-	<% char.each do |name, desc| %>
-		<li><%= desc[:label] %>: <%= desc[:number_of_beers] %> beers remaining.</li>
-	<% end %>
-<% end %>
-
-	

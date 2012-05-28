@@ -20,7 +20,6 @@ class BeerMeController < ApplicationController
           search_term: "#{char.to_s}_present".to_sym , 
           number_of_beers: Beer.sum(char) } }
     end
-      
   end
   
   def recommendation
