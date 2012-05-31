@@ -6,11 +6,10 @@
 	<li>Share what beers they're drinking with friends.</li>
 </div>
 <div class='right'>
-	<h2>Join BeerOn</h2>
-		<% render 'form' %>
+	<h2>Join BeerOn! </h2>
+	
+<%= render 'form' %>		
 		Already a member?
-		<a href='#'>
-			Sign in!
-		</a>
+<%= link_to "Sign In!", new_session_url %>		</a>
 	</p>
 </div>
