@@ -1,0 +1,36 @@
+<%= form_for(@member) do |m| %>
+	<% if @member.errors.any? %>
+		<div id="error_explanation">
+			<h2>
+				<%= pluralize(@member.errors.count, "error") %> yikes this user was not saved because:
+			</h2>
+			<ul>
+				<%= @member.errors.full_messages.each do |msg| %>
+				<li>
+					<%= msg %>
+				</li><% end %>
+			</ul>
+		</div>
+		  <div class="field">
+		    <%= m.label :name, 'Name' %><br />
+		    <%= m.text_field :name %>
+
+		  </div>
+		  <div class="field">
+		    <%= m.label :email %><br />
+		    <%= m.text_field :email %>
+		  </div>
+		  <div class="field">
+		    <%= m.label :password %><br />
+		    <%= m.password_field :password %>
+		  </div>
+		  <div class="field">
+		    <%= m.label :password_confirmation, 'Password Again' %><br />
+		    <%= m.password_field :password_confirmation %>
+		  </div>
+		  <div class="actions">
+		    <%= m.submit 'BeerMe!' %>
+		  </div>
+	<% end %>
+	
+	<% end %>
