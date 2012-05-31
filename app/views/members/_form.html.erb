@@ -2,15 +2,17 @@
 	<% if @member.errors.any? %>
 		<div id="error_explanation">
 			<h2>
-				<%= pluralize(@member.errors.count, "error") %> yikes this user was not saved because:
+				<%= pluralize(@member.errors.count, "error") %>! Yikes, this user was not saved because:
 			</h2>
 			<ul>
-				<%= @member.errors.full_messages.each do |msg| %>
+				<% @member.errors.full_messages.each do |msg| %>
 				<li>
 					<%= msg %>
 				</li><% end %>
 			</ul>
 		</div>
+		<br/>
+			<% end %>
 		  <div class="field">
 		    <%= m.label :name, 'Name' %><br />
 		    <%= m.text_field :name %>
@@ -28,9 +30,10 @@
 		    <%= m.label :password_confirmation, 'Password Again' %><br />
 		    <%= m.password_field :password_confirmation %>
 		  </div>
+			<br/>
 		  <div class="actions">
-		    <%= m.submit 'BeerMe!' %>
+		    <%= m.submit 'BeerMe!', class: 'button' %>
 		  </div>
-	<% end %>
+
 	
 	<% end %>

@@ -11,10 +11,14 @@
 	<h1>BeerOn</h1>
 		<p class='menu'>
 			<a href='#'>Contact Us</a>
-			<a href='#'>Profile</a>
-			<%= link_to "Sign Up", new_member_url %>
-			<%= link_to "Sign In", new_session_url %>
-			<%= link_to "Sign Out", sign_out_url %>		</p>
+			<% if @current_member %>
+				<a href='#'>Profile</a>
+				<%= link_to "Sign Out", sign_out_url %>	</p>
+			<% else %>
+				<%= link_to "Sign Up", new_member_url %>
+				<%= link_to "Sign In", new_session_url %>
+				</p>
+			<% end %>
 		<hr/>
 
 		<form class='search'/>
@@ -25,6 +29,9 @@
 		<hr/>
 	</header>
 	<div class='content'>
+		<% if flash[:notice] %>
+			<%= flash[:notice] %>
+		<% end %>
 		<%= yield %>
 	</div>
 </body>

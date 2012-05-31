@@ -9,8 +9,8 @@ TeamBeerOn::Application.routes.draw do
   get 'members/:id' => 'members#show', as: :member
   get 'members/:id/edit' => 'members#edit', as: :edit_member
 	
-	get "sessions/new" => 'sessions#new', :as => :sign_in
-  get "signout" => 'sessions#destroy', :as => :sign_out
+	get "sign_in" => 'sessions#new', :as => :sign_in
+  get "sign_out" => 'sessions#destroy', :as => :sign_out
   post "sessions/create" => 'sessions#create'
 
   get 'preference' => 'beer_me#preference', as: :preference

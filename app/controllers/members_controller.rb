@@ -2,7 +2,7 @@ class MembersController < ApplicationController
  
 
 
- def new
+  def new
     @member = Member.new
   end
 
@@ -11,11 +11,11 @@ class MembersController < ApplicationController
   end
   
   def edit
-	@member = Member.find(params[:id])
+	  @member = Member.find(params[:id])
   end
 
   def create
-	@member = Member.new(params[:id])
+	@member = Member.new(params[:member])
 	
 		if @member.save
 			redirect_to root_url, notice: "Now you can get your BeerOn!"
