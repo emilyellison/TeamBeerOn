@@ -6,11 +6,12 @@ class BeerMeController < ApplicationController
   
   def preference
     @q = Beer.search(params[:q])
+    @beers = @q.result(:distinct => true)
     
     styles = []
     Beer.all.collect { |x| styles << x.style }
     @styles = styles.uniq.sort!
-      
+    
     @characteristics_array = [] 
     characteristics = [ :acidic, :clean, :creamy, :crisp, :hoppy, :malty, :rich, :smooth, :bitter, :earthy,
       :sour, :spicy, :sweet, :tart, :banana, :caramel, :citrus, :chocolate, :cloves, :coffee, :floral, :fruity,
@@ -19,9 +20,9 @@ class BeerMeController < ApplicationController
       @characteristics_array << { char => 
         { label: char.to_s.capitalize, 
           search_term: "#{char.to_s}_present".to_sym , 
-          number_of_beers: Beer.sum(char) } }
+          number_of_beers: @beers.sum(char) } }
     end
-    @beers = @q.result(:distinct => true)
+    
     
   end
   

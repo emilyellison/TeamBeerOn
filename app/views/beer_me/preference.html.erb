@@ -1,39 +1,4 @@
 <h2>What are you in the mood for?</h2>
 
 <%#= search_form_for @q, url: recommendation_url, method: :post do |f| %>
-<%= search_form_for @q, remote: :true do |f| %>
-	<div class='column'>
-		<h3>
-			Style
-		</h3>
-		<%= f.select(:style_cont, @styles, include_blank: true) %><br/>
-	</div>
-	<div class='column'>
-		<h3>
-			Characteristics
-		</h3>
-		<div id='checkbox_section'>
-			<% @characteristics_array.each do |char| %>
-				<% char.each do |name, desc| %>
-					<% if desc[:number_of_beers] > 0 %>
-						<%= f.label desc[:search_term], "#{desc[:label]} (#{desc[:number_of_beers]})", class: 'button', id: "label_#{desc[:search_term]}" %>
-						<%= f.check_box desc[:search_term], style: 'visibility:hidden' %>
-					<% else %>
-						<%= f.label desc[:search_term], "#{desc[:label]} (#{desc[:number_of_beers]})", class: 'disabled', id: "label_#{desc[:search_term]}" %>
-						<br/><br/>
-					<% end %>
-					
-				<% end %>
-			<% end %>
-		</div>
-	</div>
-	<div class='floor'>
-		<%= f.submit 'Beer Me' %>
-	</div>
-<% end %>
-<div id='beer_result'>
-<% @beers.each do |beer| %>
-	<li><%= beer.name %></li>
-<% end %>
-<%= @beer_list %>
-</div>
+<%= render 'beer_me/checkbox_section' %>

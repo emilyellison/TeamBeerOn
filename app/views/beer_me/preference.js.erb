@@ -1,1 +1,3 @@
-$('#beer_result').prepend("<%= escape_javascript(@beers.collect(&:name).inspect) %>");
+
+$('#beer_me_form').html("<%= escape_javascript(render 'beer_me/checkbox_section') %>");
+// $('#beer_me_form').html("hello world");
