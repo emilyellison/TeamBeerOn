@@ -9,7 +9,7 @@ class BeerMeController < ApplicationController
     @@beers = @q.result(:distinct => true)
     
     styles = []
-    Beer.all.collect { |x| styles << x.style }
+    @@beers.all.collect { |x| styles << x.style }
     @styles = styles.uniq.sort!
     
     @characteristics_array = [] 
