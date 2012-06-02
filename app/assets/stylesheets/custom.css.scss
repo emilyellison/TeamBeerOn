@@ -129,6 +129,7 @@ header {
 	.floor {
 		width:500px;
 		.button {
+			background-image: -moz-linear-gradient(top, brown, darkred);
 			background-image: -webkit-linear-gradient(top, brown, darkred);
 			border:1px solid brown;
 		}
@@ -160,14 +161,17 @@ header {
 		}
 		.disabled {
 			border:1px solid bisque;
+			background-image: -moz-linear-gradient(top, bisque, peachpuff);
 			background-image: -webkit-linear-gradient(top, bisque, peachpuff);
 		}
 		.button {
 			border:1px solid darkorange;
+			background-image: -moz-linear-gradient(top, orange, darkorange);
 			background-image: -webkit-linear-gradient(top, orange, darkorange);
 		}
 		.checked {
 			border:1px solid darkred;
+			background-image: -moz-linear-gradient(top, brown, darkred);
 			background-image: -webkit-linear-gradient(top, brown, darkred);
 		}
 	}

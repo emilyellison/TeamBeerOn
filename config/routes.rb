@@ -13,7 +13,7 @@ TeamBeerOn::Application.routes.draw do
   get "sign_out" => 'sessions#destroy', :as => :sign_out
   post "sessions/create" => 'sessions#create'
 
-  get 'preference' => 'beer_me#preference', as: :preference
+  get 'preference' => 'beer_me#preference', as: :beers
   post 'recommendation' => 'beer_me#recommendation', as: :recommendation
   get 'ratings/new' => 'ratings#new', as: :new_rating 
   get 'beers/1/rate' => 'beers#rate', as: :rate_beer 

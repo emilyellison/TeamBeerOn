@@ -1,5 +1,15 @@
 $(document).ready( function() {
 
+	// $('.button').live('click',function() {
+	// 	$(this).closest('form').submit();
+	// });
+	
+	$('.button').live('click',function() {
+		$(this).closest('form').submit();
+		
+	});
+	
+
 	// $("#q_belgian_present").change(function () {
 	//     $.post('recommendation.html.erb', function(data) {
 	//        $('#checkbox_section').html(data);

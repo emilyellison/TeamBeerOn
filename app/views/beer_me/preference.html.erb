@@ -1,6 +1,7 @@
 <h2>What are you in the mood for?</h2>
 
-<%= search_form_for @q, url: recommendation_url, method: :post do |f| %>
+<%#= search_form_for @q, url: recommendation_url, method: :post do |f| %>
+<%= search_form_for @q, remote: true do |f| %>
 	<div class='column'>
 		<h3>
 			Style
@@ -11,7 +12,7 @@
 		<h3>
 			Characteristics
 		</h3>
-		<div id='#checkbox_section'>
+		<div id='checkbox_section'>
 			<% @characteristics_array.each do |char| %>
 				<% char.each do |name, desc| %>
 					<% if desc[:number_of_beers] > 0 %>
@@ -27,6 +28,11 @@
 		</div>
 	</div>
 	<div class='floor'>
-		<%= f.submit 'Beer Me', class: 'button' %>
+		<%= f.submit 'Beer Me' %>
 	</div>
 <% end %>
+<div id='beer_result'>
+<% @beers.each do |beer| %>
+	<li><%= beer.name %></li>
+<% end %>
+</div>
