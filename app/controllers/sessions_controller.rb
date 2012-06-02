@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
   	if member
   		if member.authenticate(params[:password])
   			session[:mid] = member.id
-  			redirect_to root_url, notice: "Let's Get our BeerOn!"
+  			redirect_to member_url(member.id), notice: "Let's Get our BeerOn!"
   		else
   			flash.now[:notice] = "Unknown email or password"
   			render :new

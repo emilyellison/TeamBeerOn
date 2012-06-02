@@ -2,11 +2,11 @@ TeamBeerOn::Application.routes.draw do
   
   root to: 'beer_me#location'
   
-  resources :members
 	resources :sessions
-	
-	get 'sign_up' => 'members#new', action: 'new', as: :sign_up
-  get 'members/:id' => 'members#show', as: :member
+	resources :members
+
+  get 'members/:id' => 'members#show', as: :member	
+	get 'sign_up' => 'members#new', as: :sign_up
   get 'members/:id/edit' => 'members#edit', as: :edit_member
 	
 	get "sign_in" => 'sessions#new', :as => :sign_in

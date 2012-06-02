@@ -1,21 +1,17 @@
-<h2>Update Your Account</h2>
-<div class='left'>
-	<form/>
-		<div class='fields'>
-		<label>First Name</label>
-		<input value='Stella'/></input>
-		<label>Last Name</label>
-		<input value='Fayman'/></input>
-		<label>E-mail Address</label>
-		<input value='startupstella@gmail.com'/></input>
-		<label>Password</label>
-		<input value='foobar' type='password'/></input>
-		<label>Confirm Password</label>
-		<input value='foobar' type='password'/></input>
-		</div>
-		<br/>
-		<input type='submit' value='Update' class='button'></input>
-	</form>
+<h2>Edit Your Account</h2>
+
+<%= form_for(@member) do |m| %>
+<%= m.label :name %>
+<%= m.text_field :name %>
+<%= m.label :email %>
+<%= m.text_field :email %>
+<%= m.label :password %>
+<%= m.password_field :password %>
+<%= m.label :password_confirmation, "Confirm Password" %>
+<%= m.password_field :password_confirmation %>
+<%= m.submit "Save Changes", class: "btn btn-large btn-primary" %>
+<% end %>
+
 </div>
 <div class='right'>
 	<img alt="Beer" src="/assets/three_champion.jpg" width="400" class='photo'/></a>
