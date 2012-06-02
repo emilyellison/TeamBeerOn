@@ -22,6 +22,7 @@ class BeerMeController < ApplicationController
           number_of_beers: Beer.sum(char) } }
     end
     @beers = @q.result(:distinct => true)
+    
   end
   
   def recommendation

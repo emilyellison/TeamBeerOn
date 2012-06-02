@@ -1,1 +1,1 @@
-('#beer_result').prepend("<%= escape_javascript(@beers.inspect) %>");
+$('#beer_result').prepend("<%= escape_javascript(@beers.collect(&:name).inspect) %>");

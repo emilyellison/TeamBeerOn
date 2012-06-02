@@ -4,9 +4,10 @@ $(document).ready( function() {
 	// 	$(this).closest('form').submit();
 	// });
 	
-	$('.button').live('click',function() {
+	$('.button').live('click',function(e) {
+		$(this).next().next().attr('checked', !$(this).next().next().attr('checked'));
 		$(this).closest('form').submit();
-		
+		e.preventDefault();	
 	});
 	
 
