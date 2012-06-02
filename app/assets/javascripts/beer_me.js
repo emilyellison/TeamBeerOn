@@ -4,6 +4,11 @@ $(document).ready( function() {
 	// 	$(this).closest('form').submit();
 	// });
 	
+	$('select').change(function () {
+	    $(this).closest('form').submit();
+	});
+	
+	
 	$('.button').live('click',function(e) {
 		$(this).next().next().attr('checked', !$(this).next().next().attr('checked'));
 		$(this).closest('form').submit();

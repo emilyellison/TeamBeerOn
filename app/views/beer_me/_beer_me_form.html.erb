@@ -1,4 +1,6 @@
 <div id='beer_me_form'>
+	<%= @sum_of_checkboxes_checked %>
+	<%= params[:q] %>
 	<%= search_form_for @q, remote: :true do |f| %>
 		<div class='column'>
 			<h3>
