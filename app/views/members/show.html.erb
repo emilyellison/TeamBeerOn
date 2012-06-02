@@ -1,10 +1,9 @@
-<div class='left'>
-	<h2>
-		Stella Fayman 
-	</h2>
-	<img alt="Stella" src="/assets/stella.jpg" width="160" class='photo'/></a>
-	<form/>
-		<div class='fields'>
+<h1>
+  <%= gravatar_for @member %>
+  <%= @member.name %>
+  
+  <%= @member.email %>
+</h1>
 		<br/>
 			<label>What are you drinking?</label>
 		<br/>

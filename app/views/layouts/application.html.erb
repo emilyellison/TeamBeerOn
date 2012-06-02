@@ -12,7 +12,7 @@
 		<p class='menu'>
 			<a href='#'>Contact Us</a>
 			<% if @current_member %>
-				<a href='#'>Profile</a>
+				<%= link_to "Profile", member_url(@current_member.id) %>
 				<%= link_to "Sign Out", sign_out_url %>	</p>
 			<% else %>
 				<%= link_to "Sign Up", new_member_url %>
