@@ -13,7 +13,6 @@
 			<div id='checkbox_section'>
 				<% @characteristics_array.each do |char| %>
 					<% char.each do |name, desc| %>
-						<%= params[:q][desc[:search_term]].inspect if params[:q] %>
 						<% if params[:q] && params[:q][desc[:search_term]] == "1" %>
 							<%= f.label desc[:search_term], "#{desc[:label]} (#{desc[:number_of_beers]})", class: 'checked', id: "label_#{desc[:search_term]}" %>
 							<%= f.check_box desc[:search_term], style: 'visibility:hidden' %>						
@@ -30,7 +29,8 @@
 			</div>
 		</div>
 		<div class='floor'>
-			<%= f.submit 'Beer Me' %>
+			<%= f.submit 'Beer Me', style: 'visibility:hidden' %>
+			<%= link_to 'Beer Me', recommendation_url %>
 		</div>
 	<% end %>
 </div>
