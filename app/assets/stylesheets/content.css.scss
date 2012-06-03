@@ -1,0 +1,89 @@
+.content {
+	h2 {
+		font-size:25px;
+		font-weight:bold;
+		padding:20px 0px;
+	}
+	h3 {
+		font-size:20px;
+		font-weight:bold;
+		padding:10px 0px;
+	}
+	.left {
+		float:left;
+		width:450px;
+	}
+	.right {
+		float:left;
+	}
+	p, li {
+		padding:5px 0px;
+		font-size:16px;
+	}
+	.fields {
+		input {
+			width:200px;
+			font-size:16px;
+		}
+	}
+	.column {
+		float:left;
+		padding:0px 40px 0px 0px;
+	}
+	.floor {
+		width:500px;
+		.button {
+			background-image: -webkit-linear-gradient(top, brown, darkred);
+			border:1px solid brown;
+		}
+	}
+	form {
+		line-height:10px;
+		margin:20px 0px;
+		input {
+			padding:5px;
+			border-radius:4px;
+		}
+		input, label, textarea, select {
+			display:block;
+			padding:5px 5px;
+			font-size:16px;
+		}
+		textarea {
+			width:200px;
+			border-radius:4px;
+		}
+		.disabled, .button, .checked {
+			text-align:center;
+			width:100px;
+			padding:10px 5px;
+			font-size:16px;
+			font-weight:bold;
+			color:white;
+			border-radius:4px;			
+		}
+		.disabled {
+			border:1px solid bisque;
+			background-image: -webkit-linear-gradient(top, bisque, peachpuff);
+		}
+		.button {
+			border:1px solid darkorange;
+			background-image: -webkit-linear-gradient(top, orange, darkorange);
+		}
+		.checked {
+			border:1px solid darkred;
+			background-image: -webkit-linear-gradient(top, brown, darkred);
+		}
+	}
+
+	.status_date {
+		color:grey;
+	}
+	.photo {
+		padding:10px 0px;
+	}
+	.edit {
+		font-weight:normal;
+		font-size:16px;
+	}
+}

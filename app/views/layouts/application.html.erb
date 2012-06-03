@@ -7,26 +7,22 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<header>
-	<h1>BeerOn</h1>
-		<p class='menu'>
-			<a href='#'>Contact Us</a>
+	<header class="cf">
+		<div class='beeronhead'>
+			<a id='apptitle'>BeerOn</a>
+			<a id='userid'>"User-Name"</a>
+		</div>
+		<nav>
+			<a href='#'>Location</a>
 			<% if @current_member %>
-				<%= link_to "Profile", member_url(@current_member.id) %>
-				<%= link_to "Sign Out", sign_out_url %>	</p>
+				<a href='#'>Profile</a>
+				<%= link_to "Sign Out", sign_out_url %>
 			<% else %>
 				<%= link_to "Sign Up", new_member_url %>
 				<%= link_to "Sign In", new_session_url %>
-				</p>
 			<% end %>
-		<hr/>
-
-		<form class='search'/>
-			<input type='text' id='query' name='query'></input>
-			<input type='submit' value='Search'></input>
-		</form>
-
-		<hr/>
+			<a href='#'>Contact Us</a>
+		</nav>
 	</header>
 	<div class='content'>
 		<% if flash[:notice] %>
@@ -34,5 +30,12 @@
 		<% end %>
 		<%= yield %>
 	</div>
+	<footer>
+		<p class='menu'>
+			<a href="#">About Us</a>
+			<a href="#">How It Works</a>
+			<a href="#">@BeerOn2012</a>
+		</p>
+	</footer>
 </body>
 </html>
