@@ -1,6 +1,4 @@
 <div id='beer_me_form'>
-	<%= @sum_of_checkboxes_checked %>
-	<%= params[:q] %>
 	<%= search_form_for @q, remote: :true do |f| %>
 		<div class='column'>
 			<h3>
@@ -24,8 +22,7 @@
 						<% else %>
 							<%= f.label desc[:search_term], "#{desc[:label]} (#{desc[:number_of_beers]})", class: 'disabled', id: "label_#{desc[:search_term]}" %>
 							<br/><br/>
-						<% end %>
-					
+						<% end %>					
 					<% end %>
 				<% end %>
 			</div>
@@ -36,3 +33,4 @@
 		</div>
 	<% end %>
 </div>
+
