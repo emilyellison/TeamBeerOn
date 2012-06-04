@@ -1,21 +1,41 @@
-$text: brown;
-
+/*coloring schemes*/
+/*current color scheme: colourlovers: "Headache"*/
+$text: #0838e5;/*on theme: #80BCA3 but trying to make blue pop*/
+$buttonborder: #E6AC27;
+$buttonbody: #F6F7BD;
+$lineborder: #655643;
+$beerontitle: #BF4D28;
+$userid: #80BCA3;
+/*borders and sizes*/
+$buttonpx: 3px;
+/*shape formatting mixin*/
+@mixin buttonformat {
+	margin: 5px 20px;
+	padding: 5px 20px;
+	background: $buttonbody;
+	border: $buttonpx solid $buttonborder;
+	border-radius: 10px;
+	text-decoration:none;
+	color: $text;
+}
+@mixin navfooterline {
+	font-size: 20px;
+	font-weight: bold;
+	border-top: 3px solid $lineborder;
+	border-bottom: 3px solid $lineborder;
+	padding: 15px;
+}
 body {
 	background: url('ravenna.png');
-	padding:10px 50px;
+	padding:10px;
 	font-family:arial;
-	a {
-		text-decoration:none;
-		color: $text;
-	}
 }
-
 /*Contains both the BeerOn/User_name line 
 and the nav below it in the header container*/
 header {
-	border: 1px solid black;
-	margin: 20px;
+/*	border: 1px solid black;*/
 }
+/*All ".cf" code allows nav bar to sit inside header bucket*/
 .cf:before,
 .cf:after {
     content:"";
@@ -24,34 +44,66 @@ header {
 .cf:after {
     clear:both;
 }
-
 /*Contains the BeerOn title and the "User_Name"*/
 .beeronhead { 
 	margin: 10px;
 }
 #apptitle {	
-	font-size:30px;
+	font-size:45px;
 	font-weight:bold;
-	color: darkorange;
+	color: $beerontitle;
 }
 #userid {
-	float: right;
-	font-size: 30px;
+/*	float: right;*/
+	margin: 10px 0 0 350px;
+	font-size: 25px;
+	color: $userid;
 }
-
 /*container for the 4 nav elements, 
 profile/signout toggle with signup/signin*/
 nav {
-/*	float: left;*/
-	font-size: 20px;
-	font-weight: bold;
-	border-top: 5px solid brown;
-	border-bottom: 5px solid brown;
-	padding: 10px;
+	float: left;
+	@include navfooterline;
 	a {
-	margin: 5px 20px;
-	padding: 5px;
-	border: 5px solid black;
-	border-radius: 1em 4em 1em 4em;
+		@include buttonformat;
+	}
+}
+/*nest all arrow_box styles into an a:active style subset when ready*/
+/*Might be cool to have a cookie trial below location
+in order to follow the app through functional stage*/
+.arrow_box_bottom {
+	position: relative;
+	background: $buttonbody;
+	border: $buttonpx solid $buttonborder;
+}
+.arrow_box_bottom:after, .arrow_box_bottom:before {
+	top: 100%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+.arrow_box_bottom:after {
+	border-top-color: $buttonbody;
+	border-width: 17px;
+	left: 50%;
+	margin-left: -17px;
+}
+.arrow_box_bottom:before {
+	border-top-color: $buttonborder;
+	border-width: 22px;
+	left: 50%;
+	margin-left: -22px;
+}
+/*do i need to "stick" this to the bottom?
+I can probably just format the content better, right?*/
+footer {
+	float: left;
+	bottom: 50px;
+	@include navfooterline;
+	a {
+		@include buttonformat;
 }
 }

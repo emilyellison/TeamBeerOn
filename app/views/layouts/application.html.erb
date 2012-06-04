@@ -13,9 +13,9 @@
 			<a id='userid'>"User-Name"</a>
 		</div>
 		<nav>
-			<a href='#'>Location</a>
+			<a class='arrow_box_bottom' href='#'>Location</a>
 			<% if @current_member %>
-				<a href='#'>Profile</a>
+				<a class='arrow_box_bottom' href='#'>Profile</a>
 				<%= link_to "Sign Out", sign_out_url %>
 			<% else %>
 				<%= link_to "Sign Up", new_member_url %>
