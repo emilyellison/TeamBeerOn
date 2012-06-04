@@ -1,6 +1,4 @@
 <div id='beer_me_form'>
-	<%= @sum_of_checkboxes_checked %>
-	<%= params[:q] %>
 	<%= search_form_for @q, remote: :true do |f| %>
 		<div class='column'>
 			<h3>
@@ -35,4 +33,9 @@
 			<%= link_to 'Beer Me', recommendation_url %> or <%= link_to 'Reset', beers_url %>
 		</div>
 	<% end %>
+
+	<%= form_tag @recipes, :url => recipes_url do %>
+		<%= f.select :diet, @diets,  %>
+	<% end %>
 </div>
+

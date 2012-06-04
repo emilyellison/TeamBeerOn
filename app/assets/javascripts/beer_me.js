@@ -1,28 +1,30 @@
 $(document).ready( function() {
-
-	// $('.button').live('click',function() {
-	// 	$(this).closest('form').submit();
-	// });
+	
+	// Submit the form when someone selects an option. 
 	
 	$('select').change(function () {
 	    $(this).closest('form').submit();
 	});
-	
+		
+	// Submit the form when someone checks a checkbox.
 	
 	$('.button').live('click',function(e) {
-		$(this).next().next().attr('checked', !$(this).next().next().attr('checked'));
-		$(this).closest('form').submit();
-		e.preventDefault();	
+		  var z = $(this).next().next();
+			var v = z.attr('checked');
+			z.attr('checked', !v);
+			$(this).closest('form').submit();
+			e.preventDefault();
 	});
 	
-
-	// $("#q_belgian_present").change(function () {
-	//     $.post('recommendation.html.erb', function(data) {
-	//        $('#checkbox_section').html(data);
-	//     });
-	// })
-	
-
+	$('.checked').live('click',function(e) {
+		  var z = $(this).next().next();
+			var v = z.attr('checked');
+			z.removeAttr('checked', v);
+			$(this).closest('form').submit();
+			e.preventDefault();
+	});
+		
+	// Change button colors on click.
 
 	$("#q_acidic_present").change(function() {
 		 $("#label_acidic_present").toggleClass("checked", this.checked)
