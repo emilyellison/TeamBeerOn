@@ -1,21 +1,36 @@
 <% if @beers.present? %>
-	<% @beers.each do |beer| %>
-		<h2><%= beer.name %> <%= "(#{beer.abv}%)" if beer.abv %></h2>
-		<h3><%= beer.brewery.name %></h3>
-		<h3><%= beer.brewery.city %>, <%= beer.brewery.state %>, <%= beer.brewery.country %></h3>
-		<br/>
-		<p>
-			Style: <%= beer.style %>
-		</p>
-		<p>
-			<% if beer.characteristics.present? %>
-				Characteristics:
-				<% beer.characteristics.sort.each do |char| %>
-				<li><%= char %></li>
-				<% end %>
+	<script type="text/javascript">
+	    $(function(){
+	        $("div.beer_recommendation_list").carousel( { direction: 'vertical', loop: true, dispItems: 1, pagination: true, effect: 'slow' });
+	    });
+	</script>
+	<div class='beer_recommendation_list'>
+		<ul>
+			<% @beers.each do |beer| %>
+				<li>
+					<%= link_to image_tag 'glowing_beer.jpg', height: 300, width: 400, class: 'glowing_beer' %>
+					<div class='beer_information'>
+						<span class='beer_name'><%= beer.name %> <%= "(#{beer.abv}%)" if beer.abv %></span>
+						<span class='beer_brewery'><%= beer.brewery.name %></span>
+						<span><%= beer.brewery.city %>, <%= beer.brewery.state %>, <%= beer.brewery.country %></span>
+						<br/>
+						<span>
+							Style: <%= beer.style %>
+						</span>
+						<div class='beer_characteristics'>
+							<% if beer.characteristics.present? %>
+								Characteristics:<br/>
+								<% beer.characteristics.sort.each do |char| %>
+									<%= char %><br/>
+								<% end %>
+							<% end %>
+						</div>
+					</div>
+				</li>
 			<% end %>
-		</p>
-	<% end %>
+		</ul>
+	</div>
+
 <% else %>
 	<h2>Sorry, there were no beers that matched your requirements.</h2>
 <% end %>

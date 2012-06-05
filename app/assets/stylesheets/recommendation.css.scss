@@ -1,0 +1,40 @@
+.beer_recommendation_list {
+	margin:20px 0px;
+	width:960px;
+	border-radius:8px;
+	background:-webkit-linear-gradient(top, white, ghostwhite);
+	height:380px;
+	ul {
+		float:left;
+		margin:0px 0px;
+	}
+	ul li {
+		float:right;
+		margin:0px 0px 0px;
+		span {
+			display:block;
+		}
+		.glowing_beer {
+			height:300px;
+			width:400px;
+			float:left;
+			padding-left:50px;
+		}
+		.beer_information {
+			height:300px;
+			width:400px;
+			float:right;
+			padding-left:60px;
+			span {
+				margin:0px 0px 6px;
+			}
+			.beer_name {
+				font-size:20px;
+				font-weight:bold;
+			}
+			.beer_brewery {
+				font-size:20px;
+			}
+		}
+	}
+}
