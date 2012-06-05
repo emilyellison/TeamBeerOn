@@ -1,9 +1,4 @@
 <% if @beers.present? %>
-	<script type="text/javascript">
-	    $(function(){
-	        $("div.beer_recommendation_list").carousel( { direction: 'vertical', loop: true, dispItems: 1, pagination: true, effect: 'slow' });
-	    });
-	</script>
 	<div class='beer_recommendation_list'>
 		<ul>
 			<% @beers.each do |beer| %>
