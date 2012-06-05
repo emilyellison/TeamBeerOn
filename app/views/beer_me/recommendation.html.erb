@@ -20,9 +20,9 @@
 						</span>
 						<div class='beer_characteristics'>
 							<% if beer.characteristics.present? %>
-								Characteristics:<br/>
+								<span>Characteristics:</span>
 								<% beer.characteristics.sort.each do |char| %>
-									<%= char %><br/>
+									&bull;&nbsp;<%= char %><br/>
 								<% end %>
 							<% end %>
 						</div>
