@@ -1,14 +1,15 @@
 <% if @beers.present? %>
 	<script type="text/javascript">
 	    $(function(){
-	        $("div.beer_recommendation_list").carousel( { direction: 'vertical', loop: true, dispItems: 1, pagination: true, effect: 'slow' });
+	        $("div#beer_recommendation_list").carousel( { direction: 'vertical', loop: true, dispItems: 1, pagination: true, paginationPosition: 'inside', effect: 'slow', btnsPosition: 'inside', animSpeed: "slow" });
 	    });
 	</script>
-	<div class='beer_recommendation_list'>
+
+	<div id='beer_recommendation_list'>
 		<ul>
 			<% @beers.each do |beer| %>
 				<li>
-					<%= link_to image_tag 'glowing_beer.jpg', height: 300, width: 400, class: 'glowing_beer' %>
+					<%= link_to image_tag 'glowing_beer.jpg', class: 'glowing_beer' %>
 					<div class='beer_information'>
 						<span class='beer_name'><%= beer.name %> <%= "(#{beer.abv}%)" if beer.abv %></span>
 						<span class='beer_brewery'><%= beer.brewery.name %></span>
