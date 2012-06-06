@@ -59,7 +59,7 @@ class BeerMeController < ApplicationController
     
     # Change shuffle later to order by price, local, rarity.
   
-    @beers = @@beers.shuffle
+    @beers = @@beers.limit(20).shuffle
   
   end
   
