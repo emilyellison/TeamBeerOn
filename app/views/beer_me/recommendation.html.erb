@@ -12,8 +12,11 @@
 					<%= link_to image_tag 'glowing_beer.jpg', class: 'glowing_beer' %>
 					<div class='beer_information'>
 						<span class='beer_name'><%= beer.name %> <%= "(#{beer.abv}%)" if beer.abv %></span>
+						<%= beer.brewery %>
+						<% if beer.brewery.present? %>
 						<span class='beer_brewery'><%= beer.brewery.name %></span>
 						<span><%= beer.brewery.city %>, <%= beer.brewery.state %>, <%= beer.brewery.country %></span>
+						<% end %>
 						<br/>
 						<span>
 							Style: <%= beer.style %>
