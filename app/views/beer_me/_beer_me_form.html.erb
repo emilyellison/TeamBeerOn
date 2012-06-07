@@ -1,5 +1,5 @@
 <div id='beer_me_form'>
-	<%= search_form_for @q, remote: true do |f| %>
+	<%= search_form_for @q, url: beers_url(:bar_id => params[:bar_id]), remote: true do |f| %>
 		<div class='column'>
 			<h3>
 				Style
@@ -29,7 +29,7 @@
 		</div>
 		<div class='floor'>
 			<%= f.submit 'Beer Me', style: 'visibility:hidden' %>
-			<%= link_to 'Beer Me', recommendation_url %> or <%= link_to 'Reset', beers_url %>
+			<%= link_to 'Beer Me', recommendation_url %> or <%= link_to 'Reset', beers_url(:bar_id => params[:bar_id]) %>
 		</div>
 	<% end %>
 </div>

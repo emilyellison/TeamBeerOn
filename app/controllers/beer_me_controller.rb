@@ -20,10 +20,13 @@ class BeerMeController < ApplicationController
       :grapefruit, :lemon, :nutty, :pine, :smoky, :toffee, :vanilla, :wheat, :belgian ]
     characteristics.each do |char|
       @characteristics_array << { char => 
+        
           # Create the label for each characteristic.
         { label: char.to_s.capitalize, 
+          
           # Create the Ransack appropriate variable name for each characteristic.
           search_term: "#{char.to_s}_present".to_sym, 
+          
           # Create the number of beers behind each characteristic.
           number_of_beers: @@beers.sum(char) } } 
     end
