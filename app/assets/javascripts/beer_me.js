@@ -1,8 +1,14 @@
 $(document).ready( function() {
+
+	// Submit the form when someone selects an option. 
+	
+	$('#keyword_bar_id').change(function () {
+	    $(this).closest('form').submit();
+	});
 	
 	// Submit the form when someone selects an option. 
 	
-	$('select').change(function () {
+	$('#q_style_cont').change(function () {
 	    $(this).closest('form').submit();
 	});
 		
