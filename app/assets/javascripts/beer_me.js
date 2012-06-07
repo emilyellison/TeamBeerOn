@@ -2,7 +2,7 @@ $(document).ready( function() {
 
 	// Submit the form when someone selects an option. 
 	
-	$('#keyword_bar_id').change(function () {
+	$('#keyword').change(function () {
 	    $(this).closest('form').submit();
 	});
 	

@@ -1,10 +1,14 @@
 <div id='bar_location_form'>
-	<%= form_tag root_url, method: :get, remote: :true do %>
-		<%= collection_select(:keyword, :bar_id, Bar.all, :id, :name, include_blank: true) %><br/>
-	<% end %>
-	<% if params[:keyword].present? %>
-		<%= link_to 'Beer Me', beers_url(:bar_id => params[:keyword][:bar_id]) %>
-	<% else %>
-		<%= link_to 'Beer Me', root_url  %>
+	<%= form_tag root_url, method: :get, remote: true do %>
+		<%# If a search has not been done, have the pre-selected value blank. %>
+		<% if params[:keyword].nil? %> 
+			<%= select_tag(:keyword, options_for_select(@bars), include_blank: true) %><br/>
+			<%= link_to 'Beer Me', root_url %>
+		<%# Else if a search has been done, have the pre-selected value equal to the last choice. %>
+		<% else %>
+			<% @bar =  Bar.find_by_name(params[:keyword]) %>
+			<%= select_tag(:keyword, options_for_select(@bars, @bar.name), include_blank: true) %><br/>
+			<%= link_to 'Beer Me', beers_url(:bar_id => @bar.id) %>
+		<% end %>
 	<% end %>
 </div>

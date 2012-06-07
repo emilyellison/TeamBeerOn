@@ -1,7 +1,8 @@
 class BeerMeController < ApplicationController
   
   def location
-
+    @bars = [] 
+    Bar.all.collect { |x| @bars << x.name }
   end
   
   def preference
