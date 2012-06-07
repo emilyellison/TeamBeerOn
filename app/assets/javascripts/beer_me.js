@@ -1,16 +1,16 @@
 $(document).ready( function() {
 
-	// Submit the form when someone selects an option. 
+	// Submit the form when someone selects a bar. 
 	
-	$('#keyword').change(function () {
-	    $(this).closest('form').submit();
-	});
+  $('#keyword').live('change',function() {
+      $(this).closest('form').submit();
+  });
 	
-	// Submit the form when someone selects an option. 
+	// Submit the form when someone selects a style. 
 	
-	$('#q_style_cont').change(function () {
-	    $(this).closest('form').submit();
-	});
+	$('#q_style_cont').live('change',function() {
+      $(this).closest('form').submit();
+  });
 		
 	// Submit the form when someone checks a checkbox.
 	
