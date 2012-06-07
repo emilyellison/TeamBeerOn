@@ -3,6 +3,7 @@ class Beer < ActiveRecord::Base
   
   belongs_to :brewery
   has_many :beer_experiences
+  has_many :bars, through: :beer_experiences
   
   validates :name, presence: true
   validates :brewery_id, presence: true

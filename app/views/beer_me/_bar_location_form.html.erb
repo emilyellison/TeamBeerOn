@@ -10,7 +10,6 @@
 		<%# Else if a search has been done, have the pre-selected value equal to the last choice. %>
 		
 		<% else %>
-			<% @selected_bar =  Bar.find_by_name(params[:keyword]) %>
 			<%= select_tag(:keyword, options_for_select(@bars, @selected_bar.name), include_blank: true) %><br/>
 			<%= link_to 'Beer Me', beers_url(:bar_id => @selected_bar.id) %>
 		<% end %>

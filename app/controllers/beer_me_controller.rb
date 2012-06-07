@@ -3,10 +3,12 @@ class BeerMeController < ApplicationController
   def location
     @bars = [] 
     Bar.all.collect { |x| @bars << x.name }
+    @selected_bar =  Bar.find_by_name(params[:keyword])
   end
   
   def preference
-    @q = Beer.search(params[:q])
+    @available_beer = Beer.joins(:beer_experiences).where('beer_experiences.bar_id LIKE ?', params[:bar_id])
+    @q = @available_beer.search(params[:q])
     @@beers = @q.result(:distinct => true)
     
     # Create a characteristics array for form labeling and collecting how many 
@@ -47,7 +49,7 @@ class BeerMeController < ApplicationController
     if @sum_of_checkboxes_checked > 0
       @@beers.all.collect { |x| styles << x.style }
     else 
-      Beer.all.collect { |x| styles << x.style }
+      @available_beer.all.collect { |x| styles << x.style }
     end
     
     # Uniqify styles and sort alphabetically.
