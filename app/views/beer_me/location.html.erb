@@ -10,10 +10,8 @@
 </form> -->
 
 <div id='bar_location_form'>
-	<%= form_tag pass_location_url, method: :post do %>
-		<div class='ui-widget'>
-			<%= text_field_tag :keyword %>
-		</div>
+	<%= form_tag pass_location_url do %>
+		<%= text_field_tag :keyword %>
 		<%= submit_tag 'Beer Me' %>
 	<% end %>
 </div>
