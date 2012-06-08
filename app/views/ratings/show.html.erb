@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Rating:</b>
+  <%= @rating.rating %>
+</p>
+
+<p>
+  <b>Smell:</b>
+  <%= @rating.smell %>
+</p>
+
+<p>
+  <b>Look:</b>
+  <%= @rating.look %>
+</p>
+
+<p>
+  <b>Taste:</b>
+  <%= @rating.taste %>
+</p>
+
+<p>
+  <b>Feel:</b>
+  <%= @rating.feel %>
+</p>
+
+<p>
+  <b>Overall:</b>
+  <%= @rating.overall %>
+</p>
+
+<p>
+  <b>Story:</b>
+  <%= @rating.story %>
+</p>
+
+
+<%= link_to 'Edit', edit_rating_path(@rating) %> |
+<%= link_to 'Back', ratings_path %>

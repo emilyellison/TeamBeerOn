@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  rating: 1
+  smell: MyString
+  look: MyString
+  taste: MyString
+  feel: MyString
+  overall: MyString
+  story: MyString
+
+two:
+  rating: 1
+  smell: MyString
+  look: MyString
+  taste: MyString
+  feel: MyString
+  overall: MyString
+  story: MyString

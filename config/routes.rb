@@ -1,5 +1,7 @@
 TeamBeerOn::Application.routes.draw do
   
+  resources :ratings
+
   root to: 'beer_me#location'
   
 	resources :sessions
