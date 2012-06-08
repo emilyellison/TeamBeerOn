@@ -1,3 +1,5 @@
+<%# If there is only one beer, don't show pagination or any arrows. %>
+
 <% if @beers.count == 1 %>
 	<script type="text/javascript">
 	  $(function(){
@@ -9,6 +11,9 @@
 			opacity:0;
 		}
 	</style>
+	
+<%# Otherwise, show the pagination and arrows. %>	
+	
 <% else %>
 	<script type="text/javascript">
 	  $(function(){
