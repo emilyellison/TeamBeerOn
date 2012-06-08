@@ -1,9 +1,16 @@
 class BeerMeController < ApplicationController
   
   def location
-    @bars = [] 
-    Bar.all.collect { |x| @bars << x.name }
-    @selected_bar =  Bar.find_by_name(params[:keyword])
+
+  end
+  
+  def pass_location
+    bar = Bar.find_by_name(params[:keyword])
+    if bar.present?
+      redirect_to beers_url(:bar_id => bar.id)
+    else
+      redirect_to root_url, notice: 'Sorry, BeerOn does not serve that bar!'
+    end
   end
   
   def preference

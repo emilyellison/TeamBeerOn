@@ -1,10 +1,14 @@
 $(document).ready( function() {
 
-	// Submit the location form when someone selects a bar. 
-	
-  $('#keyword').live('change',function() {
-      $(this).closest('form').submit();
-  });
+	// Autocomplete the location when someone types in a bar.
+
+	$(function() {
+		var bars = <%= Bar.all.map(&:name).to_json.html_safe %>;
+		$( "#keyword" ).autocomplete({
+			source: bars,
+			delay: 0
+		});
+	});
 	
 	// Submit the preference form when someone selects a style. 
 	
