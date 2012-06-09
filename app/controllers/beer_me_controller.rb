@@ -35,10 +35,13 @@ class BeerMeController < ApplicationController
   end
   
   def recommendation
+    @beers = []
+    params[:available_beer].each do |beer_id|
+      @beers << Beer.find_by_id(beer_id)
+    end 
     
     # Change shuffle later to order by price, local, rarity.
-  
-    @beers = @available_beer.limit(20).shuffle
+    @beers = @beers.take(20).shuffle
   
   end
   

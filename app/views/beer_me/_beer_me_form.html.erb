@@ -27,7 +27,7 @@
 		</div>
 		<div class='floor'>
 		 <%= f.submit 'Beer Me', style: 'visibility: hidden;' %>
-		 <%= link_to 'Beer Me', recommendation_url %>
+		 <%= link_to 'Beer Me', recommendation_url(:available_beer => @available_beer.collect { |beer| beer.id }) %>
 		 or <%= link_to 'Reset', beers_url(:bar_id => params[:bar_id]) %>
 		</div>
 	<% end %>
