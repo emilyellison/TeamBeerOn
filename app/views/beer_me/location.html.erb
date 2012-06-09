@@ -1,10 +1,17 @@
 <h2>Get your BeerOn.</h2>
 <p>Tell us where you are and we'll recommend you a beer.</p>
 
-<form class='location'/>
+<!-- <form class='location'/>
 	<div class='fields'>
 		<input type='text' placeholder='e.g. Haymarket Brewery'></input>
 	</div>	
 	<br/>
 	<input type='submit' value='Beer Me' class='button'></input>
-</form>
+</form> -->
+
+<div id='bar_location_form'>
+	<%= form_tag pass_location_url do %>
+		<%= text_field_tag :keyword %>
+		<%= submit_tag 'Beer Me' %>
+	<% end %>
+</div>

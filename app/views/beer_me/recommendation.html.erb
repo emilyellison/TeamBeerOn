@@ -12,17 +12,17 @@
 					<div class='beer_information'>
 						<span class='beer_name'><%= beer.name %> <%= "(#{beer.abv}%)" if beer.abv %></span>
 						<% if beer.brewery.present? %>
-						<span class='beer_brewery'><%= beer.brewery.name %></span>
-						<span><%= beer.brewery.city %>, <%= beer.brewery.state %>, <%= beer.brewery.country %></span>
+							<span class='beer_brewery'><%= beer.brewery.name %></span>
+							<span><%= beer.brewery.city %>, <%= beer.brewery.state %>, <%= beer.brewery.country %></span>
 						<% end %>
 						<br/>
 						<span>
 							Style: <%= beer.style %>
 						</span>
 						<div class='beer_characteristics'>
-							<% if beer.characteristics.present? %>
+							<% if beer.has_characteristics.present? %>
 								<span>Characteristics:</span>
-								<% beer.characteristics.sort.each do |char| %>
+								<% beer.has_characteristics.sort.each do |char| %>
 									&bull;&nbsp;<%= char %><br/>
 								<% end %>
 							<% end %>

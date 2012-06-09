@@ -18,6 +18,8 @@ class MembersController < ApplicationController
 	@member = Member.new(params[:member])
 	
 		if @member.save
+		  # Tell the MemberMailer to send a welcome Email after save
+      MemberMailer.confirm(@member).deliver
 			redirect_to root_url, notice: "Now you can get your BeerOn!"
 		else
 			render action: "new"

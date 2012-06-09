@@ -9,13 +9,13 @@
 <body>
 	<header class="cf">
 		<div class='beeronhead'>
-			<a id='apptitle'>BeerOn</a>
-			<a id='userid'>"User-Name"</a>
+			<%= link_to 'BeerOn', root_url, id: 'apptitle' %>
+			<%= link_to "#{@current_member.name}", member_url(@current_member.id), id: 'userid' if @current_member %>
 		</div>
 		<nav>
-			<a class='arrow_box_bottom' href='#'>Location</a>
+			<%= link_to 'Where are you?', root_url, class: 'arrow_box_bottom' %>
 			<% if @current_member %>
-				<a class='arrow_box_bottom' href='#'>Profile</a>
+				<%= link_to "Profile", member_url(@current_member.id), class: 'arrow_box_bottom' %>
 				<%= link_to "Sign Out", sign_out_url %>
 			<% else %>
 				<%= link_to "Sign Up", new_member_url %>
@@ -34,7 +34,7 @@
 		<p class='menu'>
 			<a href="#">About Us</a>
 			<a href="#">How It Works</a>
-			<a href="#">@BeerOn2012</a>
+			<%= link_to '@BeerOn2012', 'https://twitter.com/#!/BeerOn2012' %>
 		</p>
 	</footer>
 </body>
