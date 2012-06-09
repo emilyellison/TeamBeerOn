@@ -150,13 +150,13 @@ ActiveRecord::Schema.define(:version => 20120608140844) do
   end
 
   create_table "ratings", :force => true do |t|
-    t.integer  "rating"
-    t.string   "smell"
-    t.string   "look"
-    t.string   "taste"
-    t.string   "feel"
-    t.string   "overall"
-    t.string   "story"
+    t.integer  "score"
+    t.text     "smell"
+    t.text     "look"
+    t.text     "taste"
+    t.text     "feel"
+    t.text     "overall"
+    t.text     "story"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
