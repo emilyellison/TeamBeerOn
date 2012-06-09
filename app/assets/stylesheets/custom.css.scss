@@ -34,6 +34,9 @@ body {
 and the nav below it in the header container*/
 header {
 /*	border: 1px solid black;*/
+	a {
+		text-decoration:none;
+	}
 }
 /*All ".cf" code allows nav bar to sit inside header bucket*/
 .cf:before,
