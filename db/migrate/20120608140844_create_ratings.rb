@@ -1,13 +1,13 @@
 class CreateRatings < ActiveRecord::Migration
   def change
     create_table :ratings do |t|
-      t.integer :rating
-      t.string :smell
-      t.string :look
-      t.string :taste
-      t.string :feel
-      t.string :overall
-      t.string :story
+      t.integer :score
+      t.text :smell
+      t.text :look
+      t.text :taste
+      t.text :feel
+      t.text :overall
+      t.text :story
 
       t.timestamps
     end
