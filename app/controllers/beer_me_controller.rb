@@ -9,7 +9,7 @@ class BeerMeController < ApplicationController
     if bar.present?
       redirect_to beers_url(:bar_id => bar.id)
     else
-      redirect_to root_url, notice: 'Sorry, BeerOn does not serve that bar!'
+      redirect_to root_url, notice: 'Sorry, BeerOn doesn\'t serve that bar!'
     end
   end
   
@@ -37,11 +37,7 @@ class BeerMeController < ApplicationController
           # Create the number of beers behind each characteristic.
           number_of_beers: @@beers.sum(char) } } 
     end
-    
-    # Create a styles instance variable to collect all available styles.
-    
-    styles = []
-    
+ 
     # Add the number of checkboxes checked.
     
     if params[:q]
@@ -53,6 +49,7 @@ class BeerMeController < ApplicationController
     # If they have filtered on any checkbox characteristics, only keep the styles left.
     # Otherwise, load all the styles.  
       
+    styles = []  
     if @sum_of_checkboxes_checked > 0
       @@beers.all.collect { |x| styles << x.style }
     else 
