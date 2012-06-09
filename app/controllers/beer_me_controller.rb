@@ -41,16 +41,13 @@ class BeerMeController < ApplicationController
     # Create a styles instance variable to collect all available styles.
     
     styles = []
-    @sum_of_checkboxes_checked = 0
-
-    # If someone has searched, count how many characteristics they have checked.
     
-    if params[:q].present?
-      @characteristics_array.each do |char|
-        char.each do |name, desc|
-          @sum_of_checkboxes_checked += params[:q][desc[:search_term]].to_i
-        end 
-      end
+    # Add the number of checkboxes checked.
+    
+    if params[:q]
+      @sum_of_checkboxes_checked = params[:q].values.map{ |x| x.to_i }.sum
+    else
+      @sum_of_checkboxes_checked = 0
     end
       
     # If they have filtered on any checkbox characteristics, only keep the styles left.
