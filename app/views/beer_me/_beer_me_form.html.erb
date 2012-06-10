@@ -1,4 +1,5 @@
 <div id='beer_me_form'>
+	<%= params[:q] if params[:q] %>
 	<%= search_form_for @q, url: beers_url(:bar_id => params[:bar_id]), remote: true do |f| %>
 		<div class='column'>
 			<h3>

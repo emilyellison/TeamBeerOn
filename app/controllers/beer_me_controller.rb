@@ -16,15 +16,17 @@ class BeerMeController < ApplicationController
   def preference
     @available_beer = Beer.joins(:beer_experiences).where('beer_experiences.bar_id LIKE ?', params[:bar_id])
     @q = @available_beer.search(params[:q])
+    @styles = @available_beer.all.collect(&:style).uniq.sort
     
     if params[:q]
-      @available_beer = @q.result(:distinct => true)
       @sum_of_checkboxes_checked = params[:q].values.map{ |x| x.to_i }.sum
+      @available_beer = @q.result(:distinct => true)
+      if @sum_of_checkboxes_checked > 0
+        @styles = @available_beer.all.collect(&:style).uniq.sort
+      end
     else
       @sum_of_checkboxes_checked = 0
     end
-
-    @styles = @available_beer.all.collect(&:style).uniq.sort
   end
   
   def recommendation
