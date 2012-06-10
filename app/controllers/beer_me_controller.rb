@@ -17,31 +17,20 @@ class BeerMeController < ApplicationController
     @available_beer = Beer.joins(:beer_experiences).where('beer_experiences.bar_id LIKE ?', params[:bar_id])
     @q = @available_beer.search(params[:q])
     
-    styles = [] 
     if params[:q]
       @available_beer = @q.result(:distinct => true)
       @sum_of_checkboxes_checked = params[:q].values.map{ |x| x.to_i }.sum
-      if @sum_of_checkboxes_checked > 0
-        @available_beer.all.collect { |x| styles << x.style }
-      else 
-        @available_beer.all.collect { |x| styles << x.style }
-      end
     else
       @sum_of_checkboxes_checked = 0
-      @available_beer.all.collect { |x| styles << x.style }
     end
-    @styles = styles.uniq.sort!
-    
+
+    @styles = @available_beer.all.collect(&:style).uniq.sort
   end
   
   def recommendation
-    @beers = []
-    params[:available_beer].each do |beer_id|
-      @beers << Beer.find_by_id(beer_id)
-    end 
-    
+
     # Change shuffle later to order by price, local, rarity.
-    @beers = @beers.take(20).shuffle
+    @beers = Beer.find_all_by_id(params[:available_beer]).take(20).shuffle
   
   end
   
