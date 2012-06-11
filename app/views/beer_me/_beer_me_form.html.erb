@@ -32,14 +32,14 @@
 		</div>
 		<div class='column'>
 			<h3>
-				Order
+				Options
 			</h3>
 			<br/>
 			<div class='order'>
 			<% if params[:rarity] == "true" %>
-				<%= link_to 'Rarity', beers_url(:bar_id => params[:bar_id], :q => params[:q], :rarity => false ), remote: true, id: 'rarity_true' %>
+				<%= link_to 'Rarest', beers_url(:bar_id => params[:bar_id], :q => params[:q], :rarity => false ), remote: true, id: 'rarity_true' %>
 			<% else %>
-				<%= link_to 'Rarity', beers_url(:bar_id => params[:bar_id], :q => params[:q], :rarity => true ), remote: true, id: 'rarity_false' %>			
+				<%= link_to 'Rarest', beers_url(:bar_id => params[:bar_id], :q => params[:q], :rarity => true ), remote: true, id: 'rarity_false' %>			
 			<% end %>
 			</div>
 		</div>
