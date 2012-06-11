@@ -36,4 +36,18 @@ $(document).ready( function() {
 			e.preventDefault();
 	});
 		
+	// Submit the form when someone orders on rarity.
+	
+	$('#rarity_true').live('change',function(e) {
+			$(this).closest('form').submit();
+			$("#rarity_true").toggleClass("rarity_false")
+	});
+	
+	// Submit the preference form when someone unchecks a checkbox.
+	
+	$('#rarity_false').live('change',function(e) {	
+			$(this).closest('form').submit();
+			$("#rarity_false").toggleClass("rarity_true")
+	});
+		
 });

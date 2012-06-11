@@ -30,9 +30,12 @@ class BeerMeController < ApplicationController
   end
   
   def recommendation
-
+    @all_beer = Beer.joins(:beer_experiences).where('beer_experiences.bar_id LIKE ?', params[:bar_id])
     # Change shuffle later to order by price, local, rarity.
-    @beers = Beer.find_all_by_id(params[:available_beer]).take(20).shuffle
+    @beers = @all_beer.find_all_by_id(params[:available_beer]).take(20).shuffle
+    if params[:rarity] == 'true'
+      @beers = @all_beer.order('rarity asc').find_all_by_id(params[:available_beer]).take(20)
+    end
   
   end
   
