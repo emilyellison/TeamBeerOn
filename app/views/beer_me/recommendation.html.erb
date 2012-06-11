@@ -30,10 +30,15 @@
 							</div>
 						</div>
 						<div class='beer_experience'>
-							Rarity:
-							<% beer.beer_experiences[0].rarity.times do %>
-								<%= image_tag('beer.png', height: 20, class: 'icon') %>
-							<% end %>
+							<span>
+								Rarity:
+								<% beer.beer_experiences[0].rarity.times do %>
+									<%= image_tag('beer.png', height: 20, class: 'icon') %>
+								<% end %>
+							</span>
+							<span>
+								<%= "Available on Draft" if beer.beer_experiences[0].draft == 1 %>
+							</span>
 						</div>
 					</div>
 				</li>

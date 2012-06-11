@@ -53,7 +53,7 @@
 			width:200px;
 			border-radius:4px;
 		}
-		.disabled, .button, .checked, #rarity_true, #rarity_false {
+		.disabled, .button, .checked, #rarity_true, #rarity_false, #draft_true, #draft_false {
 			text-align:center;
 			width:100px;
 			padding:10px 5px;
@@ -75,11 +75,11 @@
 			border:1px solid darkred;
 			background-image: -webkit-linear-gradient(top, brown, darkred);
 		}
-		#rarity_false {
+		#rarity_false, #draft_false {
 			border:1px solid darkorange;
 			background-image: -webkit-linear-gradient(top, orange, darkorange);
 		}
-		#rarity_true {
+		#rarity_true, #draft_true {
 			border:1px solid darkred;
 			background-image: -webkit-linear-gradient(top, brown, darkred);
 		}

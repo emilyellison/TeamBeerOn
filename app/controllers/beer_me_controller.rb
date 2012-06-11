@@ -31,12 +31,19 @@ class BeerMeController < ApplicationController
   
   def recommendation
     @all_beer = Beer.joins(:beer_experiences).where('beer_experiences.bar_id LIKE ?', params[:bar_id])
-    # Change shuffle later to order by price, local, rarity.
-    @beers = @all_beer.find_all_by_id(params[:available_beer]).take(20).shuffle
     if params[:rarity] == 'true'
-      @beers = @all_beer.order('rarity desc').find_all_by_id(params[:available_beer]).take(20)
+      if params[:draft] == 'true'
+        @beers = @all_beer.where('beer_experiences.draft = ?', 1).order('rarity desc').find_all_by_id(params[:available_beer]).take(20)
+      else
+        @beers = @all_beer.order('rarity desc').find_all_by_id(params[:available_beer]).take(20)
+      end
+    else
+      if params[:draft] == 'true'
+        @beers = @all_beer.where('beer_experiences.draft = ?', 1).find_all_by_id(params[:available_beer]).take(20).shuffle
+      else
+        @beers = @all_beer.find_all_by_id(params[:available_beer]).take(20).shuffle
+      end
     end
-  
   end
   
 end

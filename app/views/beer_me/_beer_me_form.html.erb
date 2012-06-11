@@ -1,8 +1,9 @@
 <div id='beer_me_form'>
 	Params: <%= params %>
-	Q: <%= params[:q] if params[:q] %><br/>
-	Rarity: <%= params[:rarity] if :rarity %><br/>
-	<%= search_form_for @q, url: beers_url(:bar_id => params[:bar_id], :rarity => params[:rarity]), remote: true do |f| %>
+	Q: <%= params[:q] %><br/>
+	Rarity: <%= params[:rarity] %><br/>
+	Draft: <%= params[:draft] %>
+	<%= search_form_for @q, url: beers_url(:bar_id => params[:bar_id], :rarity => params[:rarity], :draft => params[:draft]), remote: true do |f| %>
 		<div class='column'>
 			<h3>
 				Style
@@ -36,16 +37,21 @@
 			</h3>
 			<br/>
 			<div class='order'>
-			<% if params[:rarity] == "true" %>
-				<%= link_to 'Rarest', beers_url(:bar_id => params[:bar_id], :q => params[:q], :rarity => false ), remote: true, id: 'rarity_true' %>
-			<% else %>
-				<%= link_to 'Rarest', beers_url(:bar_id => params[:bar_id], :q => params[:q], :rarity => true ), remote: true, id: 'rarity_false' %>			
-			<% end %>
+				<% if params[:rarity] == "true" %>
+					<%= link_to 'Rarest', beers_url(:bar_id => params[:bar_id], :q => params[:q], :rarity => false, :draft => params[:draft] ), remote: true, id: 'rarity_true' %>
+				<% else %>
+					<%= link_to 'Rarest', beers_url(:bar_id => params[:bar_id], :q => params[:q], :rarity => true, :draft => params[:draft] ), remote: true, id: 'rarity_false' %>			
+				<% end %>
+				<% if params[:draft] == "true" %>
+					<%= link_to 'Draft', beers_url(:bar_id => params[:bar_id], :q => params[:q], :rarity => params[:rarity], :draft => false ), remote: true, id: 'draft_true' %>
+				<% else %>
+					<%= link_to 'Draft', beers_url(:bar_id => params[:bar_id], :q => params[:q], :rarity => params[:rarity], :draft => true ), remote: true, id: 'draft_false' %>			
+				<% end %>
 			</div>
 		</div>
 		<div class='floor'>
 		 <%= f.submit 'Beer Me', style: 'visibility: hidden;' %>
-		 <%= link_to 'Beer Me', recommendation_url(:available_beer => @available_beer.collect { |beer| beer.id }, :rarity => params[:rarity], :bar_id => params[:bar_id]) %>
+		 <%= link_to 'Beer Me', recommendation_url(:available_beer => @available_beer.collect { |beer| beer.id }, :rarity => params[:rarity], :bar_id => params[:bar_id], :draft => params[:draft]) %>
 		 or <%= link_to 'Reset', beers_url(:bar_id => params[:bar_id]) %>
 		</div>
 	<% end %>

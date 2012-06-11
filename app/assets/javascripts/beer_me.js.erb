@@ -43,11 +43,21 @@ $(document).ready( function() {
 			$("#rarity_true").toggleClass("rarity_false")
 	});
 	
-	// Submit the preference form when someone unchecks a checkbox.
-	
 	$('#rarity_false').live('change',function(e) {	
 			$(this).closest('form').submit();
 			$("#rarity_false").toggleClass("rarity_true")
+	});
+	
+	// Submit the form when someone chooses draft.
+	
+	$('#draft_true').live('change',function(e) {
+			$(this).closest('form').submit();
+			$("#draft_true").toggleClass("draft_false")
+	});
+	
+	$('#draft_false').live('change',function(e) {	
+			$(this).closest('form').submit();
+			$("#draft_false").toggleClass("draft_true")
 	});
 		
 });
