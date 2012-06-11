@@ -77,10 +77,17 @@
 			.beer_brewery {
 				font-size:20px;
 			}
+			.facts {
+				float:left;
+			}
+			.rarity {
+				float:right;
+				.icon {
+					margin:-3px -2px;
+				}
+			}
 		}
-		.rarity {
-			margin-top:6px;
-		}
+
 	}
 }
 

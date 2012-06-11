@@ -16,19 +16,24 @@
 							<span><%= beer.brewery.city %>, <%= beer.brewery.state %>, <%= beer.brewery.country %></span>
 						<% end %>
 						<br/>
-						<span>
-							Style: <%= beer.style %>
-						</span>
-						<div class='beer_characteristics'>
-							<% if beer.has_characteristics.present? %>
-								<span>Characteristics:</span>
-								<% beer.has_characteristics.sort.each do |char| %>
-									&bull;&nbsp;<%= char %><br/>
+						<div class='facts'>
+							<span>
+								Style: <%= beer.style %>
+							</span>
+							<div class='beer_characteristics'>
+								<% if beer.has_characteristics.present? %>
+									<span>Characteristics:</span>
+									<% beer.has_characteristics.sort.each do |char| %>
+										&bull;&nbsp;<%= char %><br/>
+									<% end %>
 								<% end %>
-							<% end %>
+							</div>
 						</div>
 						<div class='rarity'>
-							Rarity: <%= beer.beer_experiences[0].rarity %>
+							Rarity:
+							<% beer.beer_experiences[0].rarity.times do %>
+								<%= image_tag('beer.png', height: 20, class: 'icon') %>
+							<% end %>
 						</div>
 					</div>
 				</li>

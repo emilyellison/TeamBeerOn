@@ -34,7 +34,7 @@ class BeerMeController < ApplicationController
     # Change shuffle later to order by price, local, rarity.
     @beers = @all_beer.find_all_by_id(params[:available_beer]).take(20).shuffle
     if params[:rarity] == 'true'
-      @beers = @all_beer.order('rarity asc').find_all_by_id(params[:available_beer]).take(20)
+      @beers = @all_beer.order('rarity desc').find_all_by_id(params[:available_beer]).take(20)
     end
   
   end
