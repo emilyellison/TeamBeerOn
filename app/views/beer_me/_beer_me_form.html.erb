@@ -5,7 +5,9 @@
 			<h3>
 				Style
 			</h3>
-			<%= f.select(:style_cont, @styles, include_blank: true, id: 'beer_select') %><br/>
+			<div id='select_section'>
+				<%= f.select(:style_cont, @styles, include_blank: true, id: 'beer_select') %><br/>
+			</div>
 		</div>
 		<div class='column'>
 			<h3>
