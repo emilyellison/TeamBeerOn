@@ -11,6 +11,22 @@
 			<div id='select_section'>
 				<%= f.select(:style_cont, @styles, include_blank: true, id: 'beer_select') %><br/>
 			</div>
+			<h3>
+				Options
+			</h3>
+			<br/>
+			<div class='order'>
+				<% if params[:rarity] == "true" %>
+					<%= link_to 'Rarest', beers_url(:bar_id => params[:bar_id], :q => params[:q], :rarity => false, :draft => params[:draft] ), remote: true, id: 'rarity_true', class: 'btn btn-danger' %>
+				<% else %>
+					<%= link_to 'Rarest', beers_url(:bar_id => params[:bar_id], :q => params[:q], :rarity => true, :draft => params[:draft] ), remote: true, id: 'rarity_false', class: 'btn btn-warning' %>			
+				<% end %>
+				<% if params[:draft] == "true" %>
+					<%= link_to 'Draft', beers_url(:bar_id => params[:bar_id], :q => params[:q], :rarity => params[:rarity], :draft => false ), remote: true, id: 'draft_true', class: 'btn btn-danger' %>
+				<% else %>
+					<%= link_to 'Draft', beers_url(:bar_id => params[:bar_id], :q => params[:q], :rarity => params[:rarity], :draft => true ), remote: true, id: 'draft_false', class: 'btn btn-warning' %>			
+				<% end %>
+			</div>
 		</div>
 		<div class='column'>
 			<h3>
@@ -19,33 +35,15 @@
 			<div id='checkbox_section'>		
 				<% Beer.characteristics.each do |char| %>
 					<% if params[:q] && params[:q][Beer.search_term(char)] == "1" %>
-						<%= f.label Beer.search_term(char), "#{Beer.label(char)} (#{Beer.number_of_beers(@available_beer, char)})", class: 'checked', id: "label_#{Beer.search_term(char)}" %>
+						<%= f.label Beer.search_term(char), "#{Beer.label(char)} (#{Beer.number_of_beers(@available_beer, char)})", class: 'checked btn btn-danger', id: "label_#{Beer.search_term(char)}" %>
 						<%= f.check_box Beer.search_term(char), style: 'visibility:hidden' %>						
 					<% elsif @available_beer && Beer.number_of_beers(@available_beer, char) > 0 %>
-						<%= f.label Beer.search_term(char), "#{Beer.label(char)} (#{Beer.number_of_beers(@available_beer, char)})", class: 'button', id: "label_#{Beer.search_term(char)}" %>
+						<%= f.label Beer.search_term(char), "#{Beer.label(char)} (#{Beer.number_of_beers(@available_beer, char)})", class: 'button btn btn-warning', id: "label_#{Beer.search_term(char)}" %>
 						<%= f.check_box Beer.search_term(char), style: 'visibility:hidden' %>
 					<% else %>
-						<%= f.label Beer.search_term(char), "#{Beer.label(char)} (#{Beer.number_of_beers(@available_beer, char)})", class: 'disabled', id: "label_#{Beer.search_term(char)}" %>
+						<%= f.label Beer.search_term(char), "#{Beer.label(char)} (#{Beer.number_of_beers(@available_beer, char)})", class: 'disabled btn btn-warning', id: "label_#{Beer.search_term(char)}" %>
 						<br/><br/>
 					<% end %>					
-				<% end %>
-			</div>
-		</div>
-		<div class='column'>
-			<h3>
-				Options
-			</h3>
-			<br/>
-			<div class='order'>
-				<% if params[:rarity] == "true" %>
-					<%= link_to 'Rarest', beers_url(:bar_id => params[:bar_id], :q => params[:q], :rarity => false, :draft => params[:draft] ), remote: true, id: 'rarity_true' %>
-				<% else %>
-					<%= link_to 'Rarest', beers_url(:bar_id => params[:bar_id], :q => params[:q], :rarity => true, :draft => params[:draft] ), remote: true, id: 'rarity_false' %>			
-				<% end %>
-				<% if params[:draft] == "true" %>
-					<%= link_to 'Draft', beers_url(:bar_id => params[:bar_id], :q => params[:q], :rarity => params[:rarity], :draft => false ), remote: true, id: 'draft_true' %>
-				<% else %>
-					<%= link_to 'Draft', beers_url(:bar_id => params[:bar_id], :q => params[:q], :rarity => params[:rarity], :draft => true ), remote: true, id: 'draft_false' %>			
 				<% end %>
 			</div>
 		</div>

@@ -41,10 +41,10 @@
 		line-height:10px;
 		margin:20px 0px;
 		input {
-			padding:5px;
-			border-radius:4px;
+/*			padding:5px;
+			border-radius:4px;*/
 		}
-		input, label, textarea, select, #rarity_true, #rarity_false, #draft_true, #draft_false {
+		input, label, textarea, select {
 			display:block;
 			padding:5px 5px;
 			font-size:16px;
@@ -53,35 +53,12 @@
 			width:200px;
 			border-radius:4px;
 		}
-		.disabled, .button, .checked, #rarity_true, #rarity_false, #draft_true, #draft_false {
-			text-align:center;
-			width:100px;
-			padding:10px 5px;
+		#rarity_true, #rarity_false, #draft_true, #draft_false {
 			font-size:16px;
-			font-weight:bold;
-			color:white;
-			border-radius:4px;
-			text-decoration:none;			
-		}
-		.disabled {
-			border:1px solid bisque;
-			background-image: -webkit-linear-gradient(top, bisque, peachpuff);
-		}
-		.button {
-			border:1px solid darkorange;
-			background-image: -webkit-linear-gradient(top, orange, darkorange);
-		}
-		.checked {
-			border:1px solid darkred;
-			background-image: -webkit-linear-gradient(top, brown, darkred);
-		}
-		#rarity_false, #draft_false {
-			border:1px solid darkorange;
-			background-image: -webkit-linear-gradient(top, orange, darkorange);
-		}
-		#rarity_true, #draft_true {
-			border:1px solid darkred;
-			background-image: -webkit-linear-gradient(top, brown, darkred);
+			padding:5px 15px;
+			display:block;
+			width:100px;
+			margin-bottom:20px;
 		}
 	}
 
