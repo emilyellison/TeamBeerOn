@@ -59,5 +59,15 @@ $(document).ready( function() {
 			$(this).closest('form').submit();
 			$("#draft_false").toggleClass("draft_true")
 	});
+	
+	// Display rarity popovers.
+	
+	$('#rarity_true').popover();
+	$('#rarity_false').popover();
+	
+	// Display draft popovers.
+	
+	$('#draft_true').popover();
+	$('#draft_false').popover();
 		
 });
