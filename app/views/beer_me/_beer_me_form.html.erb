@@ -52,11 +52,12 @@
 				<% end %>
 		</div>
 	</div>
+	<br/>
 	<div class='row'>
 		<div class='span12'>
-	 	<%= f.submit 'Beer Me', style: 'visibility: hidden;' %>
-	 	<%= link_to 'Beer Me', recommendation_url(:available_beer => @available_beer.collect { |beer| beer.id }, :rarity => params[:rarity], :bar_id => params[:bar_id], :draft => params[:draft]) %>
-	 	or <%= link_to 'Reset', beers_url(:bar_id => params[:bar_id]) %>
+		 	<%= link_to 'Beer Me', recommendation_url(:available_beer => @available_beer.collect { |beer| beer.id }, :rarity => params[:rarity], :bar_id => params[:bar_id], :draft => params[:draft]), class: 'btn btn-large btn-primary' %>
+		 	or <%= link_to 'Reset', beers_url(:bar_id => params[:bar_id]), class: 'btn btn-large btn-primary' %>
+			<%= f.submit 'Beer Me', style: 'visibility: hidden;' %>
 		</div>
 	</div>
 	<% end %>
