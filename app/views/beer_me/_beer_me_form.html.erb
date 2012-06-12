@@ -4,7 +4,8 @@
 	Rarity: <%= params[:rarity] %><br/>
 	Draft: <%= params[:draft] %>
 	<%= search_form_for @q, url: beers_url(:bar_id => params[:bar_id], :rarity => params[:rarity], :draft => params[:draft]), remote: true do |f| %>
-		<div class='column'>
+	<div class='row'>
+		<div class='span4'>
 			<h3>
 				Style
 			</h3>
@@ -28,7 +29,7 @@
 				<% end %>
 			</div>
 		</div>
-		<div class='column'>
+		<div class='span2'>
 			<h3>
 				Characteristics
 			</h3>
@@ -53,4 +54,5 @@
 		 or <%= link_to 'Reset', beers_url(:bar_id => params[:bar_id]) %>
 		</div>
 	<% end %>
+	</div>
 </div>
