@@ -1,9 +1,9 @@
 <%= form_for(@member) do |m| %>
 	<% if @member.errors.any? %>
-		<div id="error_explanation">
-			<h2>
+		<div class="alert alert-error">
+			<p class='alert-heading'>
 				<%= pluralize(@member.errors.count, "error") %>! Yikes, this user was not saved because:
-			</h2>
+			</p>
 			<ul>
 				<% @member.errors.full_messages.each do |msg| %>
 				<li>
