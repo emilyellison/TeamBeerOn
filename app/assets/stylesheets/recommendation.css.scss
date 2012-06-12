@@ -19,12 +19,12 @@
 	.carousel-control.previous.carousel-previous {
 		background: url('prev.png') 0 0 no-repeat;
 		float:left;
-		margin:315px 10px;
+		margin:225px 5px;
 	}
 	.carousel-control.next.carousel-next {
 		background: url('next.png') 0 0 no-repeat;
 		float:right;
-		margin: 0px 10px;
+		margin:225px 900px 0px;
 	}
 	.carousel-pagination {
 		color:ghostwhite;
@@ -33,27 +33,31 @@
 		padding:20px 0px 20px;
 		a {
 			margin:6px;
+			color:ghostwhite;
+			text-decoration:none;
 		}
 		a:hover {
 			opacity:0.70;
+			text-decoration:none;
 		}
 	}
 	.carousel-wrap {
-		width:800px;
+		width:960px;
+		border-radius:8px;
 	}
 	ul {
 		float:left;
 		margin:0px 0px 0px;
 		text-align:left;
-		width:810px;
+		width:960px;
 	}
 	ul li {
 		background:-webkit-linear-gradient(top, #1f1f1f, #1f1f1f);
 		float:right;
-		margin:0px 0px -10px;
+		margin:0px 0px -10px 0px;
 		color:ghostwhite;
 		height:300px;
-		width:800px;
+		width:960px;
 		span {
 			display:block;
 			margin:0px 0px 6px;
@@ -63,12 +67,13 @@
 			border-radius:10px;
 			width:350px;
 			float:left;
-			margin-left:10px;
+			margin-left:100px;
 		}
 		.beer_information {
 			width:350px;
-			float:right;
-			margin-right:10px;
+			float:left;
+			margin-left:60px;
+			margin-right:100px;
 			margin-top:25px;
 			.beer_name {
 				font-size:20px;
@@ -79,6 +84,7 @@
 			}
 			.facts {
 				float:left;
+				width:150px;
 			}
 			.beer_experience {
 				float:right;
