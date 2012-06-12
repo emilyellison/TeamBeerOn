@@ -1,15 +1,17 @@
-<div class='left'>
-	<h2>Welcome to BeerOn!</h2>
-	<h3>BeerOn Members can:</h3>
-	<li>Get more personalized recommendations</li>
-	<li>Rate beers they've tried.</li>
-	<li>Share what beers they're drinking with friends.</li>
-</div>
-<div class='right'>
-	<h2>Join BeerOn! </h2>
-	
-<%= render 'members/form' %>		
-		Already a member?
-<%= link_to "Sign In!", new_session_url %>		</a>
-	</p>
+<div class='row'>
+	<div class='span6'>
+		<h2>Welcome to BeerOn!</h2>
+		<h3>BeerOn Members can:</h3>
+		<li>Get more personalized recommendations</li>
+		<li>Rate beers they've tried.</li>
+		<li>Share what beers they're drinking with friends.</li>
+	</div>
+	<div class='span6'>
+		<h2>Join BeerOn! </h2>
+		<%= render 'members/form' %>		
+		<p>
+			Already a member?
+			<%= link_to "Sign In!", new_session_url, class: 'btn btn-large btn-primary' %>
+		</p>
+	</div>
 </div>
