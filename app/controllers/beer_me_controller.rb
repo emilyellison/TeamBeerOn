@@ -1,7 +1,7 @@
 class BeerMeController < ApplicationController
   
   def location
-
+    @bars = Bar.all.map(&:name)
   end
   
   def pass_location

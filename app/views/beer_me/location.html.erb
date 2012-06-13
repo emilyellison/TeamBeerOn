@@ -1,9 +1,10 @@
-<h2>Get your BeerOn in Chicago.</h2>
+<h2>Get your BeerOn.</h2>
 <p>Tell us which bar you're at and we'll recommend you a beer.</p>
-
+<br/>
+<h3>I'm at..</h3>
 <div id='bar_location_form'>
 	<%= form_tag pass_location_url do %>
-		<%= text_field_tag :keyword %>
+		<%= select_tag :keyword, options_for_select(@bars), include_blank: true %><br/><br/>
 		<%= submit_tag 'Beer Me', class: 'btn btn-large btn-primary' %>
 	<% end %>
 </div>
