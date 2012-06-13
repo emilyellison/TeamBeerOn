@@ -1,8 +1,5 @@
 <div id='beer_me_form'>
-	Params: <%= params %><br/>
-	Q: <%= params[:q] %><br/>
-	Rarity: <%= params[:rarity] %><br/>
-	Draft: <%= params[:draft] %>
+
 	<div class='row'>
 	<%= search_form_for @q, url: beers_url(:bar_id => params[:bar_id], :rarity => params[:rarity], :draft => params[:draft]), remote: true do |f| %>
 		<div class='span4'>
@@ -52,4 +49,9 @@
 	</div>
 	<% end %>
 	<br/>
+	Params: <%= params %><br/>
+	Q: <%= params[:q] %><br/>
+	Rarity: <%= params[:rarity] %><br/>
+	Draft: <%= params[:draft] %>
+	<br/><br/>
 </div>
