@@ -68,9 +68,9 @@ Beer.create(name: 'Lolita', brewery_id: 8, style: 'Wild Ale', abv: 7, sour: 1)
 Beer.create(name: 'Queen-OA', brewery_id: 8, style: 'Gluten-Free', abv: 6.2, citrus: 1, fruity: 1, grapefruit: 1)
 Beer.create(name: 'Ebel\'s Weiss', brewery_id: 9, style: 'Hefeweizen', abv: 4.7, spicy: 1, sweet: 1, banana: 1, cloves: 1, vanilla: 1)
 
-Bar.create(name: 'Haymarket Brewery', address: '737 W Randolph', city: 'Chicago', state: 'IL', zip: 60661, phone: 3126380700, website: 'http://haymarketbrewing.com/', open_sunday: 11, open_monday: 11, open_tuesday: 11, open_wednesday: 11, open_thursday: 11, open_friday: 11, open_saturday: 11, close_sunday: 2, close_monday: 2, close_tuesday: 2, close_wednesday: 2, close_thursday: 2, close_friday: 2, close_saturday: 2)
-Bar.create(name: 'Revolution Brewing', address: '2323 N Milwaukee Ave', city: 'Chicago', state: 'IL', zip: 60647, phone: 7732272739, website: 'http://revbrew.com/', open_sunday: 10, open_monday: 11, open_tuesday: 11, open_wednesday: 11, open_thursday: 11, open_friday: 11, open_saturday: 10, close_sunday: 2, close_monday: 2, close_tuesday: 2, close_wednesday: 2, close_thursday: 2, close_friday: 2, close_saturday: 2)
-Bar.create(name: 'Goose Island Brewery', address: '3535 N Clark St', city: 'Chicago', state: 'IL', zip: 60657, phone: 7738329040, website: 'http://www.gooseisland.com/', open_sunday: 11, open_monday: 11, open_tuesday: 11, open_wednesday: 11, open_thursday: 11, open_friday: 11, open_saturday: 11, close_sunday: 23, close_monday: 23, close_tuesday: 23, close_wednesday: 23, close_thursday: 0, close_friday: 2, close_saturday: 2)
+Bar.create(name: 'Haymarket Brewery', address: '737 W Randolph', city: 'Chicago', state: 'IL', zip: 60661, phone: 3126380700, website: 'http://haymarketbrewing.com/')
+Bar.create(name: 'Revolution Brewing', address: '2323 N Milwaukee Ave', city: 'Chicago', state: 'IL', zip: 60647, phone: 7732272739, website: 'http://revbrew.com/')
+Bar.create(name: 'Goose Island Brewery', address: '3535 N Clark St', city: 'Chicago', state: 'IL', zip: 60657, phone: 7738329040, website: 'http://www.gooseisland.com/')
 
 BeerExperience.create(beer_id: 1, bar_id: 1, home: 1, local: 1, draft: 1, rarity: 5)
 BeerExperience.create(beer_id: 2, bar_id: 1, home: 1, local: 1, draft: 1, rarity: 5)
