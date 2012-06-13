@@ -30,12 +30,19 @@
 		<% end %>
 		<%= yield %>
 	</div>
-	<footer>
-		<p class='menu'>
-			<a href="#">About Us</a>
-			<a href="#">How It Works</a>
-			<%= link_to '@BeerOn2012', 'https://twitter.com/#!/BeerOn2012' %>
-		</p>
-	</footer>
+	<div class="navbar navbar-fixed-bottom">
+      <div class="navbar-inner">
+        <div class="container">
+                              <!-- class of Nav here? -->
+  		  <footer>
+  		    <a href="#">About Us</a>
+  		    <a href="#">How It Works</a>
+  		    <%= link_to '@BeerOn2012', 'https://twitter.com/#!/BeerOn2012' %>
+          </footer>
+        </div>
+      </div>
+    </div>
+	
+	
 </body>
 </html>
