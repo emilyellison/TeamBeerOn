@@ -11,7 +11,6 @@ $beerontitle: #BF4D28;
 $userid: white; /*#80BCA3*/
 /*borders and sizes*/
 $buttonpx: 3px;
-$push: 5px;
 /*shape formatting mixin*/
 @mixin buttonformat {
 	margin: 5px 20px;
@@ -49,7 +48,7 @@ header {
     display:table;
 }
 .cf:after {
-    clear:both;
+    clear: both;
 }
 /*Contains the BeerOn title and the "User_Name"*/
 .beeronhead { 
@@ -111,29 +110,36 @@ I can probably just format the content better, right?*/
 how you can do it across devices -EE*/
 footer {
 	float: left;
-	height: $push;
+	height: 20px;
 	bottom: 50px;
 	@include navfooterline;
 	a {
 		@include buttonformat;
 }
 }
-.wrapper {
-	min-height: 100%;
-	height: auto !important;
-	height: 100%;
-	margin: 0 auto -$push;
+.navbar-fixed-bottom{
+	.navbar-inner {
+		background: white;
+}
 }
 
 
-/*if statement for responsive design*/
-/*
-@media screen and (max-width: 960px){
+
+@media screen and (max-width: 500px){
 	nav{
 		display: none;
 	}
+	.navbar {
+		display: none;
+	}
+	header {
+		display: none;
+	}
+	footer {
+		display: none;
+	}
 }	
-*/
+
 	
 	
 	
