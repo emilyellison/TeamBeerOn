@@ -1,3 +1,6 @@
+/* Just testing changes, making sure commits are up-to-date */
+
+
 /*coloring schemes*/
 /*current color scheme: colourlovers: "Headache"*/
 $text: #0E00D1;/*on theme: #80BCA3 but trying to make blue pop*/
@@ -5,9 +8,10 @@ $buttonborder: #E6AC27;
 $buttonbody: #F6F7BD;
 $lineborder: #655643;
 $beerontitle: #BF4D28;
-$userid: #80BCA3;
+$userid: white; /*#80BCA3*/
 /*borders and sizes*/
 $buttonpx: 3px;
+$push: 5px;
 /*shape formatting mixin*/
 @mixin buttonformat {
 	margin: 5px 20px;
@@ -58,6 +62,7 @@ header {
 }
 #userid {
 /*	float: right;*/
+	text-shadow: 0 0 5px black;
 	margin: 10px 0 0 350px;
 	font-size: 25px;
 	color: $userid;
@@ -106,9 +111,29 @@ I can probably just format the content better, right?*/
 how you can do it across devices -EE*/
 footer {
 	float: left;
+	height: $push;
 	bottom: 50px;
 	@include navfooterline;
 	a {
 		@include buttonformat;
 }
 }
+.wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -$push;
+}
+
+
+/*if statement for responsive design*/
+/*
+@media screen and (max-width: 960px){
+	nav{
+		display: none;
+	}
+}	
+*/
+	
+	
+	
