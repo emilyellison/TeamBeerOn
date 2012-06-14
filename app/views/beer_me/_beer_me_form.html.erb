@@ -21,10 +21,10 @@
 				<% end %>
 		</div>
 		<h3>&nbsp;&nbsp;&nbsp;Characteristics</h3>	
-		<% x = [ 0, 10, 20, 30 ] %>
+		<% x = [ 0, 8, 16, 24 ] %>
 		<% x.each do |x| %>
 		<div class='span2'>
-			<% Beer.characteristics.slice(x, 10).each do |char| %>
+			<% Beer.characteristics.slice(x, 8).each do |char| %>
 				<% if params[:q] && params[:q][Beer.search_term(char)] == "1" %>
 					<%= f.label Beer.search_term(char), "#{Beer.label(char)} (#{Beer.number_of_beers(@available_beer, char)})", class: 'checked btn btn-danger', id: "label_#{Beer.search_term(char)}" %>
 					<%= f.check_box Beer.search_term(char), style: 'visibility:hidden' %>						
@@ -42,8 +42,7 @@
 	<br/>
 	<div class='row'>
 		<div class='span12'>
-		 	<%= link_to 'Beer Me', recommendation_url(:available_beer => @available_beer.collect { |beer| beer.id }, :rarity => params[:rarity], :bar_id => params[:bar_id], :draft => params[:draft]), class: 'btn btn-large btn-primary' %>
-		 	or <%= link_to 'Reset', beers_url(:bar_id => params[:bar_id]), class: 'btn btn-large btn-primary' %>
+		 	<%= link_to 'Beer Me', recommendation_url(:available_beer => @available_beer.collect { |beer| beer.id }, :rarity => params[:rarity], :bar_id => params[:bar_id], :draft => params[:draft]), class: 'btn btn-large btn-primary pull-left' %>
 			<%= f.submit 'Beer Me', style: 'visibility: hidden;' %>
 		</div>
 	</div>
