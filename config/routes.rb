@@ -25,5 +25,8 @@ TeamBeerOn::Application.routes.draw do
 
   get 'contact' => 'information#contact'
   
+  get '/contact_us' => 'inquiries#new', :as => :contact_us
+  post '/contact_us' => 'inquiries#create'
+  
 end
 
