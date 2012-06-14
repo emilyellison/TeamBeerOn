@@ -2,7 +2,7 @@
 	<% if @member.errors.any? %>
 		<div class="alert alert-error">
 			<p class='alert-heading'>
-				<%= pluralize(@member.errors.count, "error") %>! Yikes, this user was not saved because:
+				<%= pluralize(@member.errors.count, "error") %>! Yikes, something went wrong:
 			</p>
 			<ul>
 				<% @member.errors.full_messages.each do |msg| %>
@@ -27,13 +27,17 @@
 		    <%= m.password_field :password %>
 		  </div>
 		  <div class="field">
-		    <%= m.label :password_confirmation, 'Password Again' %><br />
+		    <%= m.label :password_confirmation, 'Confirm Password' %><br />
 		    <%= m.password_field :password_confirmation %>
 		  </div>
 			<br/>
 		  <div class="actions">
-		    <%= m.submit 'BeerMe!', class: 'btn btn-large btn-primary' %>
-		  </div>
+				<% if @member.new_record? %>
+		    	<%= m.submit 'BeerMe!', class: 'btn btn-large btn-primary' %>
+		  	<% else %>
+					<%= m.submit 'Update Profile', class: 'btn btn-large btn-primary' %>
+				<% end %>
+			</div>
 
 	
 	<% end %>

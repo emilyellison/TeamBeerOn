@@ -1,18 +1,13 @@
 <h2>Edit Your Account</h2>
-
-<%= form_for(@member) do |m| %>
-<%= m.label :name %>
-<%= m.text_field :name %>
-<%= m.label :email %>
-<%= m.text_field :email %>
-<%= m.label :password %>
-<%= m.password_field :password %>
-<%= m.label :password_confirmation, "Confirm Password" %>
-<%= m.password_field :password_confirmation %>
-<%= m.submit "Save Changes", class: "btn btn-large btn-primary" %>
-<% end %>
-
-</div>
-<div class='right'>
-	<img alt="Beer" src="/assets/three_champion.jpg" width="400" class='photo'/></a>
+<div class='row'>
+	<div class='span6'>
+		<div class='pull-left'>
+			<%= render 'members/form' %>
+		</div>
+	</div>
+	<div class='span6'>
+		<div class='pull-right'>
+			<img alt="Beer" src="/assets/three_champion.jpg" width="400" class='photo'/></a>
+		</div>
+	</div>
 </div>
