@@ -9,7 +9,7 @@ class BeerMeController < ApplicationController
     if bar.present?
       redirect_to beers_url(:bar_id => bar.id)
     else
-      redirect_to root_url, notice: 'You must select a bar.'
+      redirect_to location_url, notice: 'You must select a bar.'
     end
   end
   
