@@ -1,13 +1,14 @@
 <%= form_for(@member) do |m| %>
 	<% if @member.errors.any? %>
 		<div class="alert alert-error">
+			<br/>
 			<p class='alert-heading'>
-				<%= pluralize(@member.errors.count, "error") %>! Yikes, something went wrong:
+				Yikes! Something went wrong...
 			</p>
 			<ul>
 				<% @member.errors.full_messages.each do |msg| %>
 				<li>
-					<%= msg %>
+					<%= msg %>.
 				</li><% end %>
 			</ul>
 		</div>
