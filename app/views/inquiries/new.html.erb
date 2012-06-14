@@ -11,10 +11,18 @@
 		<%= form_for @inquiry, :url => '/contact_us' do |f| %>
 
 			<%= f.label :name %>
-			<%= f.text_field :name %><br/><br/>
-
+			<% if @current_member.present? %>
+				<%= f.text_field :name, value: @current_member.name %><br/><br/>
+			<% else %>
+				<%= f.text_field :name %><br/><br/>
+			<% end %>
+			
 			<%= f.label :email, 'E-mail' %>
-			<%= f.text_field :email %><br/><br/>
+			<% if @current_member.present? %>
+				<%= f.text_field :email, value: @current_member.email %><br/><br/>
+			<% else %>
+				<%= f.text_field :email %><br/><br/>
+			<% end %>
 
 			<%= f.label :message %>
 			<%= f.text_area :message %><br/><br/>
