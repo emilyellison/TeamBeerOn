@@ -1,49 +1,77 @@
 <% if @beers.present? %>
 	
 	<%# Only show pagination and previous/next if there is more than one beer. %>
-	
-	<%= render 'beer_me/pagination_rules' %>
-	
-	<div id='beer_recommendation_list'>
-		<ul>
+
+	<%#= render 'beer_me/pagination_rules' %>
+	<div class="progress progress-striped active">
+	  <div class="bar" style="width: 100%;">
+		</div>	
+	</div>
+	<div id="myCarousel" class="carousel slide">
+	  <!-- Carousel items -->
+	  <div class="carousel-inner">
 			<% @beers.each do |beer| %>
-				<li>
-					<%= link_to image_tag 'glowing_beer.jpg', class: 'glowing_beer' %>
-					<div class='beer_information'>
-						<span class='beer_name'><%= beer.name %> <%= "(#{beer.abv}%)" if beer.abv %></span>
-						<% if beer.brewery.present? %>
-							<span class='beer_brewery'><%= beer.brewery.name %></span>
-							<span><%= beer.brewery.city %>, <%= beer.brewery.state %>, <%= beer.brewery.country %></span>
-						<% end %>
-						<br/>
-						<div class='facts'>
-							<span>
-								Style: <%= beer.style %>
-							</span>
-							<div class='beer_characteristics'>
-								<% if beer.has_characteristics.present? %>
-									<span>Characteristics:</span>
-									<% beer.has_characteristics.sort.each do |char| %>
-										&bull;&nbsp;<%= char %><br/>
-									<% end %>
-								<% end %>
-							</div>
+		  	<% if @beers.first == beer %>
+					<div class="item active">
+				<% else %>
+					<div class="item">
+				<% end %>
+					<div class='beer_carousel'>
+						<div class='span1'>
+							&nbsp;
 						</div>
-						<div class='beer_experience'>
-							<span>
-								Rarity:
-								<% beer.beer_experiences[0].rarity.times do %>
-									<%= image_tag('beer.png', height: 20, class: 'icon') %>
+						<div class='span4'>
+							<%= link_to image_tag 'glowing_beer.jpg', class: 'glowing_beer', height: 250 %>
+						</div>
+						<div class='span1'>
+							&nbsp;
+						</div>
+						<div class='span4'>
+							<div class='beer_information'>
+								<h1><%= beer.name %> <%= "(#{beer.abv}%)" if beer.abv %></h1>
+								<% if beer.brewery.present? %>
+									<h2><%= beer.brewery.name %></h2>
+									<h2><%= beer.brewery.city %>, <%= beer.brewery.state %>, <%= beer.brewery.country %></h2>
 								<% end %>
-							</span>
-							<span>
-								<%= "Available on Draft" if beer.beer_experiences[0].draft == 1 %>
-							</span>
+								<br/>
+								<div class='facts'>
+									<p>
+										Style: <%= beer.style %>
+									</p>
+									<div class='beer_characteristics'>
+										<% if beer.has_characteristics.present? %>
+											<p>Characteristics:</p>
+											<ul>
+												<% beer.has_characteristics.sort.each do |char| %>
+													<li><%= char %></li>
+												<% end %>
+											</ul>
+										<% end %>
+									</div>
+								</div>
+								<div class='beer_experience'>
+									<p>
+										Rarity:
+										<% beer.beer_experiences[0].rarity.times do %>
+											<%= image_tag('beer.png', height: 20, class: 'icon') %>
+										<% end %>
+									</p>
+									<p>
+										<%= "Available on Draft" if beer.beer_experiences[0].draft == 1 %>
+									</p>
+								</div>
+							</div>
+		    		</div>
+						<div class='span1'>
+							&nbsp;
 						</div>
 					</div>
-				</li>
+		    </div>
 			<% end %>
-		</ul>
+	  </div>
+	  <!-- Carousel nav -->
+	  <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+	  <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
 	</div>
 
 <% else %>
