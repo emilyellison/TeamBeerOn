@@ -24,7 +24,7 @@
 		<% x = [ 0, 8, 16, 24 ] %>
 		<% x.each do |x| %>
 		<div class='span2'>
-			<% Beer.characteristics.slice(x, 8).each do |char| %>
+			<% Beer.characteristics.sort.slice(x, 8).each do |char| %>
 				<% if params[:q] && params[:q][Beer.search_term(char)] == "1" %>
 					<%= f.label Beer.search_term(char), "#{Beer.label(char)} (#{Beer.number_of_beers(@available_beer, char)})", class: 'checked btn btn-danger', id: "label_#{Beer.search_term(char)}" %>
 					<%= f.check_box Beer.search_term(char), style: 'visibility:hidden' %>						
