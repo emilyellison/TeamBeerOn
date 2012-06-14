@@ -1,47 +1,41 @@
 <div class='row'>
 	<div class='span6'>
-		  <%= gravatar_for @member %>
+		<div class='pull-left'>
+		  <%= gravatar_for @member, size: 150 %><br/><br/>
 		  <h2><%= @member.name %></h2>
 		  <h3><%= @member.email %></h3>
-		
-				<br/>
-					<label>What are you drinking?</label>
-				<br/>
-					<textarea rows="4"></textarea>
-				<br/>
-				
-				<input type='submit' value='Share' class='btn btn-large btn-primary'></input>
-			</form>
-	
+			<br/><br/>
+		</div>
 	</div>
 	<div class='span6'>
-		<h2>Beer Feed</h2>
-		<hr/>
-		<h3>
-			<a href='#'>
-				Zak Boswell
-			</a>
-		</h3>
-		<p>Mmm... Just enjoyed an <a href='#'>Well's Banana Bread Beer</a> at <a href='#'>Cooper's Brewery.</a></p>
-		<p class='status_date'>4 minutes ago.</p>
-		<hr/>
-		<h3>
-			<a href='#'>
-				Fernando Diaz
-			</a>
-		</h3>
-		<p>Rated <a href='#'>Allagash White</a> from <a href='#'>Allagash Brewing Company</a> ****.</p> 
-		<p><a href='#'>Check out his full review.</a></p>
-		<p class='status_date'>8 hours ago.</p>
-		<hr/>
-		<h3>
-			<a href='#'>
-				Emily Ellison
-			</a>
-		</h3>
-		<p>@startupstella You were right! Nothing like a <a href='#'>Shock Top</a> on a hot summer day... :)</p>
-		<p class='status_date'>2 days ago.</p>
-		<hr/>
-		
+		<div class='pull-right'>
+			<h2>Beer Feed</h2>
+			<hr/>
+			<h3>
+				<a href='#'>
+					Zak Boswell
+				</a>
+			</h3>
+			<p>Mmm... Just enjoyed an <a href='#'>Well's Banana Bread Beer</a> at <a href='#'>Cooper's Brewery.</a></p>
+			<p class='status_date'>4 minutes ago.</p>
+			<hr/>
+			<h3>
+				<a href='#'>
+					Fernando Diaz
+				</a>
+			</h3>
+			<p>Rated <a href='#'>Allagash White</a> from <a href='#'>Allagash Brewing Company</a> ****.</p> 
+			<p><a href='#'>Check out his full review.</a></p>
+			<p class='status_date'>8 hours ago.</p>
+			<hr/>
+			<h3>
+				<a href='#'>
+					Emily Ellison
+				</a>
+			</h3>
+			<p>@startupstella You were right! Nothing like a <a href='#'>Shock Top</a> on a hot summer day... :)</p>
+			<p class='status_date'>2 days ago.</p>
+			<hr/>
+		</div>
 	</div>
 </div>
