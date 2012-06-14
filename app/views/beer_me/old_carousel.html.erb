@@ -1,0 +1,58 @@
+<% if @beers.present? %>
+	
+	<%# Only show pagination and previous/next if there is more than one beer. %>
+
+	<%= render 'beer_me/pagination_rules' %>
+	<div class="progress progress-striped active">
+	  <div class="bar" style="width: 100%;">
+		</div>	
+	</div>
+	<div class='row'>
+		<div class='span12'>
+			<div id='beer_recommendation_list'>
+				<ul>
+					<% @beers.each do |beer| %>
+						<li>
+							<%= link_to image_tag 'glowing_beer.jpg', class: 'glowing_beer' %>
+							<div class='beer_information'>
+								<span class='beer_name'><%= beer.name %> <%= "(#{beer.abv}%)" if beer.abv %></span>
+								<% if beer.brewery.present? %>
+									<span class='beer_brewery'><%= beer.brewery.name %></span>
+									<span><%= beer.brewery.city %>, <%= beer.brewery.state %>, <%= beer.brewery.country %></span>
+								<% end %>
+								<br/>
+								<div class='facts'>
+									<span>
+										Style: <%= beer.style %>
+									</span>
+									<div class='beer_characteristics'>
+										<% if beer.has_characteristics.present? %>
+											<span>Characteristics:</span>
+											<% beer.has_characteristics.sort.each do |char| %>
+												&bull;&nbsp;<%= char %><br/>
+											<% end %>
+										<% end %>
+									</div>
+								</div>
+								<div class='beer_experience'>
+									<span>
+										Rarity:
+										<% beer.beer_experiences[0].rarity.times do %>
+											<%= image_tag('beer.png', height: 20, class: 'icon') %>
+										<% end %>
+									</span>
+									<span>
+										<%= "Available on Draft" if beer.beer_experiences[0].draft == 1 %>
+									</span>
+								</div>
+							</div>
+						</li>
+					<% end %>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+<% else %>
+	<h2>Sorry, there were no beers that matched your requirements.</h2>
+<% end %>

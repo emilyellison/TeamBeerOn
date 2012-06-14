@@ -1,0 +1,33 @@
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+		<div class='container'>
+			<header>
+				<div class='beeronhead'>
+					<ul class='nav pull-left'>
+						<li><%= link_to 'BeerOn', root_url, id: 'apptitle' %><li>
+					</ul>
+					<ul class='nav pull-right'>
+						<li>
+							<%= link_to "#{@current_member.name}", member_url(@current_member.id), id: 'userid' if @current_member %>
+						</li>
+					</ul>
+				</div>
+				<br/><br/><br/>
+				<div class='beeronmenu'>
+					<ul class='nav pull-left'>
+						<li><%= link_to 'Start', location_url %></li>
+					</ul>
+					<ul class='nav pull-right'>	
+						<% if @current_member %>
+							<li><%= link_to "Profile", member_url(@current_member.id) %></li>
+							<li><%= link_to "Sign Out", sign_out_url %></li>
+						<% else %>
+							<li><%= link_to "Sign Up", new_member_url %></li>
+							<li><%= link_to "Sign In", new_session_url %></li>
+						<% end %>
+					</ul>
+				</div>
+			</header>
+		</div>
+  </div>
+</div>
