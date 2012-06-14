@@ -9,13 +9,14 @@ class SessionsController < ApplicationController
   	if member
   		if member.authenticate(params[:password])
   			session[:mid] = member.id
-  			redirect_to member_url(member.id), notice: "Let's Get our BeerOn!"
+  			flash[:success] = "Welcome, #{member.name.split(' ').first}! Let\'s get your BeerOn!"
+  			redirect_to member_url(member.id)
   		else
-  			flash.now[:notice] = "Unknown email or password"
+  			flash.now[:error] = "Invalid email/password."
   			render :new
   		end
   	else
-  		flash.now[:notice] = "Unknown email or password"
+  		flash.now[:error] = "Invalid email/password."
   		render :new
     end
 	end

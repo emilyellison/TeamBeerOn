@@ -23,20 +23,22 @@
 		    <%= m.label :email %><br />
 		    <%= m.text_field :email %>
 		  </div>
-		  <div class="field">
-		    <%= m.label :password %><br />
-		    <%= m.password_field :password %>
-		  </div>
-		  <div class="field">
-		    <%= m.label :password_confirmation, 'Confirm Password' %><br />
-		    <%= m.password_field :password_confirmation %>
-		  </div>
+			<% if @member.new_record? %>
+			  <div class="field">
+			    <%= m.label :password %><br />
+			    <%= m.password_field :password %>
+			  </div>
+			  <div class="field">
+			    <%= m.label :password_confirmation, 'Confirm Password' %><br />
+			    <%= m.password_field :password_confirmation %>
+			  </div>
+			<% end %>
 			<br/>
 		  <div class="actions">
 				<% if @member.new_record? %>
 		    	<%= m.submit 'BeerMe!', class: 'btn btn-large btn-primary' %>
 		  	<% else %>
-					<%= m.submit 'Update Profile', class: 'btn btn-large btn-primary' %>
+					<%= m.submit 'Update', class: 'btn btn-large btn-primary' %>
 				<% end %>
 			</div>
 

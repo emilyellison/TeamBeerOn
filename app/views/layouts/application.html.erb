@@ -1,48 +1,33 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>BeerOn</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-	<header class="cf">
-		<div class='beeronhead'>
-			<%= link_to 'BeerOn', root_url, id: 'apptitle' %>
-			<%= link_to "#{@current_member.name}", member_url(@current_member.id), id: 'userid' if @current_member %>
+	<head>
+	  <title>BeerOn</title>
+	  <%= stylesheet_link_tag    "application", :media => "all" %>
+	  <%= javascript_include_tag "application" %>
+	  <%= csrf_meta_tags %>
+	</head>
+	<body>
+		<%= render 'layouts/header' %>
+		<div class='body_of_beeron'>
+			<div class='container'>
+				<% if flash[:success] %>
+					<p class='alert alert-success'>
+						<%= flash[:success] %>
+					</p>
+				<% end %>
+				<% if flash[:notice] %>
+					<p class='alert alert-notice'>
+						<%= flash[:notice] %>
+					</p>
+				<% end %>
+				<% if flash[:error] %>
+					<p class='alert alert-error'>
+						<%= flash[:error] %>
+					</p>
+				<% end %>
+				<%= yield %>
+			</div>
 		</div>
-		<nav>
-			<%= link_to 'Where are you?', root_url, class: 'arrow_box_bottom' %>
-			<% if @current_member %>
-				<%= link_to "Profile", member_url(@current_member.id), class: 'arrow_box_bottom' %>
-				<%= link_to "Sign Out", sign_out_url %>
-			<% else %>
-				<%= link_to "Sign Up", new_member_url %>
-				<%= link_to "Sign In", new_session_url %>
-			<% end %>
-			<a href='#'>Contact Us</a>
-		</nav>
-	</header>
-	<div class='content'>
-		<% if flash[:notice] %>
-			<%= flash[:notice] %>
-		<% end %>
-		<%= yield %>
-	</div>
-	<div class="navbar navbar-fixed-bottom">
-      <div class="navbar-inner">
-        <div class="container">
-                              <!-- class of Nav here? -->
-  		  <footer>
-  		    <a href="#">About Us</a>
-  		    <a href="#">How It Works</a>
-  		    <%= link_to '@BeerOn2012', 'https://twitter.com/#!/BeerOn2012' %>
-          </footer>
-        </div>
-      </div>
-    </div>
-	
-	
-</body>
+		<%= render 'layouts/footer' %>
+	</body>
 </html>

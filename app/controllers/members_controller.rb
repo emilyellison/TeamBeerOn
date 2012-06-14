@@ -18,7 +18,9 @@ class MembersController < ApplicationController
 		if @member.save
 		  # Tell the MemberMailer to send a welcome Email after save
       MemberMailer.confirm(@member).deliver
-			redirect_to root_url, notice: "Now you can get your BeerOn!"
+      session[:mid] = @member.id
+      flash[:success] = "Welcome to BeerOn, #{@member.name.split(' ').first}!"
+			redirect_to @member
 		else
 			render action: "new"
 		end
@@ -27,7 +29,8 @@ class MembersController < ApplicationController
 	def update
 		@member = Member.find(params[:id])
 			if @member.update_attributes(params[:member])
-				redirect_to @member, notice: "Member successfully updated."
+			  flash[:success] = "Your profile has been updated."
+				redirect_to @member
 			else
 				render action: "edit"
 			end
