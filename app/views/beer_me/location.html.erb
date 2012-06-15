@@ -4,19 +4,20 @@
 		  <div class="bar" style="width: 33%;">
 			</div>	
 		</div>
-		<h2>Where are you?</h2>
-		<br/>
-		<p>
-			Tell us which bar you're at, and we'll go fetch their menu. 
-			- Don't see the bar you're at? <%= link_to 'E-mail us!', contact_us_url %>
-			And let us know what we're missing.</p>
-		<br/>
-		<h3>I'm at...</h3>
-		<div id='bar_location_form'>
-			<%= form_tag pass_location_url do %>
-				<%= select_tag :keyword, options_for_select(@bars.sort), include_blank: true %><br/><br/>
-				<%= submit_tag 'Next', class: 'btn btn-large btn-primary' %>
-			<% end %>
+		<div class='well'>
+			<h2>Where are you?</h2>
+			<div id='bar_location_form'>
+				<%= form_tag pass_location_url do %>
+					<%= select_tag :keyword, options_for_select(@bars.sort), include_blank: true %><br/><br/>
+					<%= submit_tag 'Next', class: 'btn btn-large btn-primary' %>
+				<% end %>
+			</div>
+			<p>
+				Don't see the bar you're at? 
+			</p>
+			<p>	
+				<%= link_to 'E-mail us!', contact_us_url %> And let us know what we're missing.
+			</p>
 		</div>
 	</div>
 </div>
