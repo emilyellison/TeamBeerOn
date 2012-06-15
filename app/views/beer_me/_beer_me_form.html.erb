@@ -20,19 +20,19 @@
 					<%= link_to 'Draft', beers_url(:bar_id => params[:bar_id], :q => params[:q], :rarity => params[:rarity], :draft => true ), remote: true, id: 'draft_false', class: 'btn btn-warning', rel: 'popover', 'data-original-title' => 'Draft', 'data-content' => 'Select to only be recommended beers that are served on draft.' %>			
 				<% end %>
 		</div>
-		<h3>&nbsp;&nbsp;&nbsp;Characteristics</h3>	
+		<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Characteristics</h3>	
 		<% x = [ 0, 8, 16, 24 ] %>
 		<% x.each do |x| %>
 		<div class='span2'>
 			<% Beer.characteristics.sort.slice(x, 8).each do |char| %>
 				<% if params[:q] && params[:q][Beer.search_term(char)] == "1" %>
-					<%= f.label Beer.search_term(char), "#{Beer.label(char)} (#{Beer.number_of_beers(@available_beer, char)})", class: 'checked btn btn-danger', id: "label_#{Beer.search_term(char)}" %>
+					<%= f.label Beer.search_term(char), "#{Beer.label(char)}", class: 'checked btn btn-danger', id: "label_#{Beer.search_term(char)}" %>
 					<%= f.check_box Beer.search_term(char), style: 'visibility:hidden' %>						
 				<% elsif @available_beer && Beer.number_of_beers(@available_beer, char) > 0 %>
-					<%= f.label Beer.search_term(char), "#{Beer.label(char)} (#{Beer.number_of_beers(@available_beer, char)})", class: 'button btn btn-warning', id: "label_#{Beer.search_term(char)}" %>
+					<%= f.label Beer.search_term(char), "#{Beer.label(char)}", class: 'button btn btn-warning', id: "label_#{Beer.search_term(char)}" %>
 					<%= f.check_box Beer.search_term(char), style: 'visibility:hidden' %>
 				<% else %>
-					<%= f.label Beer.search_term(char), "#{Beer.label(char)} (#{Beer.number_of_beers(@available_beer, char)})", class: 'disabled btn ', id: "label_#{Beer.search_term(char)}" %>
+					<%= f.label Beer.search_term(char), "#{Beer.label(char)}", class: 'disabled btn ', id: "label_#{Beer.search_term(char)}" %>
 					<br/><br/>
 				<% end %>				
 			<% end %>
