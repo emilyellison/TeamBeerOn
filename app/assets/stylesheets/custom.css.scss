@@ -5,12 +5,14 @@
 /*current color scheme: colourlovers: "Headache"*/
 $text: #0E00D1;/*on theme: #80BCA3 but trying to make blue pop*/
 $buttonborder: #E6AC27;
-$buttonbody: #F6F7BD;
+$buttonbody: #FFE999;
 $lineborder: #655643;
 $beerontitle: #BF4D28;
+$beerongradient: #A14020;
 $userid: white; /*#80BCA3*/
 /*borders and sizes*/
-$buttonpx: 3px;
+$buttonpx: 2px;
+$apptitle:white;
 /*shape formatting mixin*/
 @mixin buttonformat {
 	margin: 5px 20px;
@@ -28,104 +30,165 @@ $buttonpx: 3px;
 	border-bottom: 3px solid $lineborder;
 	padding: 15px;
 }
-body {
-	background: url('ravenna.png');
-	padding:10px;
-	font-family:arial;
+.navbar-fixed-top {
+	.navbar-inner {
+		background:-linear-gradient(top, $beerontitle, $beerongradient);
+		background:-ms-linear-gradient(top, $beerontitle, $beerongradient);
+		background:-o-linear-gradient(top, $beerontitle, $beerongradient);
+		background:-moz-linear-gradient(top, $beerontitle, $beerongradient);
+		background:-webkit-linear-gradient(top, $beerontitle, $beerongradient);
+		border-bottom:1px $lineborder solid;
+		header {
+			a {
+				text-shadow: 0 0 5px black;
+				text-decoration:none;
+				color:white;
+			}
+			/*Contains the BeerOn title and the "User_Name"*/
+			.beeronhead { 
+				margin: 10px -10px;
+				#apptitle {	
+					font-size:45px;
+					font-weight:bold;
+					color: $apptitle;
+				}
+				#userid {
+				/*	float: right;*/
+					font-size: 25px;
+					color: $userid;
+				}
+			}
+			.beeronmenu {
+				margin:0px -10px;
+				font-size:20px;
+			}
+		}
+	}
 }
-/*Contains both the BeerOn/User_name line 
-and the nav below it in the header container*/
-header {
-/*	border: 1px solid black;*/
+.navbar-fixed-bottom {
+	.navbar-inner {
+		background:-linear-gradient(bottom, $beerontitle, $beerongradient);
+		background:-ms-linear-gradient(bottom, $beerontitle, $beerongradient);
+		background:-o-linear-gradient(bottom, $beerontitle, $beerongradient);
+		background:-moz-linear-gradient(bottom, $beerontitle, $beerongradient);
+		background:-webkit-linear-gradient(bottom, $beerontitle, $beerongradient);
+		border-bottom:1px $lineborder solid;
+		footer {
+			a {
+				font-size: 20px;
+				text-shadow: 0 0 5px black;
+				text-decoration:none;
+				color:white;
+			}
+		}
+	}
+}
+
+.body_of_beeron {
+	height:100%;
+	margin:125px 0px 0px 0px;
+	.hero-unit {
+		background:$buttonbody;
+		border:1px #FFDB59 solid;
+		box-shadow:2px 2px 1px rgba(0, 0, 0, 0.25);
+	}
 	a {
 		text-decoration:none;
 	}
-}
-/*All ".cf" code allows nav bar to sit inside header bucket*/
-.cf:before,
-.cf:after {
-    content:"";
-    display:table;
-}
-.cf:after {
-    clear: both;
-}
-/*Contains the BeerOn title and the "User_Name"*/
-.beeronhead { 
-	margin: 10px;
-}
-#apptitle {	
-	font-size:45px;
-	font-weight:bold;
-	color: $beerontitle;
-}
-#userid {
-/*	float: right;*/
-	text-shadow: 0 0 5px black;
-	margin: 10px 0 0 350px;
-	font-size: 25px;
-	color: $userid;
-}
-/*container for the 4 nav elements, 
-profile/signout toggle with signup/signin*/
-nav {
-	float: left;
-	@include navfooterline;
-	a {
-		@include buttonformat;
+	p, li {
+		font-size:16px;
+	}
+	li {
+		margin:6px 0px;
+	}
+	.gravatar {
+		border-radius:8px;
+		box-shadow:2px 2px 1px rgba(0, 0, 0, 0.25);
+		border:1px solid lightgrey;
+	}
+	form {
+		line-height:10px;
+		margin:20px 0px;
+		input, label, textarea, select {
+			display:block;
+			font-size:16px;
+		}
+		textarea {
+			width:200px;
+			border-radius:4px;
+		}
+		#rarity_true, #rarity_false, #draft_true, #draft_false {
+			font-size:16px;
+			padding:5px 15px;
+			display:block;
+			width:100px;
+			margin-bottom:20px;
+		}
+		.submit_links {
+		position:absolute; bottom:0;
+		}
+	}
+	.teambeeron {
+		img {
+			border-radius:8px;
+			box-shadow:2px 2px 1px rgba(0, 0, 0, 0.25);
+			border:1px solid lightgrey;
+		}
+	}
+	.beer_carousel {
+		color:ghostwhite;
+		background:-webkit-linear-gradient(bottom, #1f1f1f, #272829);
+		background:-moz-linear-gradient(top, #1f1f1f, #272829);
+		background:-ms-linear-gradient(top, #1f1f1f, #272829);
+		background:-o-linear-gradient(top, #1f1f1f, #272829);
+		background:-linear-gradient(top, #1f1f1f, #272829);
+		border-radius:8px;
+		.span4 {
+			padding:50px 0px;
+			h1, h2 {
+				line-height:20px;
+			}
+			h1 {
+				font-size:20px;
+			}
+			h2 {
+				font-size:16px;
+			}
+			p, li {
+				line-height:15px;
+				font-size:15px;
+			}
+			img {
+				margin:0px 7px;
+				border-radius:8px;
+				box-shadow:2px 2px 1px rgba(0, 0, 0, 0.25);
+				border:1px solid darkbrown;
+			}
+		}
+		.beer_information {
+			margin:0px 7px;
+			img {
+				margin:0px -3px 7px;
+			}
+		}
+		.span1 {
+			margin:270px 0px 0px 0px;
+			a {
+				font-size:16px;
+			}
+		}
+	}
+	.carousel-inner {
+		background:-webkit-linear-gradient(bottom, #1f1f1f, #272829);
+		background:-moz-linear-gradient(top, #1f1f1f, #272829);
+		background:-ms-linear-gradient(top, #1f1f1f, #272829);
+		background:-o-linear-gradient(top, #1f1f1f, #272829);
+		background:-linear-gradient(top, #1f1f1f, #272829);
+		border-radius:8px;
 	}
 }
-/*nest all arrow_box styles into an a:active style subset when ready*/
-/*Might be cool to have a cookie trial below location
-in order to follow the app through functional stage*/
-.arrow_box_bottom {
-	position: relative;
-	background: $buttonbody;
-	border: $buttonpx solid $buttonborder;
-}
-.arrow_box_bottom:after, .arrow_box_bottom:before {
-	top: 100%;
-	border: solid transparent;
-	content: " ";
-	height: 0;
-	width: 0;
-	position: absolute;
-	pointer-events: none;
-}
-.arrow_box_bottom:after {
-	border-top-color: $buttonbody;
-	border-width: 17px;
-	left: 50%;
-	margin-left: -17px;
-}
-.arrow_box_bottom:before {
-	border-top-color: $buttonborder;
-	border-width: 22px;
-	left: 50%;
-	margin-left: -22px;
-}
-/*do i need to "stick" this to the bottom?
-I can probably just format the content better, right?*/
-/*I like the idea of sticking if you can figure out
-how you can do it across devices -EE*/
-footer {
-	float: left;
-	height: 20px;
-	bottom: 50px;
-	@include navfooterline;
-	a {
-		@include buttonformat;
-}
-}
-.navbar-fixed-bottom{
-	.navbar-inner {
-		background: white;
-}
-}
 
-
-
-@media screen and (max-width: 500px){
+/*@media screen and (max-width: 500px){
 	nav{
 		display: none;
 	}
@@ -138,7 +201,7 @@ footer {
 	footer {
 		display: none;
 	}
-}	
+}	*/
 
 	
 	
