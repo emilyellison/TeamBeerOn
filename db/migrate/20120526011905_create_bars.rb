@@ -6,7 +6,7 @@ class CreateBars < ActiveRecord::Migration
       t.string :city
       t.string :state
       t.integer :zip
-      t.integer :phone
+      t.string :phone
       t.string :website
       t.time :open_sunday
       t.time :open_monday
