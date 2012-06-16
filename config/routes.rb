@@ -1,6 +1,6 @@
 TeamBeerOn::Application.routes.draw do
   
-  resources :ratings
+  resources :ratings, except: [ :index ]
 
   root to: 'static_pages#home'
   
