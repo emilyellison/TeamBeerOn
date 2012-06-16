@@ -19,8 +19,9 @@ TeamBeerOn::Application.routes.draw do
   post "sessions/create" => 'sessions#create'
 
   get 'location' => 'beer_me#location', as: :location
-  get 'preference' => 'beer_me#preference', as: :beers
   post 'location' => 'beer_me#pass_location', as: :pass_location
+  get 'preference' => 'beer_me#preference', as: :beers
+  post 'preference' => 'beer_me#save_preference_and_recommendation', as: :save_preference_and_recommendation
   get 'recommendation' => 'beer_me#recommendation', as: :recommendation
 
   get 'contact' => 'information#contact'

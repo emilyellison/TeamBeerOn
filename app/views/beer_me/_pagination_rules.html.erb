@@ -1,6 +1,6 @@
 <%# If there is only one beer, don't show pagination or any arrows. %>
 
-<% if @beers.count == 1 %>
+<% if @beers.count > 1 %>
 <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
 <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
 	

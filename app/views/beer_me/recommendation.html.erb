@@ -64,8 +64,8 @@
 	  </div>
 		<%# Only show pagination and previous/next if there is more than one beer. %>
 
-		<%#= render 'beer_me/pagination_rules' %>
-
+		<%= render 'beer_me/pagination_rules' %>
+		<%= Beer.characteristics %>
 	</div>
 	<%= params %>
 <% else %>
