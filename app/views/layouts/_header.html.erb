@@ -21,25 +21,29 @@
 				</div>
 				<br/><br/><br/>
 				<div class='beer_progress'>
-					<div class='row'>
-						<div class='span12'>										
-							<ul>
-								<div class='span4'>
-								  <li>
-								    <%= link_to '1. Where are you?', location_url, class: @location_link %>
-								  </li>
+					<div class='progress'>
+						<div class="bar" style="width: 100%;">
+							<div class='row'>
+								<div class='span12'>										
+									<ul>
+										<div class='span4'>
+										  <li>
+										    <%= link_to '1. Where are you?', location_url, class: @location_link %>
+										  </li>
+										</div>
+										<div class='span4'>
+										  <li>
+										    <%= link_to '2. What would you like?', '#', class: @preference_link %>
+										  </li>
+										</div>
+										<div class='span3'>
+										  <li>
+										    <%= link_to '3. Recommendation', '#', class: @recommendation_link %>
+										  </li>
+										</div>
+									</ul>
 								</div>
-								<div class='span4'>
-								  <li>
-								    <%= link_to '2. What would you like?', '#', class: @preference_link %>
-								  </li>
-								</div>
-								<div class='span3'>
-								  <li>
-								    <%= link_to '3. Recommendation', '#', class: @recommendation_link %>
-								  </li>
-								</div>
-							</ul>
+							</div>
 						</div>
 					</div>
 				</div>

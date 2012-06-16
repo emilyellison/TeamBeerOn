@@ -17,29 +17,29 @@
   </div>
   <div class="field">
     <%= f.label :smell %><br />
-    <%= f.text_field :smell %>
+    <%= f.text_area :smell, rows: 2 %>
   </div>
   <div class="field">
     <%= f.label :look %><br />
-    <%= f.text_field :look %>
+    <%= f.text_area :look, rows: 2 %>
   </div>
   <div class="field">
     <%= f.label :taste %><br />
-    <%= f.text_field :taste %>
+    <%= f.text_area :taste, rows: 2 %>
   </div>
   <div class="field">
     <%= f.label :feel %><br />
-    <%= f.text_field :feel %>
+    <%= f.text_area :feel, rows: 2 %>
   </div>
   <div class="field">
     <%= f.label :overall %><br />
-    <%= f.text_field :overall %>
+    <%= f.text_area :overall, rows: 2 %>
   </div>
   <div class="field">
     <%= f.label :story %><br />
-    <%= f.text_field :story %>
+    <%= f.text_area :story, rows: 3 %><br/>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Rate', class: 'btn btn-large btn-primary' %>
   </div>
 <% end %>

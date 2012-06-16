@@ -70,10 +70,18 @@ $apptitle:white;
 				margin:0px -10px;
 				font-size:20px;
 			}
+
 			.beer_progress {
 				background:white;
 				margin:-5px 0px 10px;
 				padding:0px -25px;
+				.progress {
+				
+					height: 35px;
+					.bar {
+						height:35px;
+					}
+				}
 				ul {
 					list-style:none;
 					
