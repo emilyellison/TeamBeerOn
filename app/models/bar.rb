@@ -3,6 +3,7 @@ class Bar < ActiveRecord::Base
 
   has_many :beer_experiences
   has_many :beers, through: :beer_experiences
+  has_many :beer_me_searches
   
   validates :name, presence: true
   validates :address, presence: true
