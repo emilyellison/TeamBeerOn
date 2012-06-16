@@ -6,17 +6,25 @@
 					<ul class='nav pull-left'>
 						<li><%= link_to 'BeerOn', root_url, id: 'apptitle' %><li>
 					</ul>
-					<ul class='nav pull-right'>
-						<li>
-							<%= link_to "#{@current_member.name}", member_url(@current_member.id), id: 'userid' if @current_member %>
-						</li>
-						<% if @current_member %>
-							<li><%= link_to "Profile", member_url(@current_member.id) %></li>
-							<li><%= link_to "Sign Out", sign_out_url %></li>
-						<% else %>
-							<li><%= link_to "Sign Up", new_member_url %></li>
+					<% if @current_member %>
+						<ul class="nav pull-right">
+						  <li class="dropdown">
+						    <a href="<%= member_url(@current_member.id) %>" class="dropdown-toggle" data-toggle="dropdown", id='userid'>
+						    	<%= @current_member.name %>
+						      <b class="caret"></b>
+						    </a>
+						    <ul class="dropdown-menu">
+						    	<%= link_to 'Profile', member_url(@current_member.id) %>
+									<%= link_to 'Sign Out', sign_out_url %>
+						    </ul>
+						  </li>
+						</ul>
+					<% else %>
+						<ul class='nav pull-right non_signed_in_user'>
 							<li><%= link_to "Sign In", new_session_url %></li>
-						<% end %>
+							<li><%= link_to "Sign Up", new_member_url %></li>
+						</ul>
+					<% end %>
 					</ul>
 				</div>
 				<br/><br/><br/>
