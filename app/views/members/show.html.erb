@@ -11,12 +11,17 @@
 		<div class='pull-right'>
 			<h2>Twitter Feed</h2>
 			<br/>
-			<% @tweets.each do |tweet| %>
-				<h3><%= link_to tweet[:from_user_name], "https://twitter.com/#!/#{tweet[:from_user]}" %> @<%= tweet[:from_user] %></h3>
-				<p><%= tweet[:text] %></p>
-				<p><%= tweet[:created_at] %></p>
-				<hr/>
-			<% end %>
+			<div class='tweets'>
+				<% @tweets.each do |tweet| %>
+					<h3>
+						<%= link_to tweet[:from_user_name], "https://twitter.com/#!/#{tweet[:from_user]}" %> 
+						<span class='grey'>@<%= tweet[:from_user] %></span>
+					</h3>
+					<p><%= tweet[:text] %></p>
+					<p class='grey'><%= time_ago_in_words(tweet[:created_at]) %> ago.</p>
+					<hr/>
+				<% end %>
+			</div>
 		</div>
 	</div>
 </div>
