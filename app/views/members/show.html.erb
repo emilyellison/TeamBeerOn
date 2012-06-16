@@ -14,7 +14,7 @@
 			<div class='ratings'>
 				<h2>Ratings</h2>
 				<br/>
-				<% @ratings.each do |rating| %>
+				<% @ratings.reverse.each do |rating| %>
 					<h3>
 						<%= link_to rating.beer.name, rating_url(rating.id) %> 
 						<%= "(#{rating.score})" if rating.score %>
@@ -30,7 +30,7 @@
 			<div class='tweets'>
 				<h2>#beeron2012 Feed</h2>
 				<br/>
-				<% @tweets.each do |tweet| %>
+				<% @tweets.reverse.each do |tweet| %>
 					<h3>
 						<%= link_to tweet[:from_user_name], "https://twitter.com/#!/#{tweet[:from_user]}" %> 
 						<span class='grey'>@<%= tweet[:from_user] %></span>
