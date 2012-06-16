@@ -90,7 +90,8 @@ class BeerMeController < ApplicationController
       :rarity => params[:rarity], 
       :bar_id => params[:bar_id], 
       :draft => params[:draft],
-      :q => params[:q])
+      :q => params[:q],
+      :beer_me_search_id => @beer_me_search.id)
   end
   
   def recommendation

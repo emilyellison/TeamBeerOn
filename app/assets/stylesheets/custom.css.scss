@@ -156,10 +156,16 @@ $apptitle:white;
 	li {
 		margin:6px 0px;
 	}
-	.gravatar {
-		border-radius:8px;
-		box-shadow:2px 2px 1px rgba(0, 0, 0, 0.25);
-		border:1px solid lightgrey;
+	.member_info {
+		padding-right:300px;
+		.gravatar {
+			border-radius:8px;
+			box-shadow:2px 2px 1px rgba(0, 0, 0, 0.25);
+			border:1px solid lightgrey;
+		}
+	}
+	.ratings {
+		padding-right:100px;
 	}
 	form {
 		line-height:10px;
@@ -249,11 +255,9 @@ $apptitle:white;
 		background:-linear-gradient(top, #1f1f1f, #272829);
 		border-radius:8px;
 	}
-	.tweets {
-		.grey {
-			color:#a9a9a9;
-			font-weight:normal;
-		}
+	.grey {
+		color:#a9a9a9;
+		font-weight:normal;
 	}
 }
 

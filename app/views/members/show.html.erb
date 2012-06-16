@@ -1,17 +1,30 @@
 <div class='row'>
 	<div class='span6'>
 		<div class='pull-left'>
-		  <%= gravatar_for @member, size: 150 %><br/><br/>
-		  <h2><%= @member.name %></h2>
-		  <h3><%= @member.email %></h3>
-			<br/><br/>
+			<div class='member_info'>
+			  <%= gravatar_for @member, size: 150 %><br/><br/>
+			  <h2><%= @member.name %></h2>
+			  <h3><%= @member.email %></h3>
+				<br/><br/>
+			</div>
 		</div>
 	</div>
 	<div class='span6'>
-		<div class='pull-right'>
-			<h2>#beeron2012 Feed</h2>
-			<br/>
+		<div class='pull-left'>
+			<div class='ratings'>
+				<h2>Ratings</h2>
+				<br/>
+				<% @ratings.each do |rating| %>
+					<h3><%= link_to rating.beer.name, rating_url(rating.id) %> <%= "(#{rating.score})" if rating.score %></h3>
+					<p class='grey'><%= time_ago_in_words(rating.created_at) %> ago.</p>
+					<div class='span6'></div><hr/>
+				<% end %>
+			</div>
+		</div>
+		<div class='pull-left'>
 			<div class='tweets'>
+				<h2>#beeron2012 Feed</h2>
+				<br/>
 				<% @tweets.each do |tweet| %>
 					<h3>
 						<%= link_to tweet[:from_user_name], "https://twitter.com/#!/#{tweet[:from_user]}" %> 
@@ -19,9 +32,10 @@
 					</h3>
 					<p><%= tweet[:text] %></p>
 					<p class='grey'><%= time_ago_in_words(tweet[:created_at]) %> ago.</p>
-					<hr/>
+					<div class='span6'></div><hr/>
 				<% end %>
 			</div>
 		</div>
 	</div>
+
 </div>

@@ -10,10 +10,21 @@
       </ul>
     </div>
   <% end %>
-
+	<div class='field'>
+		<%= f.hidden_field :beer_id, value: params[:beer_id] %>
+		<%= f.hidden_field :beer_me_search_id, value: params[:beer_me_search_id] %>
+	</div>
   <div class="field">
     <%= f.label :score %><br />
     <%= f.number_field :score %>
+  </div>
+  <div class="field">
+    <%= f.label :story %><br />
+    <%= f.text_area :story, rows: 3 %><br/>
+  </div>
+  <div class="field">
+    <%= f.label :overall %><br />
+    <%= f.text_area :overall, rows: 2 %>
   </div>
   <div class="field">
     <%= f.label :smell %><br />
@@ -30,14 +41,6 @@
   <div class="field">
     <%= f.label :feel %><br />
     <%= f.text_area :feel, rows: 2 %>
-  </div>
-  <div class="field">
-    <%= f.label :overall %><br />
-    <%= f.text_area :overall, rows: 2 %>
-  </div>
-  <div class="field">
-    <%= f.label :story %><br />
-    <%= f.text_area :story, rows: 3 %><br/>
   </div>
   <div class="actions">
     <%= f.submit 'Rate', class: 'btn btn-large btn-primary' %>

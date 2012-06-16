@@ -56,7 +56,7 @@
 							</div>
 		    		</div>
 						<div class='span1'>
-							<%= link_to 'Rate', new_rating_url(:beer_id => beer.id), class: 'btn btn-large btn-primary' if @current_member.present? %>
+							<%= link_to 'Rate', new_rating_url(:beer_id => beer.id, :beer_me_search_id => params[:beer_me_search_id]), class: 'btn btn-large btn-primary' if @current_member.present? %>
 						</div>
 					</div>
 		    </div>

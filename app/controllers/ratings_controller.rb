@@ -10,6 +10,7 @@ class RatingsController < ApplicationController
 
   def new
     @rating = Rating.new
+    @beer = Beer.find_by_id(params[:beer_id])
   end
 
   def edit
@@ -18,11 +19,11 @@ class RatingsController < ApplicationController
 
   def create
     @rating = Rating.new(params[:rating])
-
+    @rating.member_id = @current_member.id
     if @rating.save
-      redirect_to @rating, notice: 'Thanks for rating this beer!'
+      redirect_to member_url(@current_member.id), notice: 'Thanks for rating this beer!'
     else
-    render action: "new"
+      render action: "new"
     end
   end
 
