@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120616174656) do
+ActiveRecord::Schema.define(:version => 20120616214716) do
 
   create_table "bars", :force => true do |t|
     t.string   "name"
@@ -170,8 +170,11 @@ ActiveRecord::Schema.define(:version => 20120616174656) do
     t.text     "feel"
     t.text     "overall"
     t.text     "story"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+    t.integer  "beer_id"
+    t.integer  "member_id"
+    t.integer  "beer_me_search_id"
   end
 
   create_table "teams", :force => true do |t|
