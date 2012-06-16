@@ -15,6 +15,7 @@
 						    </a>
 						    <ul class="dropdown-menu">
 						    	<%= link_to 'Profile', member_url(@current_member.id) %>
+									<%= link_to 'Update Profile', edit_member_url(@current_member.id) %>
 									<%= link_to 'Sign Out', sign_out_url %>
 						    </ul>
 						  </li>
