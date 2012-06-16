@@ -70,6 +70,35 @@ $apptitle:white;
 				margin:0px -10px;
 				font-size:20px;
 			}
+			.beer_progress {
+				background:white;
+				margin:-5px 0px 10px;
+				padding:0px -25px;
+				ul {
+					list-style:none;
+					
+					li {
+						line-height:35px;
+						font-size:17px;
+					}
+					.span4 {
+						margin-left:0px;
+						
+					}
+					.span3 {
+						margin-right:0px;
+					}
+					a {
+						font-weight:bold;
+						color:#a9a9a9;
+						text-shadow:0px 0px 0px rgba(0,0,0,0);
+
+					}
+					.active {
+						color:#05C;
+					}
+				}
+			}
 		}
 	}
 }

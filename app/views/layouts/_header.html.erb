@@ -20,13 +20,28 @@
 					</ul>
 				</div>
 				<br/><br/><br/>
-				<div class='beeronmenu'>
-					<ul class='breadcrumb'>
-						<li class='btn btn2'><%= link_to 'First: Where are You?', location_url %></li> <span class="divider">>>></span>
-						<li class='btn'><%= link_to 'Next: What are you in the mood for?', location_url %></li> <span class="divider">>>></span>
-						<li class='btn'><%= link_to 'Now Drink this!' , location_url %></li>
-					  <!-- <li class="active">Data</li> -->
-					</ul>
+				<div class='beer_progress'>
+					<div class='row'>
+						<div class='span12'>										
+							<ul>
+								<div class='span4'>
+								  <li>
+								    <%= link_to '1. Where are you?', location_url, class: @location_link %>
+								  </li>
+								</div>
+								<div class='span4'>
+								  <li>
+								    <%= link_to '2. What would you like?', '#', class: @preference_link %>
+								  </li>
+								</div>
+								<div class='span3'>
+								  <li>
+								    <%= link_to '3. Recommendation', '#', class: @recommendation_link %>
+								  </li>
+								</div>
+							</ul>
+						</div>
+					</div>
 				</div>
 			</header>
 		</div>

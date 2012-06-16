@@ -1,6 +1,7 @@
 class BeerMeController < ApplicationController
   
   def location
+    @location_link = 'active'
     @bars = Bar.all.map(&:name)
   end
   
@@ -15,6 +16,7 @@ class BeerMeController < ApplicationController
   end
   
   def preference
+    @preference_link = 'active'
     if params[:draft] == 'true'
       @available_beer = Beer.joins(:beer_experiences).where('beer_experiences.bar_id LIKE ?', params[:bar_id]).where('beer_experiences.draft = ?', 1) 
     else
@@ -35,6 +37,7 @@ class BeerMeController < ApplicationController
   end
   
   def recommendation
+    @recommendation_link = 'active'
     @all_beer = Beer.joins(:beer_experiences).where('beer_experiences.bar_id LIKE ?', params[:bar_id])
     if params[:rarity] == 'true'
       if params[:draft] == 'true'
