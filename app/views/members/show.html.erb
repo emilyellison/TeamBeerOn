@@ -15,7 +15,12 @@
 				<h2>Ratings</h2>
 				<br/>
 				<% @ratings.each do |rating| %>
-					<h3><%= link_to rating.beer.name, rating_url(rating.id) %> <%= "(#{rating.score})" if rating.score %></h3>
+					<h3>
+						<%= link_to rating.beer.name, rating_url(rating.id) %> 
+						<%= "(#{rating.score})" if rating.score %>
+						<span class='grey'><%= link_to 'Edit', edit_rating_url(rating.id) %></span>
+						<span class='grey'><%= link_to 'Delete', rating_url(rating.id), method: :delete, confirm: 'Sure about that?'%></span>
+					</h3>
 					<p class='grey'><%= time_ago_in_words(rating.created_at) %> ago.</p>
 					<div class='span6'></div><hr/>
 				<% end %>
@@ -37,5 +42,4 @@
 			</div>
 		</div>
 	</div>
-
 </div>
