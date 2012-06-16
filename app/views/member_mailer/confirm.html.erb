@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
   <body style='font-family:arial; margin:20px auto; width:960px;'>
-    <h1 style='font-size:30px; color:#BF4D28;'>Welcome to BeerOn, <%= @member.name.split(' ').first %>!</h1>
+    <h1 style='font-size:20px; color:#BF4D28;'>Welcome to BeerOn, <%= @member.name.split(' ').first %>!</h1>
 		<br/>
-    <div style='font-size:25px'>
+    <div style='font-size:15px'>
 			<p>
 				Thanks for joining us on the road to beer discovery!
 			</p>
@@ -11,7 +11,7 @@
 				We hope to help you find the beers you'll love and discover new beers along the way.
 	    </p>
 			<% if @member.id <= 50 %>
-				<p style='background-color:grey;'>
+				<p>
 					Because you are the <%= @member.id.ordinalize %> person to join the BeerOn community,
 					you've just won a <span style='font-weight:bold;color:#BF4D28'>free beer</span>
 					at Moe's Cantina!
@@ -33,7 +33,7 @@
 				Now go out there. And get your <a style='text-decoration:none;color:#05c;' href='http://beeron.herokuapp.com/location'>BeerOn</a>.
 			</p>
 			<br/>
-			<h2 style='font-size:25px; font-weight:bold;'>
+			<h2 style='font-size:20px; font-weight:bold;'>
 				<a style='text-decoration:none;color:#05c;' href='http://beeron.herokuapp.com/about'>-Team BeerOn</a>
 			</h2>
 			<p style='margin:-10px 0px'>
