@@ -99,9 +99,9 @@ class BeerMeController < ApplicationController
     @all_beer = Beer.joins(:beer_experiences).where('beer_experiences.bar_id LIKE ?', params[:bar_id])
     if params[:rarity] == 'true'
       if params[:draft] == 'true'
-        @beers = @all_beer.where('beer_experiences.draft = ?', 1).order('rarity asc').find_all_by_id(params[:available_beer]).take(20)
+        @beers = @all_beer.where('beer_experiences.draft = ?', 1).order('rarity desc').find_all_by_id(params[:available_beer]).take(20)
       else
-        @beers = @all_beer.order('rarity asc').find_all_by_id(params[:available_beer]).take(20)
+        @beers = @all_beer.order('rarity desc').find_all_by_id(params[:available_beer]).take(20)
       end
     else
       if params[:draft] == 'true'

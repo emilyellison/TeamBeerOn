@@ -19,13 +19,16 @@
     <%= f.number_field :score %>
   </div>
   <div class="field">
-    <%= f.label :story %><br />
-    <%= f.text_area :story, rows: 3 %><br/>
+    <%= f.label :story, 'What\'s your story behind this beer?' %><br />
+    <%= f.text_area :story, rows: 4 %><br/>
   </div>
   <div class="field">
-    <%= f.label :overall %><br />
+    <%= f.label :overall, 'What was your overall impression?' %><br />
     <%= f.text_area :overall, rows: 2 %>
   </div>
+	<br/><br/>
+	<h3>Describe your beer's...</h3>
+	<br/>
   <div class="field">
     <%= f.label :smell %><br />
     <%= f.text_area :smell, rows: 2 %>
@@ -42,6 +45,7 @@
     <%= f.label :feel %><br />
     <%= f.text_area :feel, rows: 2 %>
   </div>
+	<br/>
   <div class="actions">
     <%= f.submit 'Rate', class: 'btn btn-large btn-primary' %>
   </div>
