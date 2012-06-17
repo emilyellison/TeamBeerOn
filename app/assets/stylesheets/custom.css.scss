@@ -196,27 +196,21 @@ $apptitle:white;
 			width:200px;
 			border-radius:4px;
 		}
-		#rarity_true, #rarity_false, #draft_true, #draft_false {
-			font-size:16px;
-			padding:5px 15px;
-			display:block;
-			width:100px;
-			margin-bottom:20px;
-		}
+
 		.submit_links {
 		position:absolute; bottom:0;
 		}
-		#reset_style, #reset_characteristics {
-			font-size:16px;
-			margin-left:5px;
-			font-weight:normal;
-			a {
-				
-			}
-		}
+
 
 	}
+	#rarity_true, #rarity_false, #draft_true, #draft_false {
+		padding:5px 0px;
+		display:block;
+		margin:0px 0px;
 
+		font-size:16px;
+	
+	}
 	.teambeeron {
 		img {
 			border-radius:8px;
