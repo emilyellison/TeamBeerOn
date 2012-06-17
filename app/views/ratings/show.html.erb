@@ -1,5 +1,5 @@
 <div class='well'>
-<h2><%= @beer.name %></h2>
+<h2><%= @beer.name %> <span class='grey'><%= link_to 'Edit', edit_rating_url(@rating.id) %></span></h2>
 <% if @beer.brewery.present? %>
 	<h3><%= @beer.brewery.name %></h3>
 	<h3><%= @beer.brewery.city %>, <%= @beer.brewery.state %>, <%= @beer.brewery.country %></h3>
