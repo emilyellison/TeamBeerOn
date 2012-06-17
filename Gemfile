@@ -6,6 +6,8 @@ gem 'ransack'
 gem 'bootstrap-sass'
 gem 'newrelic_rpm'
 gem 'jquery-star-rating-rails'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

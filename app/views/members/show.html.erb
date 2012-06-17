@@ -12,9 +12,9 @@
 	<div class='span6'>
 		<div class='pull-left'>
 			<div class='ratings'>
-				<h2>Ratings</h2>
+				<h2>Ratings</h2> <i class="icon-search"> </i>
 				<br/>
-				<% @ratings.reverse.each do |rating| %>
+				<% @ratings.each do |rating| %>
 					<h3>
 						<%= link_to rating.beer.name, rating_url(rating.id) %>
 						<% if rating.score %> 
@@ -26,6 +26,7 @@
 					<p class='grey'><%= time_ago_in_words(rating.created_at) %> ago.</p>
 					<div class='span6'></div><hr/>
 				<% end %>
+				<%= will_paginate @ratings %>
 			</div>
 		</div>
 		<div class='pull-left'>

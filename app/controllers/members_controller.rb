@@ -8,7 +8,8 @@ class MembersController < ApplicationController
 
   def show
   	@member = Member.find(params[:id])
-  	@ratings = Rating.find_all_by_member_id(params[:id])
+  	@ratings = Rating.order('created_at DESC').paginate(page: params[:page], :per_page => 5).find_all_by_member_id(params[:id])
+
   	@json = JSON.parse(open('http://search.twitter.com/search.json?q=beeron2012&rpp=5&include_entities=true&with_twitter_user_id=true&result_type=mixed').read)
     @tweets = []
     @json['results'].each do |json| 
