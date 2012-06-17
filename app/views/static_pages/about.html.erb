@@ -1,21 +1,41 @@
 <div class='row'>
-	<div class='span12'>
-
-		<h2>We like beer, so we made an app.</h2><br/>
-		<p>Twelve weeks ago, we barely knew what a Ruby on Rails was.</p>
-		<p>And today we have a Ruby on Rails app celebrating our love of beer.</p>
-		<br/>
-		<div class='teambeeron'>
-			<h2>Meet Team BeerOn.</h2><br/>
+	<div class=''>
+		<div class='span5'>
+			<div class='pull-left'>
+				<h2>We like beer, so we made an app.</h2><br/>
+				<p>Twelve weeks ago, we barely knew what a Ruby on Rails was.</p>
+				<p>Today we have a Rails app celebrating our love of beer.</p>
+				<br/>
+				<div class='teambeeron'>
+					<h2>Meet Team BeerOn.</h2><br/>
 			
-			<% @teams.each do |team| %>
-				<%= image_tag team.image, width: 250, alt: team.name if team.image.present? %>
-				<br/><br/>
-				<h3><%= team.name %></h3>
-				<h4><%= team.description %></h4>
-				<br/><br/>		
-			<% end %>
-			<br/><br/>
+					<% @teams.each do |team| %>
+						<%= image_tag team.image, width: 250, alt: team.name if team.image.present? %>
+						<br/><br/>
+						<h3><%= team.name %></h3>
+						<h4><%= team.description %></h4>
+						<br/><br/>		
+					<% end %>
+					<br/><br/>
+				</div>
+			</div>
+		</div>
+		<div class='span6'>
+			<div class='pull-left'>
+				<div class='tweets'>
+					<h2>@BeerOn2012 Feed</h2>
+					<br/>
+					<% @tweets.each do |tweet| %>
+						<h3>
+							<%= link_to tweet[:from_user_name], "https://twitter.com/#!/#{tweet[:from_user]}" %> 
+							<span class='grey'>@<%= tweet[:from_user] %></span>
+						</h3>
+						<p><%= tweet[:text] %></p>
+						<p class='grey'><%= tweet[:created_at] %> ago.</p>
+						<div class='span6'></div><hr/>
+					<% end %>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

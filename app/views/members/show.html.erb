@@ -12,7 +12,7 @@
 	<div class='span6'>
 		<div class='pull-left'>
 			<div class='ratings'>
-				<h2>Your Ratings</h2> <i class="icon-search"> </i>
+				<h2>Ratings History</h2> <i class="icon-search"> </i>
 				<br/>
 				<% @ratings.each do |rating| %>
 					<h3>
@@ -27,21 +27,6 @@
 					<div class='span6'></div><hr/>
 				<% end %>
 				<%= will_paginate @ratings %>
-			</div>
-		</div>
-		<div class='pull-left'>
-			<div class='tweets'>
-				<h2>@BeerOn2012 Feed</h2>
-				<br/>
-				<% @tweets.each do |tweet| %>
-					<h3>
-						<%= link_to tweet[:from_user_name], "https://twitter.com/#!/#{tweet[:from_user]}" %> 
-						<span class='grey'>@<%= tweet[:from_user] %></span>
-					</h3>
-					<p><%= tweet[:text] %></p>
-					<p class='grey'><%= tweet[:created_at] %> ago.</p>
-					<div class='span6'></div><hr/>
-				<% end %>
 			</div>
 		</div>
 	</div>
