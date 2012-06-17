@@ -19,7 +19,7 @@ class RatingsController < ApplicationController
     @rating = Rating.new(params[:rating])
     @rating.member_id = @current_member.id
     if @rating.save
-      redirect_to session[:return_to], notice: 'Thanks for rating this beer!'
+      redirect_to session[:return_to], notice: 'Your rating was successful. Have another beer.'
     else
       render action: "new"
     end
@@ -28,7 +28,7 @@ class RatingsController < ApplicationController
   def update
     @rating = Rating.find(params[:id])
       if @rating.update_attributes(params[:rating])
-          redirect_to @rating, notice: 'Rating successfully updated.'
+          redirect_to @rating, notice: 'Your rating successfully updated.'
       else
         render action: "edit"
       end
