@@ -2,6 +2,7 @@
 	<div class='span12'>
 		<div class='well'>
 			<h2>Where are you?</h2>
+		
 			<div id='bar_location_form'>
 				<%= form_tag pass_location_url do %>
 					<%= select_tag :keyword, options_for_select(@bars.sort), include_blank: true %><br/><br/>
@@ -17,3 +18,4 @@
 		</div>
 	</div>
 </div>
+
