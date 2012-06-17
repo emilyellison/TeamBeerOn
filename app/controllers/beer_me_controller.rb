@@ -95,6 +95,7 @@ class BeerMeController < ApplicationController
   end
   
   def recommendation
+    session[:return_to] = request.fullpath
     @recommendation_link = 'active'
     @all_beer = Beer.joins(:beer_experiences).where('beer_experiences.bar_id LIKE ?', params[:bar_id])
     if params[:rarity] == 'true'

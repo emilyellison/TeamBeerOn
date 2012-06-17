@@ -49,9 +49,9 @@
 					</span>
 				</h3>
 				<% if params[:rarity] == "true" %>
-					<%= link_to 'Rarity', beers_url(:bar_id => params[:bar_id], :q => params[:q], :rarity => false, :draft => params[:draft] ), remote: true, id: 'rarity_true', class: 'btn btn-danger ', rel: 'popover', 'data-original-title' => 'Rarity', 'data-content' => 'Select to order your results from most rare to least rare.' %>
+					<%= link_to 'Rarity', beers_url(:bar_id => params[:bar_id], :q => params[:q], :rarity => false, :draft => params[:draft] ), remote: true, id: 'rarity_true', class: 'btn btn-danger span3', rel: 'popover', 'data-original-title' => 'Rarity', 'data-content' => 'Select to order your results from most rare to least rare.' %>
 				<% else %>
-					<%= link_to 'Rarity', beers_url(:bar_id => params[:bar_id], :q => params[:q], :rarity => true, :draft => params[:draft] ), remote: true, id: 'rarity_false', class: 'btn btn-warning ', rel: 'popover', 'data-original-title' => 'Rarity', 'data-content' => 'Select to order your results from most rare to least rare.' %>			
+					<%= link_to 'Rarity', beers_url(:bar_id => params[:bar_id], :q => params[:q], :rarity => true, :draft => params[:draft] ), remote: true, id: 'rarity_false', class: 'btn btn-warning span3', rel: 'popover', 'data-original-title' => 'Rarity', 'data-content' => 'Select to order your results from most rare to least rare.' %>			
 				<% end %>
 			</div>
 			
@@ -63,7 +63,7 @@
 					<%= link_to 'Draft', beers_url(:bar_id => params[:bar_id], :q => params[:q], :rarity => params[:rarity], :draft => true ), remote: true, id: 'draft_false', class: 'btn btn-warning', rel: 'popover', 'data-original-title' => 'Draft', 'data-content' => 'Select to only be recommended beers that are served on draft.' %>			
 				<% end %>
 			</div>
-		
+			<br/><br/>
 	</div>
 	<div class='row'>
 		<div class='span12'>

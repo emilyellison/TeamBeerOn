@@ -136,6 +136,12 @@ $apptitle:white;
 					}
 					.active {
 						color:#08C;
+						font-weight:bold;
+						text-shadow:0px 0px 0px rgba(0,0,0,0);
+					}
+					span {
+						font-weight:bold;
+						text-shadow:0px 0px 0px rgba(0,0,0,0);
 					}
 				}
 			}
@@ -200,27 +206,21 @@ $apptitle:white;
 			width:200px;
 			border-radius:4px;
 		}
-		#rarity_true, #rarity_false, #draft_true, #draft_false {
-			font-size:16px;
-			padding:5px 15px;
-			display:block;
-			width:100px;
-			margin-bottom:20px;
-		}
+
 		.submit_links {
 		position:absolute; bottom:0;
 		}
-		#reset_style, #reset_characteristics {
-			font-size:16px;
-			margin-left:5px;
-			font-weight:normal;
-			a {
-				
-			}
-		}
+
 
 	}
+	#rarity_true, #rarity_false, #draft_true, #draft_false {
+		padding:5px 0px;
+		display:block;
+		margin:0px 0px;
 
+		font-size:16px;
+	
+	}
 	.teambeeron {
 		img {
 			border-radius:8px;
@@ -236,6 +236,9 @@ $apptitle:white;
 		background:-o-linear-gradient(top, #1f1f1f, #272829);
 		background:-linear-gradient(top, #1f1f1f, #272829);
 		border-radius:8px;
+		.span1 {
+			
+		}
 		.span4 {
 			padding:50px 0px;
 			h1, h2 {
