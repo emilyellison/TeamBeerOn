@@ -1,27 +1,31 @@
-<div class='center hero-unit'>
-	<h2>Welcome to BeerOn.</h2>
-	<br/>
-	<p>
-		Built for beer lovers and beer explorers. BeerOn was designed to
-		help you find the perfect beer based on where you are and what
-		you're in the mood for.
-	</p>
-	<p>
-		How does it work? Hit <%= link_to 'Start', location_url %>. Tell us 
-		<strong>which bar you're at</strong>, so we can recommend from 
-		their beer menu. Then, tell us <strong>what you're in the mood 
-		for</strong>. You can choose style. You can choose characteristics. 
-		You can choose to only be recommended draft beers. And our favorite 
-		part - you can order your choices by rarity - or how hard to find
-		a beer is based on your location - to maximize your beer discovery 
-		experience.
-	</p>
-	<p>
-		Once you've made your choices, BeerOn will recommend you THE beer 
-		that matches all your requirements, and if you're really lucky - 
-		maybe even several beers.
-	</p>
-	<p>
-		So go ahead. <%= link_to 'Get your BeerOn.', location_url %>
-	</p>
-</div>
+<!-- what is goin on to the right of the three welcomebox's. i tried span 2+6+2 inside of span10 and it bumped the right box below and i tried 2+5+2 and it looks like there is a bunch of space to the right. need to figure out way to look better -->
+
+<div class="row welcomeback well">
+	<div class="span10">
+		<h1>
+		<center>Welcome to BeerOn!</center>
+		</h1>
+	<div class="row">
+		<div class="hero-unit span2 welcomebox">
+			<p>
+			We built BeerOn to help you discover beers. We have solved the problem of complicated
+			beers menus and poor recommendations from staff and bartenders. They don't know what you like!
+			</p>
+		</div>
+		<div class="hero-unit span5 welcomebox">
+	    	<p>
+ 	    	Here's how it works:
+ 			<p class="well welcomebox"><u><strong>Step 1:</strong></u> <%= link_to 'Start', location_url %> by letting us know <strong>which bar you're at</strong>.</p>
+			<p class="well welcomebox"><u><strong>Step 2:</strong></u> Next let us know <strong>what you're in the mood for</strong> by toggling through style, draft, rarity, and characteristics.</p>
+			<p class="well welcomebox"><u><strong>Step 3:</strong></u> Click through your personal recommendations from us.</p>
+	    	</p>
+		</div>
+		<div class="hero-unit span2 welcomebox">
+			<p>
+			We are constantly adding new bars so please let us know any that you want us to add.
+			Send us a *message our *tweet at us with your experiences and feedback.
+			</p>
+		</div>
+	</div>
+	</div>	
+</div>		
