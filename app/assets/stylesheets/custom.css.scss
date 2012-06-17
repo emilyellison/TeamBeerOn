@@ -86,6 +86,11 @@ $apptitle:white;
 						color:#333;
 						text-shadow:0px 0px 0px rgba(0,0,0,0);
 					}
+					li:hover {
+						a {
+							color:white;
+						}
+					}
 				}
 				.non_signed_in_user {
 					a {
