@@ -23,8 +23,6 @@ TeamBeerOn::Application.routes.draw do
   get 'preference' => 'beer_me#preference', as: :beers
   post 'preference' => 'beer_me#save_preference_and_recommendation', as: :save_preference_and_recommendation
   get 'recommendation' => 'beer_me#recommendation', as: :recommendation
-
-  get 'contact' => 'information#contact'
   
   get '/contact_us' => 'inquiries#new', :as => :contact_us
   post '/contact_us' => 'inquiries#create'
