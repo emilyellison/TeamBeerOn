@@ -1,40 +1,45 @@
-<p id="notice"><%= notice %></p>
-
+<div class='well'>
+<h2><%= @beer.name %></h2>
+<% if @beer.brewery.present? %>
+	<h3><%= @beer.brewery.name %></h3>
+	<h3><%= @beer.brewery.city %>, <%= @beer.brewery.state %>, <%= @beer.brewery.country %></h3>
+<% end %>
+<br/>
 <p>
-  <b>Rating:</b>
+  <b>Rating</b><br/>
   <%= @rating.score %>
 </p>
 
 <p>
-  <b>Smell:</b>
+  <b>The Story Behind the Beer</b><br/>
+  <%= @rating.story %>
+</p>
+<p>
+  <b>Overall</b><br/>
+  <%= @rating.overall %>
+</p>
+<p>
+  <b>Smell</b><br/>
   <%= @rating.smell %>
 </p>
 
 <p>
-  <b>Look:</b>
+  <b>Look</b><br/>
   <%= @rating.look %>
 </p>
 
 <p>
-  <b>Taste:</b>
+  <b>Taste</b><br/>
   <%= @rating.taste %>
 </p>
 
 <p>
-  <b>Feel:</b>
+  <b>Feel</b><br/>
   <%= @rating.feel %>
 </p>
 
-<p>
-  <b>Overall:</b>
-  <%= @rating.overall %>
-</p>
-
-<p>
-  <b>Story:</b>
-  <%= @rating.story %>
-</p>
 
 
-<%= link_to 'Edit', edit_rating_path(@rating) %> |
-<%= link_to 'Back', ratings_path %>
+
+
+</div>

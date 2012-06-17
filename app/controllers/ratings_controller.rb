@@ -2,6 +2,7 @@ class RatingsController < ApplicationController
 
   def show
     @rating = Rating.find(params[:id])
+    @beer = Beer.find(@rating.beer.id)
   end
 
   def new
