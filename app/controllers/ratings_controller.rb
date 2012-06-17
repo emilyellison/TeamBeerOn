@@ -19,7 +19,7 @@ class RatingsController < ApplicationController
     @rating = Rating.new(params[:rating])
     @rating.member_id = @current_member.id
     if @rating.save
-      redirect_to member_url(@current_member.id), notice: 'Thanks for rating this beer!'
+      redirect_to session[:return_to], notice: 'Thanks for rating this beer!'
     else
       render action: "new"
     end
