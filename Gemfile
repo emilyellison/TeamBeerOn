@@ -5,6 +5,7 @@ gem 'thin'
 gem 'ransack'
 gem 'bootstrap-sass'
 gem 'newrelic_rpm'
+gem 'jquery-star-rating-rails'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

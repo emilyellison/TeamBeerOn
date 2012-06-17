@@ -15,9 +15,11 @@
 		<%= f.hidden_field :beer_me_search_id, value: params[:beer_me_search_id] %>
 	</div>
   <div class="field">
-    <%= f.label :score %><br />
-    <%= f.number_field :score %>
-  </div>
+    <%= f.label :score, 'How would you rate this beer?' %><br />
+		<% 5.times do |i| %>
+			<%= f.radio_button :score, "#{i + 1}", :class => 'star' %>
+		<% end %>
+  </div><br/><br/><br/>
   <div class="field">
     <%= f.label :story, 'What\'s your story behind this beer?' %><br />
     <%= f.text_area :story, rows: 4 %><br/>

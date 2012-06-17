@@ -11,6 +11,7 @@ class RatingsController < ApplicationController
 
   def edit
     @rating = Rating.find(params[:id])
+    @beer = Beer.find_by_id(params[:beer_id])
   end
 
   def create

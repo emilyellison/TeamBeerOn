@@ -12,5 +12,6 @@
  *= require bootstrap-responsive
  *= require custom
  *= require recommendation
+ *= require jquery-star-rating
  *= require_self
 */

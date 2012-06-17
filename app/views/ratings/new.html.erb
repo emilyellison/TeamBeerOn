@@ -1,13 +1,13 @@
 <div class='well'>
-<h1>Rate Your Beer</h1>
-<br/>
-<h2><%= @beer.name %></h2>
-<% if @beer.brewery.present? %>
-	<h3><%= @beer.brewery.name %></h3>
-	<h3><%= @beer.brewery.city %>, <%= @beer.brewery.state %>, <%= @beer.brewery.country %></h3>
-<% end %>
+	<h1>Rate Your Beer</h1>
+	<br/>
+	<h2><%= @beer.name %></h2>
+	<% if @beer.brewery.present? %>
+		<h3><%= @beer.brewery.name %></h3>
+		<h3><%= @beer.brewery.city %>, <%= @beer.brewery.state %>, <%= @beer.brewery.country %></h3>
+	<% end %>
 
-<%= render 'form' %>
+	<%= render 'form' %>
 </div>
 
 <%= params %>

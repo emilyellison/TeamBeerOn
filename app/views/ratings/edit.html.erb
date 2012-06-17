@@ -1,6 +1,12 @@
-<h1>Editing rating</h1>
+<div class='well'>
+	<h1>Edit Your Rating</h1>
+	<br/>
+	<h2><%= @beer.name %></h2>
+	<% if @beer.brewery.present? %>
+		<h3><%= @beer.brewery.name %></h3>
+		<h3><%= @beer.brewery.city %>, <%= @beer.brewery.state %>, <%= @beer.brewery.country %></h3>
+	<% end %>
 
-<%= render 'form' %>
+	<%= render 'form' %>
+</div>
 
-<%= link_to 'Show', @rating %> |
-<%= link_to 'Back', ratings_path %>
