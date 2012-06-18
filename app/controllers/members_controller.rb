@@ -1,5 +1,3 @@
-require 'open-uri'
-
 class MembersController < ApplicationController
  
   def new

@@ -31,7 +31,7 @@
 							<span class='grey'>@<%= tweet[:from_user] %></span>
 						</h3>
 						<p><%= tweet[:text] %></p>
-						<p class='grey'><%= tweet[:created_at] %> ago.</p>
+						<p class='grey'><%= time_ago_in_words(tweet[:created_at]) %> ago.</p>
 						<div class='span6'></div><hr/>
 					<% end %>
 				</div>

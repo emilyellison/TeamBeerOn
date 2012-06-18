@@ -1,3 +1,5 @@
+require 'open-uri'
+
 class StaticPagesController < ApplicationController
 
   def home
@@ -7,7 +9,7 @@ class StaticPagesController < ApplicationController
   def about
     @teams = Team.all
     @tweets = []
-  	@json_hash = JSON.parse(open('http://search.twitter.com/search.json?q=beeron2012&rpp=5&include_entities=true&with_twitter_user_id=true&result_type=mixed').read)
+    @json_hash = JSON.parse(open('http://search.twitter.com/search.json?q=beeron2012&rpp=5&include_entities=true&with_twitter_user_id=true&result_type=mixed').read)
     @json_hash['results'].each do |json| 
       @tweets << { id: json['id'],
                    created_at: json['created_at'],
