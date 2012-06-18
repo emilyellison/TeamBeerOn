@@ -7,10 +7,10 @@
 			Welcome to BeerOn!
 			</h1>
 			<br/>
-			<h5>
+			<p>
 			We built BeerOn to help you discover beers. BeerOn was designed to recommend
 			you the perfect beer based on which bar you are at and what you are looking for.
-			</h5>	
+			</p>	
 		</div>
 	</div>
 </div>
@@ -26,10 +26,8 @@
 			<p><u><strong>Step 3:</strong></u> Click through your personal recommendations from us.</p>
 		</div>
 	</div>	
-	<div class="span4">
-		<div class="mobile homepicture">
-			<%= link_to image_tag("glowing_beer.jpg", width: 250), location_url%>
-		</div>
+	<div class="mobile homepicture">
+		<%= link_to image_tag("glowing_beer.jpg", class: 'span4'), location_url%>
 	</div>
 </div>
 
@@ -39,6 +37,7 @@
 	<div class="span10 offset1">
 		<div class="well">
 			<h2>Membership Benefits</h2>
+			<br/>
 				<p>
 					All you have to do is create an account in the <%= link_to "Sign Up", sign_up_url%>. Once you have 	created an account, you will be able to rate beers and view the beers that you have rated.
 				</p>

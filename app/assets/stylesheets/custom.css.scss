@@ -65,7 +65,7 @@ $buttonbody: #FFE999;
 $lineborder: #655643;
 $beerontitle: #BF4D28;
 $beerongradient: #A14020;
-$beeroncontent: rgba(161, 64, 32, 0.45);
+$beeroncontent: rgba(161, 64, 32, 0.25);
 $userid: white; /*#80BCA3*/
 /*borders and sizes*/
 $buttonpx: 2px;
@@ -327,7 +327,14 @@ $apptitle:white;
 	}
 }
 
-
+.homepicture {
+	a {	
+		
+		img {
+			border-radius:4px;
+		}
+	}
+}
 
 
 
@@ -339,8 +346,11 @@ $apptitle:white;
 
 @media only screen and (min-width:980px) {
 	.homepicture {
-		margin-top: 5px;
+		margin-top: 0px;
 		margin-left: 20px;
+		img {
+			height:195px;
+		}	
 	}
 }
 
@@ -349,7 +359,10 @@ $apptitle:white;
 		margin:0px 0px 0px 0px;
 	}
 	.homepicture {
-		margin-top: 30px;
+		margin-top: 0px;
+		img {
+			height:233px;
+		} 
 	}
 }
 
@@ -357,6 +370,9 @@ $apptitle:white;
 	.homepicture {
 		margin-top: -5px;
 		margin-left: 40px;
+		img {
+			height:178px;
+		}
 	}
 }
 
