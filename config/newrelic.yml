@@ -3,9 +3,9 @@
 # Ruby, Java, .NET, PHP, and Python applications with deep visibility and low overhead.
 # For more information, visit www.newrelic.com.
 #
-# Generated June 11, 2012
+# Generated June 18, 2012
 #
-# This configuration file is custom generated for EmClicks
+# This configuration file is custom generated for beeron Heroku
 
 # Here are the settings that are common to all environments:
 common: &default_settings
@@ -14,7 +14,7 @@ common: &default_settings
   # You must specify the license key associated with your New Relic
   # account.  This key binds your Agent's data to your account in the
   # New Relic service.
-  license_key: '837fc8ab34275968085ecb65b7304107711bcbcb'
+  license_key: '0077762750fd247fbaaf44397bea9ea148e4dc7d'
   
   # Agent Enabled (Ruby/Rails Only)
   # Use this setting to force the agent to run or not run.
