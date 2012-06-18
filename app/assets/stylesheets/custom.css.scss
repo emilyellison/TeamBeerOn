@@ -301,4 +301,18 @@ $apptitle:white;
 	}
 }
 
+
+/*things to not display on mobile will have a class of mobile added
+possible ideas or this are:
+the beer picture in jcarousel
+maybe footer
+maybe larger buttons for somethings
+check herokuapp
+*/
+@media only screen and (max-width:480px) {	
+	.mobile {
+		display: none;
+	}
+}
+
 	
