@@ -306,7 +306,6 @@ $apptitle:white;
 			}
 		}
 		.span1 {
-			margin:270px 0px 0px 0px;
 			a {
 				font-size:16px;
 			}
@@ -380,11 +379,6 @@ $apptitle:white;
 	}
 }
 
-/*@media only screen and (max-width:) {
-	.beer_text {
-		background:pink;
-	}
-}*/
 
 @media only screen and (min-width:1200px) {
 	
@@ -404,9 +398,29 @@ maybe footer
 maybe larger buttons for somethings
 check herokuapp
 */
-@media only screen and (max-width:768px) {	
+@media only screen and (max-width:770px) {	
 	.mobile {
 		display: none;
+	}
+	.beer_carousel {
+		.beer_text {
+			margin:5% 20%;
+			min-width:100px;
+		}
+		.span1 {
+			margin:-10% 20% 10% 20%;
+
+		}
+	}
+}
+
+
+
+@media only screen and (min-width:770px) {
+	.beer_carousel {
+		.span1 {
+			margin:270px 0px 0px 0px;
+		}
 	}
 }
 
@@ -417,4 +431,5 @@ check herokuapp
 .well {
   background-color: $beeroncontent;
 }
-	
+
+
