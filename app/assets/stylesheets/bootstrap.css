@@ -8,9 +8,6 @@
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
  */
 
-$iconSpritePath: image-url('glyphicons-halflings.png');
-$iconWhiteSpritePath: image-url('glyphicons-halflings-white.png');
-
 article,
 aside,
 details,
@@ -1781,7 +1778,7 @@ table .span24 {
   *margin-right: .3em;
   line-height: 14px;
   vertical-align: text-top;
-  background-image: $iconSpritePath;
+  background-image: url("../img/glyphicons-halflings.png");
   background-position: 14px 14px;
   background-repeat: no-repeat;
 }
@@ -1792,7 +1789,7 @@ table .span24 {
 }
 
 .icon-white {
-  background-image: $iconWhiteSpritePath;
+  background-image: url("../img/glyphicons-halflings-white.png");
 }
 
 .icon-glass {

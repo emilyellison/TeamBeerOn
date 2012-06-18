@@ -2,6 +2,15 @@
 /*changed all well background colors to lighter shade of beeron orange color with .well override at bottom
  and variable of $beeroncontent where you can use the fourth value (or "A" value) to adjust opacity*/
 
+[class^="icon-"], [class*=" icon-"] {  
+    background-repeat: no-repeat;
+		background-image: url("/assets/glyphicons-halflings.png");
+    display: inline-block;
+    height: 14px;
+    line-height: 14px;
+    vertical-align: text-top;
+    width: 14px;
+}
 
 .recommend {
 	padding-left: 20%;
@@ -324,6 +333,12 @@ $apptitle:white;
 	.grey {
 		color:#a9a9a9;
 		font-weight:normal;
+		i {
+			margin:1px 0px;
+		}
+	}
+	.rating_score_on_profile i {
+		margin:4px 0px;
 	}
 }
 

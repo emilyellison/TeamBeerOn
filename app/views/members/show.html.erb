@@ -12,18 +12,25 @@
 	<div class='span6'>
 		<div class='pull-left'>
 			<div class='ratings'>
-				<h2>Ratings History</h2> <i class="icon-search"> </i>
+				<h2>Ratings History</h2>
 				<br/>
 				<% @ratings.each do |rating| %>
 					<h3>
 						<%= link_to rating.beer.name, rating_url(rating.id) %>
 						<% if rating.score %> 
-							<span id='rating_score_on_profile' class='star'><%= rating.score %></span>
+							<span class='rating_score_on_profile'>
+								<% rating.score.times do %>
+									 <i class="icon-star"> </i>
+								<% end %>
+							</span>
 						<% end %>
-						<span class='grey'><%= link_to 'Edit', edit_rating_url(rating.id, :beer_id => rating.beer.id) %></span>
-						<span class='grey'><%= link_to 'Delete', rating_url(rating.id), method: :delete, confirm: 'Are you sure you want to delete your rating?' %></span>
 					</h3>
-					<p class='grey'><%= time_ago_in_words(rating.created_at) %> ago.</p>
+					<br/>
+					<p class='grey'>
+						<%= time_ago_in_words(rating.created_at) %> ago.
+						<span class='grey'><%= link_to '<i class="icon-pencil"> </i>'.html_safe, edit_rating_url(rating.id, :beer_id => rating.beer.id) %></span>
+						<span class='grey'><%= link_to '<i class="icon-trash"> </i>'.html_safe, rating_url(rating.id), method: :delete, confirm: 'Are you sure you want to delete your rating?' %></span>
+					</p>
 					<div class='span6'></div><hr/>
 				<% end %>
 				<%= will_paginate @ratings %>
