@@ -2,7 +2,8 @@ class MembersController < ApplicationController
  
   before_filter :redirect_if_not_logged_in, only: [ :show, :edit, :update ]
   before_filter :redirect_if_logged_in, only: [ :new, :create ]
- 
+  before_filter :redirect_if_user_doesnt_match, only: [ :show, :edit, :update ]
+  
   def new
     @member = Member.new
   end
@@ -17,7 +18,7 @@ class MembersController < ApplicationController
   end
 
   def create
-	@member = Member.new(params[:member])
+	  @member = Member.new(params[:member])
 	
 		if @member.save
 		  # Tell the MemberMailer to send a welcome Email after save
@@ -28,7 +29,7 @@ class MembersController < ApplicationController
 		else
 			render action: "new"
 		end
-   end
+  end
 	
 	def update
 		@member = Member.find(params[:id])

@@ -21,4 +21,12 @@ class ApplicationController < ActionController::Base
     end
   end
   
+  def redirect_if_user_doesnt_match
+    member = Member.find(params[:id])
+    if member.id != session[:mid]
+      flash[:error] = 'You\'re not authorized to view that page.'
+      redirect_to root_url
+    end
+  end
+  
 end
