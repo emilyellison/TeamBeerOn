@@ -4,7 +4,7 @@ gem 'rails', '3.2.3'
 gem 'thin'
 gem 'ransack'
 gem 'bootstrap-sass', '2.0.3'
-
+gem 'newrelic_rpm'
 gem 'jquery-star-rating-rails'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
