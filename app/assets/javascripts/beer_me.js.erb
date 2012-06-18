@@ -54,12 +54,34 @@ $(document).ready( function() {
 	
 	// Display rarity popovers.
 	
-	$('#rarity_true').popover();
-	$('#rarity_false').popover();
+	$("#rarity_true").popover({
+		'placement' : 'top'
+	}).click(function(){
+	  $(this).popover('toggle')
+	});
+	
+	$("#rarity_false").popover({
+		'placement' : 'top'
+	}).click(function(){
+		$(this).popover('toggle')
+	});
 	
 	// Display draft popovers.
 	
-	$('#draft_true').popover();
-	$('#draft_false').popover();
+	$("#draft_true").popover({
+		'placement' : 'top'
+	}).click(function(){
+	  $(this).popover('toggle')
+	});
+	
+	$("#draft_false").popover({
+		'placement' : 'top'
+	}).click(function(){
+		$(this).popover('toggle')
+	});
+	
+	// $('#draft_true').popover('toggle');
+	// $('#draft_false').popover('toggle');
+
 		
 });
