@@ -2,42 +2,35 @@
 
 <div class="row">
 	<div class="span12">
-		<div class="well">
+		<div class="hero-unit">
 		<h1>
-		<center>Welcome to BeerOn!</center>
+			<center>Welcome to BeerOn!</center>
 		</h1>
-				<h7 class="span8 offset2">
+				<h5 class="span8 offset2">
 				<center>We built BeerOn to help you discover beers. BeerOn was designed to recommend
 						you the perfect beer based on which bar you are at and what you are looking for.</center>
-				</h7>
+				</h5>
 		</div>		
-		<!-- <br/> -->
 	</div>
-	<!-- <br/> -->
-	<div class='span12'>
-		<div class="">
-		
-		
-		
-			<div class="span4 well welcomebox">
-		    <h2>Something</h2>
-				<br/>	
-				<p>
-	 	    	Here's how it works:
+
+		<div class="span8 well">
+		    <h2>Here's how it works:</h2>
+			<br/>	
 	 			<p class=" "><u><strong>Step 1:</strong></u> <%= link_to 'Start', location_url %> by letting us know <strong>which bar you're at</strong>.</p>
 				<p class=" "><u><strong>Step 2:</strong></u> Next let us know <strong>what you're in the mood for</strong> by toggling through style, draft, rarity, and characteristics.</p>
 				<p class=" "><u><strong>Step 3:</strong></u> Click through your personal recommendations from us.</p>
-		    	</p>
-			</div>
-			<div class="span4 well welcomebox">
-				<h2>Something</h2>
-				<br/>
-				<p>
-				We are constantly adding new bars so please let us know any that you want us to add.
-				Send us a *message our *tweet at us with your experiences and feedback.
-				</p>
-			</div>
-		
 		</div>
-	</div>	
+		<div class="span3">
+			<%= link_to image_tag("glowing_beer.jpg", width: 200) %>
+		</div>
+		
+		
+	
+
+	<div class="span12 well">
+	<h2>Membership Benefits</h2>
+		<p>
+		All you have to do is create an account in <%= link_to "Sign Up", sign_up_url%>. Once you have created an account, you will be able to rate beers and view the beers that you have rated.
+		</p>
+	</div>
 </div>		

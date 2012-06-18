@@ -17,7 +17,7 @@
 						<div class='span1'>
 							&nbsp;
 						</div>
-						<div class='span4'>
+						<div class='span4 mobile'>
 							<%= link_to image_tag 'glowing_beer.jpg', class: 'glowing_beer', height: 250 %>
 						</div>
 						<div class='span1'>
@@ -70,6 +70,7 @@
 
 		<%= render 'beer_me/pagination_rules' %>
 	</div>
+	
 	<%= params %>
 <% else %>
 	<h2>Sorry, there were no beers that matched your requirements.</h2>
