@@ -14,4 +14,11 @@ class ApplicationController < ActionController::Base
     end
   end
   
+  def redirect_if_logged_in
+    if @current_member.present?
+      flash[:error] = 'You\'re already signed in. You must be signed out first.'
+      redirect_to member_url(@current_member.id)
+    end
+  end
+  
 end

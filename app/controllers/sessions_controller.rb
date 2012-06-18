@@ -1,5 +1,8 @@
 class SessionsController < ApplicationController
   
+  before_filter :redirect_if_logged_in, only: [ :new, :create ]
+  before_filter :redirect_if_not_logged_in, only: [ :destroy ]
+  
   def new
     
   end
