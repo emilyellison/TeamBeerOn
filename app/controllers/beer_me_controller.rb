@@ -18,9 +18,9 @@ class BeerMeController < ApplicationController
   def preference
     @preference_link = 'active'
     if params[:draft] == 'true'
-      @available_beer = Beer.joins(:beer_experiences).where('beer_experiences.bar_id LIKE ?', params[:bar_id]).where('beer_experiences.draft = ?', 1) 
+      @available_beer = Beer.joins(:beer_experiences).where('beer_experiences.bar_id LIKE ?', params[:bar_id].to_i).where('beer_experiences.draft = ?', 1) 
     else
-      @available_beer = Beer.joins(:beer_experiences).where('beer_experiences.bar_id LIKE ?', params[:bar_id])
+      @available_beer = Beer.joins(:beer_experiences).where('beer_experiences.bar_id LIKE ?', params[:bar_id].to_i)
     end
     @q = @available_beer.search(params[:q])
     @styles = @available_beer.all.collect(&:style).uniq.sort
@@ -97,7 +97,7 @@ class BeerMeController < ApplicationController
   def recommendation
     session[:return_to] = request.fullpath
     @recommendation_link = 'active'
-    @all_beer = Beer.joins(:beer_experiences).where('beer_experiences.bar_id LIKE ?', params[:bar_id])
+    @all_beer = Beer.joins(:beer_experiences).where('beer_experiences.bar_id LIKE ?', params[:bar_id].to_i)
     if params[:rarity] == 'true'
       if params[:draft] == 'true'
         @beers = @all_beer.where('beer_experiences.draft = ?', 1).order('rarity desc').find_all_by_id(params[:available_beer]).take(20)
