@@ -66,8 +66,9 @@
 			<br/><br/>
 	</div>
 	<div class='row'>
-		<div class='span12'>
-		 	<%= link_to 'Beer Me', save_preference_and_recommendation_url(:available_beer => @available_beer.collect { |beer| beer.id }, :rarity => params[:rarity], :bar_id => params[:bar_id], :draft => params[:draft], :q => params[:q]), method: :post, class: 'btn btn-large btn-primary pull-left' %>
+		
+		<div class='span3'>
+		 	<%= link_to 'Beer Me', save_preference_and_recommendation_url(:available_beer => @available_beer.collect { |beer| beer.id }, :rarity => params[:rarity], :bar_id => params[:bar_id], :draft => params[:draft], :q => params[:q]), method: :post, class: 'btn btn-large btn-primary pull-left beer_me_button span3' %>
 			<%= f.submit 'Beer Me', style: 'visibility: hidden;' %>
 		</div>
 	</div>
