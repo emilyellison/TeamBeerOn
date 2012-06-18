@@ -1,5 +1,7 @@
 class MembersController < ApplicationController
  
+  before_filter :redirect_if_not_logged_in, only: [ :show, :edit, :update ]
+ 
   def new
     @member = Member.new
   end
@@ -35,13 +37,6 @@ class MembersController < ApplicationController
 			else
 				render action: "edit"
 			end
-	end
-
-	def destroy
-		@member = Member.find(params[:id])
-		@member.destroy
-		
-		redirect_to root_url
 	end
 			  
 end

@@ -5,7 +5,7 @@ TeamBeerOn::Application.routes.draw do
   root to: 'static_pages#home'
   
 	resources :sessions
-	resources :members
+	resources :members, except: [ :destroy ]
 	
 	get '' => 'static_pages#home'
 	get 'about' => 'static_pages#about', as: :about

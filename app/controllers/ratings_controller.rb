@@ -1,5 +1,7 @@
 class RatingsController < ApplicationController
 
+  before_filter :redirect_if_not_logged_in
+
   def show
     @rating = Rating.find(params[:id])
     @beer = Beer.find(@rating.beer.id)
