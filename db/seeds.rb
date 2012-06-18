@@ -124,4 +124,4 @@ Team.create(name: 'Stella Fayman', description: 'Entrepreneurial Rockstar.', ima
 Team.create(name: 'Zak Boswell', description: 'UX Ninja.', image: 'zak_in_color.jpg')
 Team.create(name: 'Fernando Diaz', description: 'Code Detective.', image: 'fernando_in_color.jpg')
 Team.create(name: 'Mike Ebert', description: 'Agile Scrum Master.', image: 'mike_in_color.png')
-Team.create(name: 'Chad Hendry', description: 'Programming Guru.')
+Team.create(name: 'Chad Hendry', description: 'Programming Guru.', image: 'chad.jpg')

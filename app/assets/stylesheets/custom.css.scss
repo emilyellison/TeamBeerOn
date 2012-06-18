@@ -277,9 +277,6 @@ $apptitle:white;
 		background:-o-linear-gradient(top, #1f1f1f, #272829);
 		background:-linear-gradient(top, #1f1f1f, #272829);
 		border-radius:8px;
-		.span1 {
-			
-		}
 		.span4 {
 			padding:50px 0px;
 			h1, h2 {
@@ -357,6 +354,7 @@ $apptitle:white;
 	.beer_carousel .span1 {
 		width: 0px;
 	}
+	
 }
 
 @media only screen and (min-width:980px) {
@@ -367,6 +365,7 @@ $apptitle:white;
 			height:195px;
 		}	
 	}
+	
 }
 
 @media only screen and (max-width:980px) {
@@ -381,7 +380,14 @@ $apptitle:white;
 	}
 }
 
+/*@media only screen and (max-width:) {
+	.beer_text {
+		background:pink;
+	}
+}*/
+
 @media only screen and (min-width:1200px) {
+	
 	.homepicture {
 		margin-top: -5px;
 		margin-left: 40px;

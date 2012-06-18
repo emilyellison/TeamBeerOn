@@ -22,16 +22,10 @@
 					<div class="item">
 				<% end %>
 					<div class='beer_carousel'>
-						<div class='span1'>
-							&nbsp;
-						</div>
-						<div class='span4 mobile'>
+						<div class='span4 offset1 mobile'>
 							<%= link_to image_tag 'glowing_beer.jpg', class: 'glowing_beer', height: 250 %>
 						</div>
-						<div class='span1'>
-							&nbsp;
-						</div>
-						<div class='span4'>
+						<div class='span4 offset1 beer_text'>
 							<div class='beer_information'>
 								<h1><%= beer.name %> <%= "(#{beer.abv}%)" if beer.abv %></h1>
 								<% if beer.brewery.present? %>
