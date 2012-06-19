@@ -38,6 +38,22 @@ class BeerMeController < ApplicationController
   end
   
   def save_preference_and_recommendation
+    
+    @all_beer = Beer.joins(:beer_experiences).where('beer_experiences.bar_id = ?', params[:bar_id])
+    if params[:rarity] == 'true'
+      if params[:draft] == 'true'
+        @beers = @all_beer.where('beer_experiences.draft = ?', 1).order('rarity desc').find_all_by_id(params[:available_beer]).take(20)
+      else
+        @beers = @all_beer.order('rarity desc').find_all_by_id(params[:available_beer]).take(20)
+      end
+    else
+      if params[:draft] == 'true'
+        @beers = @all_beer.where('beer_experiences.draft = ?', 1).find_all_by_id(params[:available_beer]).shuffle.take(20)
+      else
+        @beers = @all_beer.find_all_by_id(params[:available_beer]).shuffle.take(20)
+      end
+    end
+    params[:available_beer] = @beers.collect(&:id).uniq
         
     @beer_me_search = BeerMeSearch.new
 
