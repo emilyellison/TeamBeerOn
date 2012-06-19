@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
   end
   
   def create
-	member = Member.find_by_email(params[:email])
+	member = Member.find_by_email(params[:email].downcase)
   	if member
   		if member.authenticate(params[:password])
   			session[:mid] = member.id
