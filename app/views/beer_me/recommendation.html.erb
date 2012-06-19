@@ -27,8 +27,6 @@
 				<% else %>
 					<div class="item">
 				<% end %>
-					<%= @beers.first %><br/>
-					<%= beer %>
 					<div class='beer_carousel'>
 						<div class='span4 offset1 mobile'>
 							<%= image_tag 'glowing_beer.jpg', class: 'glowing_beer', height: 250 %>
@@ -92,7 +90,6 @@
 
 		<%= render 'beer_me/pagination_rules' %>
 		
-		<%= params %>
 	</div>
 	
 <% else %>

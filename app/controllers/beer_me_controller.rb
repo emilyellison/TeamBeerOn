@@ -114,7 +114,7 @@ class BeerMeController < ApplicationController
   def recommendation
     session[:return_to] = request.fullpath
     @recommendation_link = 'active'
-    @beers = Beer.find_all_by_id(params[:available_beer]).take(20)
+    @beers = Beer.find_all_by_id(params[:available_beer])
   end
   
 end
