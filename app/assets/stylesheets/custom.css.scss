@@ -359,16 +359,6 @@ $apptitle:white;
 	
 }
 
-@media only screen and (min-width:980px) {
-	.homepicture {
-		margin-top: 0px;
-		margin-left: 20px;
-		img {
-			height:195px;
-		}	
-	}
-	
-}
 
 @media only screen and (max-width:980px) {
 /*	.body_of_beeron {
@@ -380,6 +370,17 @@ $apptitle:white;
 			height:233px;
 		} 
 	}
+}
+
+@media only screen and (min-width:980px) {
+	.homepicture {
+		margin-top: 0px;
+		margin-left: 20px;
+		img {
+			height:195px;
+		}	
+	}
+	
 }
 
 
