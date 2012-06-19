@@ -114,14 +114,14 @@ $apptitle:white;
 			.beeronhead { 
 				margin: 10px -10px;
 				#apptitle {	
-					font-size:45px;
+					font-size:30px;
 					font-weight:bold;
 					color: $apptitle;
 				}
 				#userid {
 				/*	float: right;*/
 					margin:5px 0px;
-					font-size: 16px;
+					font-size: 20px;
 					color: $userid;
 				}
 				.dropdown-menu {
@@ -138,8 +138,7 @@ $apptitle:white;
 				}
 				.non_signed_in_user {
 					a {
-						margin:13px 0px;
-						font-size:13px;
+						font-size:20px;
 					}
 				}
 			}
@@ -351,13 +350,14 @@ $apptitle:white;
 	}
 }
 
-
+.well {
+  background-color: $beeroncontent;
+}
 
 @media only screen and (max-width:480px) {	
 	.beer_carousel .span1 {
 		width: 0px;
 	}
-	
 }
 
 
@@ -433,8 +433,9 @@ check herokuapp
   background-color: $beerongradient;
 }*/
 
-.well {
-  background-color: $beeroncontent;
+
+@media only screen and (min-width:480px) {	
+	#apptitle {	
+		font-size:45px;
+	}
 }
-
-
