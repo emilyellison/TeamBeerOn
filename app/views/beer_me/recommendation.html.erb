@@ -10,7 +10,7 @@
 			</h3>	
 		<% elsif @beers.count > 1 %>
 			<h3>
-				Scroll through to view the beers that match what you chose 
+				Scroll through to view the beers that match what you chose, 
 				or <%= link_to 'search again', "/preference?bar_id=#{params[:bar_id]}" %>.
 			</h3>
 		<% end %>
