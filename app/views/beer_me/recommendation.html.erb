@@ -36,7 +36,7 @@
 								<h1><%= beer.name %> <%= "(#{beer.abv}%)" if beer.abv %></h1>
 								<% if beer.brewery.present? %>
 									<h2><%= beer.brewery.name %></h2>
-									<h2><%= beer.brewery.city %>, <%= beer.brewery.state %>, <%= beer.brewery.country %></h2>
+									<h2><%= beer.brewery.place %></h2>
 								<% end %>
 								<br/>
 								<div class='facts'>
@@ -87,7 +87,7 @@
 			<% end %>
 	  </div>
 		<%# Only show pagination and previous/next if there is more than one beer. %>
-
+		<%= params %>
 		<%= render 'beer_me/pagination_rules' %>
 		
 	</div>

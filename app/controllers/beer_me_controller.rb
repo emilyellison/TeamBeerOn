@@ -18,11 +18,7 @@ class BeerMeController < ApplicationController
   def preference
     @bar = Bar.find_by_id(params[:bar_id])
     @preference_link = 'active'
-    if params[:draft] == 'true'
-      @available_beer = Beer.joins(:beer_experiences).where('beer_experiences.bar_id = ?', params[:bar_id]).where('beer_experiences.draft = ?', 1) 
-    else
-      @available_beer = Beer.joins(:beer_experiences).where('beer_experiences.bar_id = ?', params[:bar_id])
-    end
+    @available_beer = Beer.joins(:beer_experiences).where('beer_experiences.bar_id = ?', params[:bar_id])
     @q = @available_beer.search(params[:q])
     @styles = @available_beer.all.collect(&:style).uniq.sort
     
@@ -53,7 +49,7 @@ class BeerMeController < ApplicationController
         @beers = @all_beer.find_all_by_id(params[:available_beer]).shuffle.take(20)
       end
     end
-    params[:available_beer] = @beers.collect(&:id).uniq
+  
         
     @beer_me_search = BeerMeSearch.new
 
