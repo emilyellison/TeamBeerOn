@@ -4,7 +4,9 @@
 	<div class="well ">
 		<div class="">
 		<% if @beers.count == 1 %>
-			<h3>Based on what you chose, we think you'd like this one.</h3>	
+			<h3>Based on what you chose, we think you'd like this one. Or feel free to 
+				<%= link_to 'search again', "/preference?bar_id=#{params[:bar_id]}" %>.
+			</h3>	
 		<% elsif @beers.count > 1 %>
 			<h3>
 				Scroll through to view the beers that match what you chose 
