@@ -121,7 +121,7 @@ $apptitle:white;
 				#userid {
 				/*	float: right;*/
 					margin:5px 0px;
-					font-size: 20px;
+					font-size: 16px;
 					color: $userid;
 				}
 				.dropdown-menu {
@@ -138,7 +138,7 @@ $apptitle:white;
 				}
 				.non_signed_in_user {
 					a {
-						font-size:20px;
+						font-size:16px;
 					}
 				}
 			}
@@ -361,9 +361,9 @@ $apptitle:white;
 
 
 @media only screen and (max-width:980px) {
-/*	.body_of_beeron {
+	.body_of_beeron {
 		margin:0px 0px 0px 0px;
-	}*/
+	}
 	.homepicture {
 		margin-top: 0px;
 		img {
