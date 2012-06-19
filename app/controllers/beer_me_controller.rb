@@ -107,11 +107,12 @@ class BeerMeController < ApplicationController
       end
     else
       if params[:draft] == 'true'
-        @beers = @all_beer.where('beer_experiences.draft = ?', 1).find_all_by_id(params[:available_beer]).take(20).shuffle
+        @beers = @all_beer.where('beer_experiences.draft = ?', 1).find_all_by_id(params[:available_beer]).shuffle.take(20)
       else
-        @beers = @all_beer.find_all_by_id(params[:available_beer]).take(20).shuffle
+        @beers = @all_beer.find_all_by_id(params[:available_beer]).shuffle.take(20)
       end
     end
+    params[:available_beer] = @beers.collect(&:id).uniq
   end
   
 end
