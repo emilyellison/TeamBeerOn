@@ -16,6 +16,7 @@ class BeerMeController < ApplicationController
   end
   
   def preference
+    @bar = Bar.find_by_id(params[:bar_id])
     @preference_link = 'active'
     if params[:draft] == 'true'
       @available_beer = Beer.joins(:beer_experiences).where('beer_experiences.bar_id = ?', params[:bar_id]).where('beer_experiences.draft = ?', 1) 
