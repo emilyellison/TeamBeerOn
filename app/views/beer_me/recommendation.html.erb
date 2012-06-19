@@ -54,9 +54,15 @@
 								<div class='beer_experience'>
 									<p>
 										Rarity:
-										<% beer.beer_experiences[0].rarity.times do %>
+										<% rarity_score = beer.beer_experiences[0].rarity %>
+										<% rarity_remainder = 5 - rarity_score %>
+										<% rarity_score.times do %>
 											<%= image_tag('beer.png', height: 20, class: 'icon') %>
 										<% end %>
+										<% rarity_remainder.times do %>
+											<%= image_tag('beer.png', height: 20, class: 'icon non-rare') %>
+										<% end %>
+										
 									</p>
 									<p>
 										<%= "Available on Draft" if beer.beer_experiences[0].draft == 1 %>

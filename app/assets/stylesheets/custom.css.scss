@@ -354,6 +354,10 @@ $apptitle:white;
   background-color: $beeroncontent;
 }
 
+img.non-rare {
+	opacity:0.20;
+}
+
 @media only screen and (max-width:480px) {	
 	.beer_carousel .span1 {
 		width: 0px;
