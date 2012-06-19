@@ -4,7 +4,8 @@
 	<div class="well ">
 		<div class="">
 		<% if @beers.count == 1 %>
-			<h3>Based on what you chose, we think you'd like this one. Or feel free to 
+			<h3>
+				Based on what you chose, we think you'd like this one. Or feel free to 
 				<%= link_to 'search again', "/preference?bar_id=#{params[:bar_id]}" %>.
 			</h3>	
 		<% elsif @beers.count > 1 %>
@@ -26,6 +27,8 @@
 				<% else %>
 					<div class="item">
 				<% end %>
+					<%= @beers.first %><br/>
+					<%= beer %>
 					<div class='beer_carousel'>
 						<div class='span4 offset1 mobile'>
 							<%= image_tag 'glowing_beer.jpg', class: 'glowing_beer', height: 250 %>
@@ -88,6 +91,8 @@
 		<%# Only show pagination and previous/next if there is more than one beer. %>
 
 		<%= render 'beer_me/pagination_rules' %>
+		
+		<%= params %>
 	</div>
 	
 <% else %>
